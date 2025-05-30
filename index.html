@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engeletron Engenharia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+      background: black;
+    }
+    header {
+      background: white;
+      color: #1e40af;
+      padding: 1em;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+    nav {
+      margin-top: 0.5em;
+    }
+    button {
+      background: none;
+      border: none;
+      color: #1e40af;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0 0.5em;
+    }
+    .hero {
+      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+    .hero a {
+      background: white;
+      color: #1e40af;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    [lang] {
+      display: none;
+    }
+    [lang].active {
+      display: block;
+    }
+  </style>
+  <script>
+    function toggleLanguage(lang) {
+      document.querySelectorAll('[lang]').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('[lang="' + lang + '"]').forEach(el => el.classList.add('active'));
+    }
+    window.onload = () => toggleLanguage('pt');
+  </script>
+</head>
+<body>
+  <header>
+    Engeletron
+    <nav>
+      <button onclick="toggleLanguage('pt')">PT</button>
+      <button onclick="toggleLanguage('en')">EN</button>
+    </nav>
+  </header>
+  <section class="hero">
+    <div lang="pt" class="active">
+      <h2>Transformamos ideias em circuitos, código e conectividade</h2>
+      <p>Somos uma empresa de engenharia especializada em projetos eletrônicos sob medida</p>
+      <a href="#">Saiba mais</a>
+    </div>
+    <div lang="en">
+      <h2>We turn ideas into circuits, code and connectivity</h2>
+      <p>We are an engineering company specialized in custom electronic projects</p>
+      <a href="#">Learn more</a>
+    </div>
+  </section>
+</body>
+</html>
