@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços | Engeletron Engenharia Elétrica Ltda</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, nav, footer { background: #0a3d62; color: #fff; padding: 1em; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        .container { padding: 2em; }
+        .lang-select { float: right; }
+        .card { background: #f5f6fa; margin: 1.5em 0; padding: 1.5em; border-radius: 8px; }
+        .service-list { margin: 1em 0; }
+        @media (max-width: 600px) {
+            .container { padding: 1em; }
+            nav { font-size: 0.95em; }
+        }
+    </style>
+    <script>
+        function changeLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        }
+        window.onload = () => {
+            const lang = localStorage.getItem('lang') || 'pt';
+            changeLang(lang);
+            document.querySelector('.lang-select').value = lang;
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <span style="font-weight:bold;">Engeletron Engenharia Elétrica Ltda</span>
+        <select class="lang-select" onchange="changeLang(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+        </select>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre / About</a>
+            <a href="servicos.html">Serviços / Services</a>
+            <a href="contato.html">Contatos / Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card" data-lang="pt">
+            <h1>Nossos Serviços</h1>
+            <ul class="service-list">
+                <li>Layout de placa de circuito impresso (Autodesk Eagle)</li>
+                <li>Firmware em C/C++ para microcontroladores 8 e 32 bits (ST, HOLTEK, ESPRESSIF)</li>
+                <li>Projeto de hardware analógico, digital e radiofrequência</li>
+                <li>Pesquisa e especificação de componentes</li>
+                <li>Fabricação de gigas de teste</li>
+                <li>Montagem e estruturação de servidor IoT com Google Firebase</li>
+                <li>Desenvolvimento de aplicativos Android e iOS usando Flutter</li>
+            </ul>
+        </div>
+        <div class="card" data-lang="en" style="display:none;">
+            <h1>Our Services</h1>
+            <ul class="service-list">
+                <li>PCB layout (Autodesk Eagle)</li>
+                <li>Firmware in C/C++ for 8 and 32-bit microcontrollers (ST, HOLTEK, ESPRESSIF)</li>
+                <li>Analog, digital and RF hardware design</li>
+                <li>Component research and specification</li>
+                <li>Test jigs manufacturing</li>
+                <li>Assembly and structuring of IoT servers with Google Firebase</li>
+                <li>Development of Android and iOS apps using Flutter</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div data-lang="pt">© 2025 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</div>
+        <div data-lang="en" style="display:none;">© 2025 Engeletron Engenharia Elétrica Ltda. All rights reserved.</div>
+    </footer>
+</body>
+</html>
