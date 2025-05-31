@@ -6,13 +6,7 @@
     <title>Contato | Engeletron Engenharia Elétrica Ltda</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1156a2;
-            --secondary: #f7f9fb;
-            --accent: #e8f0fe;
-            --dark: #22334c;
-            --light: #ffffff;
-        }
+        :root { --primary: #1156a2; --secondary: #f7f9fb; --accent: #e8f0fe; --dark: #22334c; --light: #ffffff;}
         body { font-family: 'Montserrat', Arial, sans-serif; margin: 0; background: var(--secondary); color: var(--dark);}
         header { position: fixed; top: 0; left: 0; right: 0; background: var(--primary); color: var(--light); display: flex; align-items: center; justify-content: space-between; padding: 0.5em 2em; box-shadow: 0 2px 8px rgba(17,86,162,0.07); z-index: 100;}
         .logo { font-weight: bold; font-size: 1.3em; letter-spacing: 1px;}
@@ -33,9 +27,8 @@
     </style>
     <script>
         function changeLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
-            });
+            document.querySelectorAll('.pt').forEach(el => el.style.display = lang === 'pt' ? '' : 'none');
+            document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
             document.documentElement.lang = lang;
             localStorage.setItem('lang', lang);
         }
@@ -50,10 +43,14 @@
     <header>
         <span class="logo">Engeletron</span>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="sobre.html">Sobre / About</a>
-            <a href="servicos.html">Serviços / Services</a>
-            <a href="contato.html">Contatos / Contact</a>
+            <a href="index.html" class="pt">Home</a>
+            <a href="index.html" class="en">Home</a>
+            <a href="sobre.html" class="pt">Sobre</a>
+            <a href="sobre.html" class="en">About</a>
+            <a href="servicos.html" class="pt">Serviços</a>
+            <a href="servicos.html" class="en">Services</a>
+            <a href="contato.html" class="pt">Contatos</a>
+            <a href="contato.html" class="en">Contact</a>
         </nav>
         <select class="lang-select" onchange="changeLang(this.value)">
             <option value="pt">Português</option>
@@ -61,7 +58,7 @@
         </select>
     </header>
     <div class="container">
-        <div class="card" data-lang="pt">
+        <div class="card pt">
             <h1>Contato</h1>
             <p><b>Razão social:</b> Engeletron Engenharia Elétrica Ltda</p>
             <p><b>Endereço:</b> Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz, Matinhos, PR, CEP: 83260-000</p>
@@ -82,7 +79,7 @@
                 </li>
             </ul>
         </div>
-        <div class="card" data-lang="en" style="display:none;">
+        <div class="card en">
             <h1>Contact</h1>
             <p><b>Company Name:</b> Engeletron Engenharia Elétrica Ltda</p>
             <p><b>Address:</b> Avenida Beira Mar, 9009, Room 1, Balneário Albatroz, Matinhos, PR, ZIP: 83260-000</p>
@@ -105,8 +102,8 @@
         </div>
     </div>
     <footer>
-        <div data-lang="pt">© 2025 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</div>
-        <div data-lang="en" style="display:none;">© 2025 Engeletron Engenharia Elétrica Ltda. All rights reserved.</div>
+        <div class="pt">© 2025 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</div>
+        <div class="en">© 2025 Engeletron Engenharia Elétrica Ltda. All rights reserved.</div>
     </footer>
 </body>
 </html>
