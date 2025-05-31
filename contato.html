@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Engeletron Engenharia Elétrica Ltda</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, nav, footer { background: #0a3d62; color: #fff; padding: 1em; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        .container { padding: 2em; }
+        .lang-select { float: right; }
+        .card { background: #f5f6fa; margin: 1.5em 0; padding: 1.5em; border-radius: 8px; }
+        @media (max-width: 600px) {
+            .container { padding: 1em; }
+            nav { font-size: 0.95em; }
+        }
+    </style>
+    <script>
+        function changeLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        }
+        window.onload = () => {
+            const lang = localStorage.getItem('lang') || 'pt';
+            changeLang(lang);
+            document.querySelector('.lang-select').value = lang;
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <span style="font-weight:bold;">Engeletron Engenharia Elétrica Ltda</span>
+        <select class="lang-select" onchange="changeLang(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+        </select>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre / About</a>
+            <a href="servicos.html">Serviços / Services</a>
+            <a href="contato.html">Contatos / Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card" data-lang="pt">
+            <h1>Contato</h1>
+            <p><b>Razão social:</b> Engeletron Engenharia Elétrica Ltda</p>
+            <p><b>Endereço:</b> Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz, Matinhos, PR, CEP: 83260-000</p>
+            <p><b>Fone:</b> (41) 99904-2302 / (41) 99904-2212</p>
+            <p><b>Ramo de atividade:</b> Serviços de engenharia elétrica e eletrônica</p>
+            <p><b>CNPJ:</b> 37.912.040/0001-10</p>
+            <h2>Diretoria</h2>
+            <ul>
+                <li>
+                    Danilo Miguel Neves Adur, Engenheiro Eletricista, Diretor – 
+                    <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a> – 
+                    (41) 99904-2212 – CREA-PR Nº PR-87205/D
+                </li>
+                <li>
+                    Gisely, Engenheira Eletricista, Diretora – 
+                    <a href="mailto:gisely.engeletron@gmail.com">gisely.engeletron@gmail.com</a> – 
+                    (41) 99904-2302 – CREA-PR Nº PR-87210/D
+                </li>
+            </ul>
+        </div>
+        <div class="card" data-lang="en" style="display:none;">
+            <h1>Contact</h1>
+            <p><b>Company Name:</b> Engeletron Engenharia Elétrica Ltda</p>
+            <p><b>Address:</b> Avenida Beira Mar, 9009, Room 1, Balneário Albatroz, Matinhos, PR, ZIP: 83260-000</p>
+            <p><b>Phone:</b> +55 41 99904-2302 / +55 41 99904-2212</p>
+            <p><b>Business area:</b> Electrical and Electronic Engineering Services</p>
+            <p><b>CNPJ:</b> 37.912.040/0001-10</p>
+            <h2>Directors</h2>
+            <ul>
+                <li>
+                    Danilo Miguel Neves Adur, Electrical Engineer, Director – 
+                    <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a> – 
+                    +55 41 99904-2212 – CREA-PR Nº PR-87205/D
+                </li>
+                <li>
+                    Gisely, Electrical Engineer, Director – 
+                    <a href="mailto:gisely.engeletron@gmail.com">gisely.engeletron@gmail.com</a> – 
+                    +55 41 99904-2302 – CREA-PR Nº PR-87210/D
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div data-lang="pt">© 2025 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</div>
+        <div data-lang="en" style="display:none;">© 2025 Engeletron Engenharia Elétrica Ltda. All rights reserved.</div>
+    </footer>
+</body>
+</html>
