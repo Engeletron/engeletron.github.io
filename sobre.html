@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | Engeletron Engenharia Elétrica Ltda</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, nav, footer { background: #0a3d62; color: #fff; padding: 1em; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        .container { padding: 2em; }
+        .lang-select { float: right; }
+        .card { background: #f5f6fa; margin: 1.5em 0; padding: 1.5em; border-radius: 8px; }
+        @media (max-width: 600px) {
+            .container { padding: 1em; }
+            nav { font-size: 0.95em; }
+        }
+    </style>
+    <script>
+        function changeLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        }
+        window.onload = () => {
+            const lang = localStorage.getItem('lang') || 'pt';
+            changeLang(lang);
+            document.querySelector('.lang-select').value = lang;
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <span style="font-weight:bold;">Engeletron Engenharia Elétrica Ltda</span>
+        <select class="lang-select" onchange="changeLang(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+        </select>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre / About</a>
+            <a href="servicos.html">Serviços / Services</a>
+            <a href="contato.html">Contatos / Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="card" data-lang="pt">
+            <h1>Sobre a Engeletron</h1>
+            <p>
+                A Engeletron Engenharia Elétrica Ltda é formada por engenheiros com ampla experiência em projetos eletrônicos, hardware e software embarcado. 
+                Atuamos nos mais diversos setores industriais, oferecendo soluções inovadoras e sob medida para cada cliente.
+            </p>
+            <h2>Especialidades</h2>
+            <ul>
+                <li>Projetos eletrônicos (analógico, digital e RF)</li>
+                <li>Desenvolvimento de firmware</li>
+                <li>Aplicações IoT e automação</li>
+                <li>Aplicativos multiplataforma</li>
+            </ul>
+        </div>
+        <div class="card" data-lang="en" style="display:none;">
+            <h1>About Engeletron</h1>
+            <p>
+                Engeletron Engenharia Elétrica Ltda is composed of engineers with extensive experience in electronic projects, hardware and embedded software. 
+                We operate in various industry sectors, offering innovative and customized solutions for each client.
+            </p>
+            <h2>Expertise</h2>
+            <ul>
+                <li>Electronic projects (analog, digital, and RF)</li>
+                <li>Firmware development</li>
+                <li>IoT and automation applications</li>
+                <li>Cross-platform applications</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div data-lang="pt">© 2025 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</div>
+        <div data-lang="en" style="display:none;">© 2025 Engeletron Engenharia Elétrica Ltda. All rights reserved.</div>
+    </footer>
+</body>
+</html>
