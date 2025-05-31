@@ -1,11 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <title>Engeletron Engenharia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engeletron Engenharia Elétrica Ltda</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, nav, footer { background: #0a3d62; color: #fff; padding: 1em; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        .container { padding: 2em; }
+        .lang-select { float: right; }
+        .slogan { font-style: italic; color: #2980b9; margin-bottom: 1em;}
+        .card { background: #f5f6fa; margin: 1.5em 0; padding: 1.5em; border-radius: 8px; }
+        @media (max-width: 600px) {
+            .container { padding: 1em; }
+            nav { font-size: 0.95em; }
+        }
+    </style>
+    <script>
+        function changeLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        }
+        window.onload = () => {
+            const lang = localStorage.getItem('lang') || 'pt';
+            changeLang(lang);
+            document.querySelector('.lang-select').value = lang;
+        };
+    </script>
 </head>
 <body>
-  <h1>Bem-vindo à Engeletron</h1>
-  <p>Site em construção.</p>
+    <header>
+        <span style="font-weight:bold;">Engeletron Engenharia Elétrica Ltda</span>
+        <select class="lang-select" onchange="changeLang(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+        </select>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre / About</a>
+            <a href="servicos.html">Serviços / Services</a>
+            <a href="contato.html">Contatos / Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- Slogan -->
+        <div class="slogan" data-lang="pt">Inovação e Engenharia para um Futuro Conectado</div>
+        <div class="slogan" data-lang="en" style="display:none;">Innovation and Engineering for a Connected Future</div>
+
+        <!-- Home Português -->
+        <div data-lang="pt">
+            <h1>Bem-vindo à Engeletron</h1>
+            <p>
+                Somos uma empresa de desenvolvimento de projetos eletrônicos. Atuamos em hardware analógico e digital, microcontroladores, eletrônica de potência, comunicação por RF, servidores IoT com Firebase e aplicativos multiplataforma com Flutter.
+            </p>
+        </div>
+        <!-- Home English -->
+        <div data-lang="en" style="display:none;">
+            <h1>Welcome to Engeletron</h1>
+            <p>
+                We are a company specialized in electronic project development. We work with analog and digital hardware, microcontrollers, power electronics, RF communication, IoT servers with Firebase, and cross-platform apps with Flutter.
+            </p>
+        </div>
+        <div class="card">
+            <div data-lang="pt">
+                <h2>Destaques</h2>
+                <ul>
+                    <li>Projetos personalizados para sua necessidade</li>
+                    <li>Atendimento técnico especializado</li>
+                    <li>Equipe capacitada e experiente</li>
+                </ul>
+            </div>
+            <div data-lang="en" style="display:none;">
+                <h2>Highlights</h2>
+                <ul>
+                    <li>Custom projects for your needs</li>
+                    <li>Specialized technical support</li>
+                    <li>Experienced and qualified team</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div data-lang="pt">© 2025 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</div>
+        <div data-lang="en" style="display:none;">© 2025 Engeletron Engenharia Elétrica Ltda. All rights reserved.</div>
+    </footer>
 </body>
 </html>
