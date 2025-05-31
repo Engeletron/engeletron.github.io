@@ -105,6 +105,27 @@
         .card p { 
             color: #666; 
         }
+        .plataformas {
+            margin: 15px 0;
+            list-style-type: none;
+            text-align: left;
+        }
+        .plataformas li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        .plataformas li:before {
+            content: "▹";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+        .destaque {
+            font-style: italic;
+            color: #1A237E;
+            margin-top: 10px;
+        }
         
         /* Informações Institucionais */
         .institucional {
@@ -215,8 +236,17 @@
                 <p>Layout profissional de placas de circuito impresso analógicas e digitais.</p>
             </div>
             <div class="card">
-                <h3>Programação C/C++</h3>
-                <p>Firmware otimizado para microcontroladores (ARM, AVR, ESP32).</p>
+                <h3>Programação em C/C++</h3>
+                <p id="programacao-texto">Desenvolvimento de firmware para:</p>
+                <ul class="plataformas">
+                    <li><strong>Microchip</strong> (PIC, AVR, dsPIC)</li>
+                    <li><strong>STMicroelectronics</strong> (STM32, STM8)</li>
+                    <li><strong>Espressif</strong> (ESP32, ESP8266)</li>
+                    <li><strong>Holtek</strong> (HT66, HT32)</li>
+                    <li><strong>Renesas</strong> (RX, RL78)</li>
+                    <li><strong>NXP</strong> (ARM Cortex-M, Kinetis)</li>
+                </ul>
+                <p class="destaque" id="programacao-destaque">Otimização para baixo consumo, RTOS e comunicação sem fio (Wi-Fi/BLE).</p>
             </div>
             <div class="card">
                 <h3>Aplicativos Flutter</h3>
@@ -292,6 +322,8 @@
                 "hero-subtitle": "Projetos personalizados em PCB, firmware, apps e cloud para sua inovação",
                 "hero-cta": "Solicite um Orçamento",
                 "servicos-title": "Nossos Serviços",
+                "programacao-texto": "Desenvolvimento de firmware para:",
+                "programacao-destaque": "Otimização para baixo consumo, RTOS e comunicação sem fio (Wi-Fi/BLE).",
                 "equipe-title": "Nossa Equipe Técnica",
                 "institucional-title": "Informações Institucionais",
                 "footer-text": "© 2024 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados."
@@ -301,6 +333,8 @@
                 "hero-subtitle": "Custom PCB, firmware, apps, and cloud projects for your innovation",
                 "hero-cta": "Request a Quote",
                 "servicos-title": "Our Services",
+                "programacao-texto": "Firmware development for:",
+                "programacao-destaque": "Optimization for low power, RTOS, and wireless communication (Wi-Fi/BLE).",
                 "equipe-title": "Our Technical Team",
                 "institucional-title": "Corporate Information",
                 "footer-text": "© 2024 Engeletron Engenharia Elétrica Ltda. All rights reserved."
@@ -312,6 +346,8 @@
             document.getElementById("hero-subtitle").innerText = translations[lang]["hero-subtitle"];
             document.getElementById("hero-cta").innerText = translations[lang]["hero-cta"];
             document.getElementById("servicos-title").innerText = translations[lang]["servicos-title"];
+            document.getElementById("programacao-texto").innerText = translations[lang]["programacao-texto"];
+            document.getElementById("programacao-destaque").innerText = translations[lang]["programacao-destaque"];
             document.getElementById("equipe-title").innerText = translations[lang]["equipe-title"];
             document.getElementById("institucional-title").innerText = translations[lang]["institucional-title"];
             document.getElementById("footer-text").innerText = translations[lang]["footer-text"];
