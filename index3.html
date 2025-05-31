@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engeletron | Engenharia Elétrica e Projetos Eletrônicos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e Fontes */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Header */
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 5%; 
+            background: #1A237E; 
+            color: white; 
+        }
+        .logo { 
+            font-size: 22px; 
+            font-weight: bold; 
+        }
+        .logo span { 
+            color: #4CAF50;
+        }
+        .idiomas button { 
+            background: none; 
+            border: none; 
+            color: white; 
+            cursor: pointer; 
+            font-size: 16px; 
+            margin-left: 10px; 
+        }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover; 
+            height: 70vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            color: white; 
+            padding: 0 20px; 
+        }
+        .hero h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 20px; 
+        }
+        .hero p { 
+            font-size: 1.2rem; 
+            max-width: 600px; 
+            margin-bottom: 30px; 
+        }
+        .btn { 
+            background: #4CAF50; 
+            color: white; 
+            padding: 12px 30px; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+        }
+        .btn:hover { background: #45a049; }
+        
+        /* Serviços */
+        .servicos { 
+            padding: 80px 5%; 
+            text-align: center; 
+            background: #f9f9f9; 
+        }
+        .servicos h2 { 
+            margin-bottom: 40px; 
+            font-size: 2rem; 
+            color: #1A237E; 
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            transition: 0.3s; 
+        }
+        .card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
+        }
+        .card h3 { 
+            margin: 20px 0; 
+            font-size: 1.3rem; 
+            color: #1A237E; 
+        }
+        .card p { 
+            color: #666; 
+        }
+        
+        /* Ferramentas PCB */
+        .ferramentas-lista {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .tag-ferramenta {
+            background: #e3f2fd;
+            color: #1A237E;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        /* Lista Serviços PCB */
+        .servicos-pcb {
+            margin: 15px 0;
+            list-style-type: none;
+        }
+        .servicos-pcb li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .servicos-pcb li:before {
+            content: "✓";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .detalhe {
+            display: block;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 3px;
+            font-style: italic;
+        }
+        
+        /* Fabricantes Microcontroladores */
+        .plataformas-lista {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .plataforma {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
+        }
+        .plataforma strong {
+            color: #1A237E;
+        }
+
+        /* Serviços Firebase */
+        .servicos-firebase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .servico-firebase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .servico-firebase i {
+            font-size: 36px;
+            color: #FFA000;
+            margin-bottom: 8px;
+        }
+        
+        /* Dispositivos IoT */
+        .dispositivos-iot {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .dispositivo {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .dispositivo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .dispositivo i {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .wifi { color: #4285F4; }
+        .ethernet { color: #FBBC05; }
+        .lte { color: #34A853; }
+        .mcu { color: #EA4335; }
+        
+        /* Logos */
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        /* Plataformas Flutter */
+        .plataformas-flutter {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        .plataforma-flutter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .plataforma-flutter i {
+            font-size: 32px;
+        }
+        .android { color: #3DDC84; }
+        .apple-icon { color: #000000; }
+        
+        /* Badges IoT */
+        .iot-badge {
+            background: #FFC107;
+            color: #1A237E;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        /* Google Cloud Icon */
+        .google-cloud-icon {
+            color: #4285F4;
+            font-size: 40px;
+            margin: 0 10px;
+        }
+        
+        /* Informações Institucionais */
+        .institucional {
+            padding: 50px 5%;
+            background: #1A237E;
+            color: white;
+        }
+        .institucional h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: #4CAF50;
+        }
+        
+        /* Equipe Técnica */
+        .equipe {
+            padding: 50px 5%;
+            background: #f0f4f8;
+        }
+        .equipe h2 {
+            text-align: center;
+            color: #1A237E;
+            margin-bottom: 40px;
+        }
+        .membros {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .membro {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .membro h3 {
+            color: #1A237E;
+            margin-bottom: 5px;
+        }
+        .membro .cargo {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .membro .contato {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .crea {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        /* Footer */
+        footer { 
+            background: #111; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
+            font-size: 14px;
+        }
+        .email-geral {
+            margin: 15px 0;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header com Seletor de Idiomas -->
+    <header>
+        <div class="logo">Engeletron <span>Engenharia Elétrica Ltda</span></div>
+        <div class="idiomas">
+            <button onclick="changeLanguage('pt')">🇧🇷 PT</button> 
+            <button onclick="changeLanguage('en')">🇺🇸 EN</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1 id="hero-title">Soluções em Engenharia Elétrica e Eletrônica</h1>
+        <p id="hero-subtitle">Projetos personalizados em PCB, firmware, apps e cloud para sua inovação</p>
+        <button class="btn" id="hero-cta">Solicite um Orçamento</button>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section class="servicos">
+        <h2 id="servicos-title">Nossos Serviços</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Projetos de PCB</h3>
+                <p id="pcb-descricao">Desenvolvimento completo com:</p>
+                
+                <div class="ferramentas-lista">
+                    <span class="tag-ferramenta">Altium Designer</span>
+                    <span class="tag-ferramenta">Autodesk Eagle</span>
+                    <span class="tag-ferramenta">KiCad</span>
+                </div>
+
+                <ul class="servicos-pcb">
+                    <li><strong>Diagrama Esquemático</strong> 
+                        <span class="detalhe">(Análise de requisitos, seleção de componentes, simulações)</span>
+                    </li>
+                    <li><strong>Desenho da Placa</strong> 
+                        <span class="detalhe">(Layout multilayer, alta frequência, impedância controlada)</span>
+                    </li>
+                    <li><strong>Gerbers Industriais</strong> 
+                        <span class="detalhe">(Padrão IPC-2581, camadas de solda, máscara, silk screen)</span>
+                    </li>
+                    <li><strong>Lista de Materiais (BOM)</strong> 
+                        <span class="detalhe">(Cotações com fornecedores, alternativas de componentes)</span>
+                    </li>
+                    <li><strong>Documentação Técnica</strong> 
+                        <span class="detalhe">(Manuais de montagem, testes de validação)</span>
+                    </li>
+                </ul>
+                <p class="destaque" id="pcb-destaque">Compatível com padrões IPC-7351 e Class 3 para aplicações críticas.</p>
+            </div>
+
+            <div class="card">
+                <h3>Programação em C/C++</h3>
+                <p id="programacao-texto">Plataformas suportadas:</p>
+                
+                <div class="plataformas-lista">
+                    <div class="plataforma">
+                        <strong>Microchip</strong> (PIC, AVR, dsPIC)
+                    </div>
+                    <div class="plataforma">
+                        <strong>STMicroelectronics</strong> (STM32, STM8)
+                    </div>
+                    <div class="plataforma">
+                        <strong>Espressif</strong> (ESP32, ESP8266)
+                    </div>
+                    <div class="plataforma">
+                        <strong>Holtek</strong> (HT66, HT32)
+                    </div>
+                    <div class="plataforma">
+                        <strong>Renesas</strong> (RX, RL78)
+                    </div>
+                    <div class="plataforma">
+                        <strong>NXP</strong> (ARM Cortex-M)
+                    </div>
+                </div>
+                
+                <p class="destaque" id="programacao-destaque">Otimização para baixo consumo, RTOS e comunicação sem fio (Wi-Fi/BLE).</p>
+            </div>
+
+            <div class="card">
+                <h3>Dispositivos IoT</h3>
+                <p>Soluções completas para dispositivos conectados:</p>
+                
+                <div class="dispositivos-iot">
+                    <div class="dispositivo">
+                        <i class="fas fa-microchip mcu"></i>
+                        <strong>Wireless MCU</strong>
+                        <p>ESP32, ESP8266</p>
+                    </div>
+                    <div class="dispositivo">
+                        <i class="fas fa-wifi wifi"></i>
+                        <strong>Wi-Fi</strong>
+                        <p>Conectividade 2.4/5GHz</p>
+                    </div>
+                    <div class="dispositivo">
+                        <i class="fas fa-network-wired ethernet"></i>
+                        <strong>Ethernet</strong>
+                        <p>Conexão cabeada</p>
+                    </div>
+                    <div class="dispositivo">
+                        <i class="fas fa-sim-card lte"></i>
+                        <strong>4G LTE</strong>
+                        <p>Conectividade móvel</p>
+                    </div>
+                </div>
+                
+                <p class="destaque">Desenvolvimento de hardware e firmware para soluções IoT completas.</p>
+            </div>
+
+            <div class="card">
+                <h3>Aplicativo IoT <span class="iot-badge">Flutter</span></h3>
+                
+                <div style="text-align: center; margin: 15px 0;">
+                    <img src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg" alt="Flutter" class="logo-img">
+                </div>
+                
+                <p>Soluções mobile para dispositivos IoT:</p>
+                
+                <div class="plataformas-flutter">
+                    <div class="plataforma-flutter">
+                        <i class="material-icons android">android</i>
+                        <span>Android</span>
+                    </div>
+                    <div class="plataforma-flutter">
+                        <i class="fab fa-apple apple-icon"></i>
+                        <span>iOS</span>
+                    </div>
+                </div>
+                
+                <p class="destaque">Controle remoto, monitoramento em tempo real e dashboards personalizados.</p>
+            </div>
+
+            <div class="card">
+                <h3>Servidor IoT <span class="iot-badge">Google Firebase</span></h3>
+                
+                <div class="logos-container">
+                    <i class="fab fa-google-cloud google-cloud-icon"></i>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg" alt="Firebase" class="logo-img" style="height: 40px;">
+                </div>
+                
+                <p>Soluções completas para Internet das Coisas:</p>
+                
+                <div class="servicos-firebase">
+                    <div class="servico-firebase">
+                        <i class="material-icons">storage</i>
+                        <span>Realtime Database</span>
+                    </div>
+                    <div class="servico-firebase">
+                        <i class="material-icons">fingerprint</i>
+                        <span>Authentication</span>
+                    </div>
+                    <div class="servico-firebase">
+                        <i class="material-icons">functions</i>
+                        <span>Cloud Functions</span>
+                    </div>
+                    <div class="servico-firebase">
+                        <i class="material-icons">notifications</i>
+                        <span>Cloud Messaging</span>
+                    </div>
+                    <div class="servico-firebase">
+                        <i class="material-icons">device_hub</i>
+                        <span>IoT Core</span>
+                    </div>
+                </div>
+                
+                <p class="destaque">Sincronização em tempo real e processamento de dados de dispositivos conectados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção da Equipe Técnica -->
+    <section class="equipe" id="equipe">
+        <h2 id="equipe-title">Nossa Equipe Técnica</h2>
+        <div class="membros">
+            <div class="membro">
+                <h3>Danilo Miguel Neves Adur</h3>
+                <div class="cargo">Engenheiro Eletricista | Diretor</div>
+                <div class="crea">CREA-PR Nº PR-87205/D</div>
+                <div class="contato">
+                    <p><strong>Email:</strong> danilo.engeletron@gmail.com</p>
+                    <p><strong>Telefone:</strong> (41) 99904-2212</p>
+                </div>
+            </div>
+            <div class="membro">
+                <h3>Gisely Bellozupko Adur</h3>
+                <div class="cargo">Engenheira Eletricista | Diretora</div>
+                <div class="crea">CREA-PR Nº PR-87210/D</div>
+                <div class="contato">
+                    <p><strong>Email:</strong> gisely.engeletron@gmail.com</p>
+                    <p><strong>Telefone:</strong> (41) 99904-2302</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Institucional -->
+    <section class="institucional" id="institucional">
+        <h2 id="institucional-title">Informações Institucionais</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Razão Social</h3>
+                <p>Engeletron Engenharia Elétrica Ltda</p>
+                <p>CNPJ: 37.912.040/0001-10</p>
+            </div>
+            <div class="info-card">
+                <h3>Endereço</h3>
+                <p>Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz</p>
+                <p>Matinhos - PR</p>
+                <p>CEP: 83260-000</p>
+            </div>
+            <div class="info-card">
+                <h3>Contato Geral</h3>
+                <p><strong>Email:</strong> engeletronltda@gmail.com</p>
+                <p><strong>Telefones:</strong> (41) 99904-2302 | (41) 99904-2212</p>
+                <p>Ramo: Engenharia Elétrica e Eletrônica</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="email-geral">engeletronltda@gmail.com</div>
+        <p id="footer-text">© 2024 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para Troca de Idioma -->
+    <script>
+        const translations = {
+            "pt": {
+                "hero-title": "Soluções em Engenharia Elétrica e Eletrônica",
+                "hero-subtitle": "Projetos personalizados em PCB, firmware, apps e cloud para sua inovação",
+           
