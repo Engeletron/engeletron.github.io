@@ -8,6 +8,7 @@
     <style>
         :root { --primary: #1156a2; --secondary: #f7f9fb; --accent: #e8f0fe; --dark: #22334c; --light: #ffffff;}
         body { font-family: 'Montserrat', Arial, sans-serif; margin: 0; background: var(--secondary); color: var(--dark);}
+        .top-spacer { height: 72px; }
         header { position: fixed; top: 0; left: 0; right: 0; background: var(--primary); color: var(--light); display: flex; align-items: center; justify-content: space-between; padding: 0.5em 2em; box-shadow: 0 2px 8px rgba(17,86,162,0.07); z-index: 100;}
         .logo { font-weight: bold; font-size: 1.3em; letter-spacing: 1px;}
         nav { display: flex; gap: 1.2em;}
@@ -15,6 +16,7 @@
         nav a::after { content: ''; display: block; height: 2px; width: 0; background: var(--accent); transition: 0.3s; position: absolute; left: 0; bottom: 0;}
         nav a:hover::after { width: 100%;}
         .lang-select { background: var(--accent); border: none; border-radius: 5px; padding: 0.3em 0.7em; font-size: 1em; color: var(--primary); margin-left: 2em;}
+        .menu-toggle { display: none; background: none; border: none; font-size: 2em; color: var(--light); margin-left: 1em; cursor: pointer;}
         .container { max-width: 1100px; margin: 0 auto; padding: 2em 1.2em; margin-top: 2em;}
         .card-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 2em;}
         .card { background: var(--light); border-radius: 18px; box-shadow: 0 2px 8px rgba(17,86,162,0.09); padding: 2em 1.3em; display: flex; flex-direction: column; align-items: flex-start; transition: transform 0.2s;}
@@ -23,7 +25,27 @@
         h1, h2 { color: #1156a2; }
         footer { background: var(--primary); color: var(--light); text-align: center; padding: 1.5em 0 0.6em 0; margin-top: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; font-size: 1em;}
         @media(max-width:900px){ .container { padding: 2em 0.2em;} }
-        @media(max-width:600px){ header { flex-direction: column; align-items: flex-start; padding: 0.5em 1em;} .container { margin-top: 1em; } .card-list { grid-template-columns: 1fr; } }
+        @media (max-width: 600px){
+            .top-spacer { height: 90px; }
+            header { flex-direction: row; align-items: center; padding: 0.5em 1em;}
+            .logo { font-size: 1.1em; }
+            .menu-toggle { display: block; }
+            nav { 
+                display: none; 
+                position: absolute; 
+                top: 60px; left: 0; right: 0; 
+                flex-direction: column; 
+                background: var(--primary); 
+                padding: 1em 0; 
+                gap: 0.5em;
+                z-index: 101;
+            }
+            nav.active { display: flex; }
+            .lang-select { margin-left: 0.5em; }
+            .container { margin-top: 1em; padding: 1em 0.4em;}
+            .card-list { grid-template-columns: 1fr; }
+            .card { padding: 1em 0.7em; }
+        }
     </style>
     <script>
         function changeLang(lang) {
@@ -31,6 +53,13 @@
             document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? '' : 'none');
             document.documentElement.lang = lang;
             localStorage.setItem('lang', lang);
+            closeMenu();
+        }
+        function toggleMenu() {
+            document.getElementById('main-nav').classList.toggle('active');
+        }
+        function closeMenu() {
+            document.getElementById('main-nav').classList.remove('active');
         }
         window.onload = () => {
             const lang = localStorage.getItem('lang') || 'pt';
@@ -40,17 +69,19 @@
     </script>
 </head>
 <body>
+    <div class="top-spacer"></div>
     <header>
         <span class="logo">Engeletron</span>
-        <nav>
-            <a href="index.html" class="pt">Home</a>
-            <a href="index.html" class="en">Home</a>
-            <a href="sobre.html" class="pt">Sobre</a>
-            <a href="sobre.html" class="en">About</a>
-            <a href="servicos.html" class="pt">Serviços</a>
-            <a href="servicos.html" class="en">Services</a>
-            <a href="contato.html" class="pt">Contatos</a>
-            <a href="contato.html" class="en">Contact</a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
+        <nav id="main-nav">
+            <a href="index.html" class="pt" onclick="closeMenu()">Home</a>
+            <a href="index.html" class="en" onclick="closeMenu()">Home</a>
+            <a href="sobre.html" class="pt" onclick="closeMenu()">Sobre</a>
+            <a href="sobre.html" class="en" onclick="closeMenu()">About</a>
+            <a href="servicos.html" class="pt" onclick="closeMenu()">Serviços</a>
+            <a href="servicos.html" class="en" onclick="closeMenu()">Services</a>
+            <a href="contato.html" class="pt" onclick="closeMenu()">Contatos</a>
+            <a href="contato.html" class="en" onclick="closeMenu()">Contact</a>
         </nav>
         <select class="lang-select" onchange="changeLang(this.value)">
             <option value="pt">Português</option>
