@@ -27,17 +27,33 @@
             header { flex-direction: row; align-items: center; padding: 0.5em 1em;}
             .logo { font-size: 1.1em; }
             .menu-toggle { display: block; }
-            nav { 
-                display: none; 
-                position: absolute; 
-                top: 60px; left: 0; right: 0; 
-                flex-direction: column; 
-                background: var(--primary); 
-                padding: 1em 0; 
+            nav {
+                display: none;
+                position: absolute;
+                top: 60px; left: 0; right: 0;
+                flex-direction: column;
+                background: var(--primary);
+                padding: 1em 0.5em;
                 gap: 0.5em;
                 z-index: 101;
+                box-shadow: 0 6px 24px 0 rgba(17,86,162,0.12);
+                border-bottom-left-radius: 18px;
+                border-bottom-right-radius: 18px;
             }
             nav.active { display: flex; }
+            nav a {
+                font-size: 1.2em;
+                padding: 1em 1.3em;
+                margin: 0.3em 0;
+                border-radius: 8px;
+                transition: background 0.2s;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            nav a:hover, nav a:active, nav a:focus {
+                background: var(--accent);
+                color: var(--primary);
+            }
             .lang-select { margin-left: 0.5em; }
             .container { margin-top: 1em; padding: 1em 0.4em;}
             .card { padding: 1em 0.7em; }
