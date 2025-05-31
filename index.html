@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engeletron | Engenharia Elétrica e Projetos Eletrônicos</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         /* Reset e Fontes */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -107,25 +106,21 @@
             color: #666; 
         }
         
-        /* Ferramentas PCB */
-        .ferramentas-pcb {
+        /* Ferramentas PCB (Versão Textual) */
+        .ferramentas-lista {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 25px;
+            gap: 10px;
             margin: 20px 0;
         }
-        .ferramenta {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-        .ferramenta img {
-            height: 40px;
-            transition: transform 0.3s;
-        }
-        .ferramenta:hover img {
-            transform: scale(1.1);
+        .tag-ferramenta {
+            background: #e3f2fd;
+            color: #1A237E;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
         }
         
         /* Lista Serviços PCB */
@@ -153,36 +148,21 @@
             font-style: italic;
         }
         
-        /* Fabricantes Microcontroladores */
-        .fabricantes-grid {
+        /* Fabricantes Microcontroladores (Versão Textual) */
+        .plataformas-lista {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
             margin: 20px 0;
         }
-        .fabricante {
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
+        .plataforma {
+            background: #f5f5f5;
             padding: 15px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: all 0.3s;
+            border-radius: 8px;
+            border-left: 4px solid #4CAF50;
         }
-        .fabricante:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        .fabricante img {
-            height: 40px;
-            object-fit: contain;
-            margin-bottom: 10px;
-            filter: grayscale(20%);
-        }
-        .fabricante div {
-            font-size: 0.9rem;
-            color: #444;
+        .plataforma strong {
+            color: #1A237E;
         }
         
         /* Informações Institucionais */
@@ -291,21 +271,12 @@
         <div class="grid">
             <div class="card">
                 <h3>Projetos de PCB</h3>
-                <p id="pcb-descricao">Desenvolvimento completo utilizando:</p>
+                <p id="pcb-descricao">Desenvolvimento completo com:</p>
                 
-                <div class="ferramentas-pcb">
-                    <div class="ferramenta">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/altium/altium-original.svg" alt="Altium Designer" width="40">
-                        <span>Altium</span>
-                    </div>
-                    <div class="ferramenta">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eagle/eagle-original.svg" alt="Autodesk Eagle" width="40">
-                        <span>Eagle</span>
-                    </div>
-                    <div class="ferramenta">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kicad/kicad-original.svg" alt="KiCad" width="40">
-                        <span>KiCad</span>
-                    </div>
+                <div class="ferramentas-lista">
+                    <span class="tag-ferramenta">Altium Designer</span>
+                    <span class="tag-ferramenta">Autodesk Eagle</span>
+                    <span class="tag-ferramenta">KiCad</span>
                 </div>
 
                 <ul class="servicos-pcb">
@@ -330,32 +301,26 @@
 
             <div class="card">
                 <h3>Programação em C/C++</h3>
-                <p id="programacao-texto">Desenvolvimento para plataformas:</p>
+                <p id="programacao-texto">Plataformas suportadas:</p>
                 
-                <div class="fabricantes-grid">
-                    <div class="fabricante">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Microchip_logo.svg" alt="Microchip" width="80">
-                        <div>PIC • AVR • dsPIC</div>
+                <div class="plataformas-lista">
+                    <div class="plataforma">
+                        <strong>Microchip</strong> (PIC, AVR, dsPIC)
                     </div>
-                    <div class="fabricante">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/STMicroelectronics_logo.svg" alt="ST Microelectronics" width="100">
-                        <div>STM32 • STM8</div>
+                    <div class="plataforma">
+                        <strong>STMicroelectronics</strong> (STM32, STM8)
                     </div>
-                    <div class="fabricante">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Espressif_Systems_logo.svg" alt="Espressif" width="90">
-                        <div>ESP32 • ESP8266</div>
+                    <div class="plataforma">
+                        <strong>Espressif</strong> (ESP32, ESP8266)
                     </div>
-                    <div class="fabricante">
-                        <img src="https://www.holtek.com.tw/images/logo.svg" alt="Holtek" width="90">
-                        <div>HT66 • HT32</div>
+                    <div class="plataforma">
+                        <strong>Holtek</strong> (HT66, HT32)
                     </div>
-                    <div class="fabricante">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Renesas_Electronics_Logo.svg" alt="Renesas" width="90">
-                        <div>RX • RL78</div>
+                    <div class="plataforma">
+                        <strong>Renesas</strong> (RX, RL78)
                     </div>
-                    <div class="fabricante">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/NXP_logo.svg" alt="NXP" width="90">
-                        <div>ARM Cortex-M</div>
+                    <div class="plataforma">
+                        <strong>NXP</strong> (ARM Cortex-M)
                     </div>
                 </div>
                 
@@ -365,18 +330,12 @@
             <div class="card">
                 <h3>Aplicativos Flutter</h3>
                 <p>Desenvolvimento mobile multiplataforma (Android/iOS).</p>
-                <div style="margin: 20px 0; text-align: center;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" width="60">
-                </div>
                 <p class="destaque">Integração com Firebase e APIs RESTful.</p>
             </div>
 
             <div class="card">
                 <h3>Cloud Firebase</h3>
                 <p>Backend escalável com autenticação, banco de dados e APIs.</p>
-                <div style="margin: 20px 0; text-align: center;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" width="60">
-                </div>
                 <p class="destaque">Implementação de IoT e sincronização em tempo real.</p>
             </div>
         </div>
@@ -445,9 +404,9 @@
                 "hero-subtitle": "Projetos personalizados em PCB, firmware, apps e cloud para sua inovação",
                 "hero-cta": "Solicite um Orçamento",
                 "servicos-title": "Nossos Serviços",
-                "pcb-descricao": "Desenvolvimento completo utilizando:",
+                "pcb-descricao": "Desenvolvimento completo com:",
                 "pcb-destaque": "Compatível com padrões IPC-7351 e Class 3 para aplicações críticas.",
-                "programacao-texto": "Desenvolvimento para plataformas:",
+                "programacao-texto": "Plataformas suportadas:",
                 "programacao-destaque": "Otimização para baixo consumo, RTOS e comunicação sem fio (Wi-Fi/BLE).",
                 "equipe-title": "Nossa Equipe Técnica",
                 "institucional-title": "Informações Institucionais",
@@ -458,9 +417,9 @@
                 "hero-subtitle": "Custom PCB, firmware, apps, and cloud projects for your innovation",
                 "hero-cta": "Request a Quote",
                 "servicos-title": "Our Services",
-                "pcb-descricao": "Complete development using:",
+                "pcb-descricao": "Complete development with:",
                 "pcb-destaque": "IPC-7351 and Class 3 compliant for critical applications.",
-                "programacao-texto": "Development for platforms:",
+                "programacao-texto": "Supported platforms:",
                 "programacao-destaque": "Optimization for low power, RTOS, and wireless communication (Wi-Fi/BLE).",
                 "equipe-title": "Our Technical Team",
                 "institucional-title": "Corporate Information",
