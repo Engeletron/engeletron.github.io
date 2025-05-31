@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato | Engeletron Engenharia Elétrica Ltda</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header, nav, footer { background: #0a3d62; color: #fff; padding: 1em; }
-        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
-        .container { padding: 2em; }
-        .lang-select { float: right; }
-        .card { background: #f5f6fa; margin: 1.5em 0; padding: 1.5em; border-radius: 8px; }
-        @media (max-width: 600px) {
-            .container { padding: 1em; }
-            nav { font-size: 0.95em; }
+        :root {
+            --primary: #1156a2;
+            --secondary: #f7f9fb;
+            --accent: #e8f0fe;
+            --dark: #22334c;
+            --light: #ffffff;
         }
+        body { font-family: 'Montserrat', Arial, sans-serif; margin: 0; background: var(--secondary); color: var(--dark);}
+        header { position: fixed; top: 0; left: 0; right: 0; background: var(--primary); color: var(--light); display: flex; align-items: center; justify-content: space-between; padding: 0.5em 2em; box-shadow: 0 2px 8px rgba(17,86,162,0.07); z-index: 100;}
+        .logo { font-weight: bold; font-size: 1.3em; letter-spacing: 1px;}
+        nav { display: flex; gap: 1.2em;}
+        nav a { color: var(--light); text-decoration: none; font-weight: 600; position: relative; padding-bottom: 3px;}
+        nav a::after { content: ''; display: block; height: 2px; width: 0; background: var(--accent); transition: 0.3s; position: absolute; left: 0; bottom: 0;}
+        nav a:hover::after { width: 100%;}
+        .lang-select { background: var(--accent); border: none; border-radius: 5px; padding: 0.3em 0.7em; font-size: 1em; color: var(--primary); margin-left: 2em;}
+        .container { max-width: 900px; margin: 0 auto; padding: 2em 1.2em; margin-top: 2em;}
+        .card { background: var(--light); border-radius: 18px; box-shadow: 0 2px 8px rgba(17,86,162,0.09); padding: 2em 1.3em; margin-top: 3em;}
+        h1 { color: #1156a2; }
+        ul { padding-left: 1.2em;}
+        li { margin-bottom: 0.7em;}
+        a { color: #1156a2; text-decoration: underline;}
+        footer { background: var(--primary); color: var(--light); text-align: center; padding: 1.5em 0 0.6em 0; margin-top: 3em; border-top-left-radius: 25px; border-top-right-radius: 25px; font-size: 1em;}
+        @media(max-width:900px){ .container { padding: 2em 0.2em;} }
+        @media(max-width:600px){ header { flex-direction: column; align-items: flex-start; padding: 0.5em 1em;} .container { margin-top: 1em; } }
     </style>
     <script>
         function changeLang(lang) {
@@ -33,17 +48,17 @@
 </head>
 <body>
     <header>
-        <span style="font-weight:bold;">Engeletron Engenharia Elétrica Ltda</span>
-        <select class="lang-select" onchange="changeLang(this.value)">
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-        </select>
+        <span class="logo">Engeletron</span>
         <nav>
             <a href="index.html">Home</a>
             <a href="sobre.html">Sobre / About</a>
             <a href="servicos.html">Serviços / Services</a>
             <a href="contato.html">Contatos / Contact</a>
         </nav>
+        <select class="lang-select" onchange="changeLang(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+        </select>
     </header>
     <div class="container">
         <div class="card" data-lang="pt">
@@ -56,13 +71,13 @@
             <h2>Diretoria</h2>
             <ul>
                 <li>
-                    Danilo Miguel Neves Adur, Engenheiro Eletricista, Diretor – 
-                    <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a> – 
+                    Danilo Miguel Neves Adur, Engenheiro Eletricista, Diretor –
+                    <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a> –
                     (41) 99904-2212 – CREA-PR Nº PR-87205/D
                 </li>
                 <li>
-                    Gisely, Engenheira Eletricista, Diretora – 
-                    <a href="mailto:gisely.engeletron@gmail.com">gisely.engeletron@gmail.com</a> – 
+                    Gisely, Engenheira Eletricista, Diretora –
+                    <a href="mailto:gisely.engeletron@gmail.com">gisely.engeletron@gmail.com</a> –
                     (41) 99904-2302 – CREA-PR Nº PR-87210/D
                 </li>
             </ul>
@@ -77,13 +92,13 @@
             <h2>Directors</h2>
             <ul>
                 <li>
-                    Danilo Miguel Neves Adur, Electrical Engineer, Director – 
-                    <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a> – 
+                    Danilo Miguel Neves Adur, Electrical Engineer, Director –
+                    <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a> –
                     +55 41 99904-2212 – CREA-PR Nº PR-87205/D
                 </li>
                 <li>
-                    Gisely, Electrical Engineer, Director – 
-                    <a href="mailto:gisely.engeletron@gmail.com">gisely.engeletron@gmail.com</a> – 
+                    Gisely, Electrical Engineer, Director –
+                    <a href="mailto:gisely.engeletron@gmail.com">gisely.engeletron@gmail.com</a> –
                     +55 41 99904-2302 – CREA-PR Nº PR-87210/D
                 </li>
             </ul>
