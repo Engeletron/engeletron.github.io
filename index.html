@@ -525,6 +525,10 @@
             .hero p {
                 font-size: 1rem;
             }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -538,7 +542,7 @@
         </div>
         
         <div class="header-right">
-            <div class="contact-pill">
+            <div class="contact-pill" id="header-phone">
                 <i class="fas fa-phone-alt"></i>
                 <span>(41) 99904-2212</span>
             </div>
@@ -559,12 +563,12 @@
     <!-- Seção de Serviços -->
     <section class="servicos">
         <h2 class="section-title" id="servicos-title">Nossos Serviços de Engenharia</h2>
-        <p class="section-subtitle">Soluções completas adaptadas às suas necessidades técnicas</p>
+        <p class="section-subtitle" id="servicos-subtitle">Soluções completas adaptadas às suas necessidades técnicas</p>
         
         <div class="grid">
             <!-- Card Projetos PCB -->
             <div class="card">
-                <h3><i class="fas fa-project-diagram"></i> Projetos de PCB</h3>
+                <h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">Projetos de PCB</span></h3>
                 <p id="pcb-descricao">Desenvolvimento completo com:</p>
                 
                 <div class="ferramentas-lista">
@@ -575,20 +579,20 @@
                 </div>
 
                 <ul class="servicos-pcb">
-                    <li><strong>Diagrama Esquemático</strong> 
-                        <span class="detalhe">(Análise de requisitos, seleção de componentes, simulações)</span>
+                    <li><strong id="pcb-item1">Diagrama Esquemático</strong> 
+                        <span class="detalhe" id="pcb-detail1">(Análise de requisitos, seleção de componentes, simulações)</span>
                     </li>
-                    <li><strong>Desenho da Placa</strong> 
-                        <span class="detalhe">(Layout multilayer, alta frequência, impedância controlada)</span>
+                    <li><strong id="pcb-item2">Desenho da Placa</strong> 
+                        <span class="detalhe" id="pcb-detail2">(Layout multilayer, alta frequência, impedância controlada)</span>
                     </li>
-                    <li><strong>Gerbers Industriais</strong> 
-                        <span class="detalhe">(Padrão IPC-2581, camadas de solda, máscara, silk screen)</span>
+                    <li><strong id="pcb-item3">Gerbers Industriais</strong> 
+                        <span class="detalhe" id="pcb-detail3">(Padrão IPC-2581, camadas de solda, máscara, silk screen)</span>
                     </li>
-                    <li><strong>Lista de Materiais (BOM)</strong> 
-                        <span class="detalhe">(Cotações com fornecedores, alternativas de componentes)</span>
+                    <li><strong id="pcb-item4">Lista de Materiais (BOM)</strong> 
+                        <span class="detalhe" id="pcb-detail4">(Cotações com fornecedores, alternativas de componentes)</span>
                     </li>
-                    <li><strong>Documentação Técnica</strong> 
-                        <span class="detalhe">(Manuais de montagem, testes de validação)</span>
+                    <li><strong id="pcb-item5">Documentação Técnica</strong> 
+                        <span class="detalhe" id="pcb-detail5">(Manuais de montagem, testes de validação)</span>
                     </li>
                 </ul>
                 <p class="destaque" id="pcb-destaque">Compatível com padrões IPC-7351 e Class 3 para aplicações críticas.</p>
@@ -596,7 +600,7 @@
 
             <!-- Card Programação C/C++ -->
             <div class="card">
-                <h3><i class="fas fa-microchip"></i> Programação em C/C++</h3>
+                <h3><i class="fas fa-microchip"></i> <span id="firmware-title">Programação em C/C++</span></h3>
                 <p id="programacao-texto">Plataformas suportadas:</p>
                 
                 <div class="plataformas-lista">
@@ -625,44 +629,44 @@
 
             <!-- Card Dispositivos IoT -->
             <div class="card">
-                <h3><i class="fas fa-wifi"></i> Dispositivos IoT</h3>
-                <p>Soluções completas para dispositivos conectados:</p>
+                <h3><i class="fas fa-wifi"></i> <span id="iot-devices-title">Dispositivos IoT</span></h3>
+                <p id="iot-devices-desc">Soluções completas para dispositivos conectados:</p>
                 
                 <div class="dispositivos-iot">
                     <div class="dispositivo">
                         <i class="fas fa-microchip mcu"></i>
-                        <strong>Wireless MCU</strong>
-                        <p>ESP32, ESP8266</p>
+                        <strong id="iot-mcu">Wireless MCU</strong>
+                        <p id="iot-mcu-desc">ESP32, ESP8266</p>
                     </div>
                     <div class="dispositivo">
                         <i class="fas fa-wifi wifi"></i>
-                        <strong>Wi-Fi</strong>
-                        <p>Conectividade 2.4/5GHz</p>
+                        <strong id="iot-wifi">Wi-Fi</strong>
+                        <p id="iot-wifi-desc">Conectividade 2.4/5GHz</p>
                     </div>
                     <div class="dispositivo">
                         <i class="fas fa-network-wired ethernet"></i>
-                        <strong>Ethernet</strong>
-                        <p>Conexão cabeada</p>
+                        <strong id="iot-ethernet">Ethernet</strong>
+                        <p id="iot-ethernet-desc">Conexão cabeada</p>
                     </div>
                     <div class="dispositivo">
                         <i class="fas fa-sim-card lte"></i>
-                        <strong>4G LTE</strong>
-                        <p>Conectividade móvel</p>
+                        <strong id="iot-lte">4G LTE</strong>
+                        <p id="iot-lte-desc">Conectividade móvel</p>
                     </div>
                 </div>
                 
-                <p class="destaque">Desenvolvimento de hardware e firmware para soluções IoT completas.</p>
+                <p class="destaque" id="iot-devices-destaque">Desenvolvimento de hardware e firmware para soluções IoT completas.</p>
             </div>
 
             <!-- Card Aplicativo IoT -->
             <div class="card">
-                <h3><i class="fas fa-mobile-alt"></i> Aplicativo IoT <span class="iot-badge">Flutter</span></h3>
+                <h3><i class="fas fa-mobile-alt"></i> <span id="app-title">Aplicativo IoT</span> <span class="iot-badge">Flutter</span></h3>
                 
                 <div style="text-align: center; margin: 15px 0;">
                     <img src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg" alt="Flutter" class="logo-img">
                 </div>
                 
-                <p>Soluções mobile para dispositivos IoT:</p>
+                <p id="app-desc">Soluções mobile para dispositivos IoT:</p>
                 
                 <div class="plataformas-flutter">
                     <div class="plataforma-flutter">
@@ -675,44 +679,44 @@
                     </div>
                 </div>
                 
-                <p class="destaque">Controle remoto, monitoramento em tempo real e dashboards personalizados.</p>
+                <p class="destaque" id="app-destaque">Controle remoto, monitoramento em tempo real e dashboards personalizados.</p>
             </div>
 
             <!-- Card Servidor IoT -->
             <div class="card">
-                <h3><i class="fas fa-cloud"></i> Servidor IoT <span class="iot-badge">Google Firebase</span></h3>
+                <h3><i class="fas fa-cloud"></i> <span id="cloud-title">Servidor IoT</span> <span class="iot-badge">Google Firebase</span></h3>
                 
                 <div class="logos-container">
                     <i class="fab fa-google-cloud google-cloud-icon"></i>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg" alt="Firebase" class="logo-img" style="height: 40px;">
                 </div>
                 
-                <p>Soluções completas para Internet das Coisas:</p>
+                <p id="cloud-desc">Soluções completas para Internet das Coisas:</p>
                 
                 <div class="servicos-firebase">
                     <div class="servico-firebase">
                         <i class="material-icons">storage</i>
-                        <span>Realtime Database</span>
+                        <span id="cloud-service1">Realtime Database</span>
                     </div>
                     <div class="servico-firebase">
                         <i class="material-icons">fingerprint</i>
-                        <span>Authentication</span>
+                        <span id="cloud-service2">Authentication</span>
                     </div>
                     <div class="servico-firebase">
                         <i class="material-icons">functions</i>
-                        <span>Cloud Functions</span>
+                        <span id="cloud-service3">Cloud Functions</span>
                     </div>
                     <div class="servico-firebase">
                         <i class="material-icons">notifications</i>
-                        <span>Cloud Messaging</span>
+                        <span id="cloud-service4">Cloud Messaging</span>
                     </div>
                     <div class="servico-firebase">
                         <i class="material-icons">device_hub</i>
-                        <span>IoT Core</span>
+                        <span id="cloud-service5">IoT Core</span>
                     </div>
                 </div>
                 
-                <p class="destaque">Sincronização em tempo real e processamento de dados de dispositivos conectados.</p>
+                <p class="destaque" id="cloud-destaque">Sincronização em tempo real e processamento de dados de dispositivos conectados.</p>
             </div>
         </div>
     </section>
@@ -720,25 +724,25 @@
     <!-- Seção da Equipe Técnica -->
     <section class="equipe" id="equipe">
         <h2 class="section-title" id="equipe-title">Nossa Equipe Técnica</h2>
-        <p class="section-subtitle">Conheça nossos profissionais qualificados</p>
+        <p class="section-subtitle" id="equipe-subtitle">Conheça nossos profissionais qualificados</p>
         
         <div class="membros">
             <div class="membro">
-                <h3>Danilo Miguel Neves Adur</h3>
-                <div class="cargo">Engenheiro Eletricista | Diretor</div>
-                <div class="crea">CREA-PR Nº PR-87205/D</div>
+                <h3 id="team-member1">Danilo Miguel Neves Adur</h3>
+                <div class="cargo" id="team-title1">Engenheiro Eletricista | Diretor</div>
+                <div class="crea" id="team-crea1">CREA-PR Nº PR-87205/D</div>
                 <div class="contato">
-                    <p><strong>Email:</strong> danilo.engeletron@gmail.com</p>
-                    <p><strong>Telefone:</strong> (41) 99904-2212</p>
+                    <p><strong id="email-label1">Email:</strong> danilo.engeletron@gmail.com</p>
+                    <p><strong id="phone-label1">Telefone:</strong> (41) 99904-2212</p>
                 </div>
             </div>
             <div class="membro">
-                <h3>Gisely Bellozupko Adur</h3>
-                <div class="cargo">Engenheira Eletricista | Diretora</div>
-                <div class="crea">CREA-PR Nº PR-87210/D</div>
+                <h3 id="team-member2">Gisely Bellozupko Adur</h3>
+                <div class="cargo" id="team-title2">Engenheira Eletricista | Diretora</div>
+                <div class="crea" id="team-crea2">CREA-PR Nº PR-87210/D</div>
                 <div class="contato">
-                    <p><strong>Email:</strong> gisely.engeletron@gmail.com</p>
-                    <p><strong>Telefone:</strong> (41) 99904-2302</p>
+                    <p><strong id="email-label2">Email:</strong> gisely.engeletron@gmail.com</p>
+                    <p><strong id="phone-label2">Telefone:</strong> (41) 99904-2302</p>
                 </div>
             </div>
         </div>
@@ -749,28 +753,28 @@
         <h2 id="institucional-title">Informações Institucionais</h2>
         <div class="info-grid">
             <div class="info-card">
-                <h3>Razão Social</h3>
-                <p>Engeletron Engenharia Elétrica Ltda</p>
-                <p>CNPJ: 37.912.040/0001-10</p>
+                <h3 id="legal-name">Razão Social</h3>
+                <p id="legal-value">Engeletron Engenharia Elétrica Ltda</p>
+                <p id="cnpj">CNPJ: 37.912.040/0001-10</p>
             </div>
             <div class="info-card">
-                <h3>Endereço</h3>
-                <p>Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz</p>
-                <p>Matinhos - PR</p>
-                <p>CEP: 83260-000</p>
+                <h3 id="address-title">Endereço</h3>
+                <p id="address-value">Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz</p>
+                <p id="city">Matinhos - PR</p>
+                <p id="zip">CEP: 83260-000</p>
             </div>
             <div class="info-card">
-                <h3>Contato Geral</h3>
-                <p><strong>Email:</strong> engeletronltda@gmail.com</p>
-                <p><strong>Telefones:</strong> (41) 99904-2302 | (41) 99904-2212</p>
-                <p>Ramo: Engenharia Elétrica e Eletrônica</p>
+                <h3 id="contact-title">Contato Geral</h3>
+                <p id="contact-email"><strong>Email:</strong> engeletronltda@gmail.com</p>
+                <p id="contact-phone"><strong>Telefones:</strong> (41) 99904-2302 | (41) 99904-2212</p>
+                <p id="business-area">Ramo: Engenharia Elétrica e Eletrônica</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="email-geral">engeletronltda@gmail.com</div>
+        <div class="email-geral" id="footer-email">engeletronltda@gmail.com</div>
         
         <div class="social-links">
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -782,86 +786,234 @@
         <p id="footer-text">© 2024 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- JavaScript para Troca de Idioma -->
+    <!-- JavaScript para Troca de Idioma Completa -->
     <script>
         const translations = {
             "pt": {
+                // Header
+                "header-subtitle": "Soluções em Engenharia",
+                "header-tagline": "Precisão em Projetos Elétricos e Eletrônicos",
+                "header-phone": "(41) 99904-2212",
+                
+                // Hero
                 "hero-title": "Soluções Inovadoras em Engenharia Elétrica e Eletrônica",
                 "hero-subtitle": "Projetos personalizados em PCB, desenvolvimento de firmware, soluções IoT e integração em nuvem",
                 "hero-cta": "Solicite um Orçamento",
+                
+                // Services
                 "servicos-title": "Nossos Serviços de Engenharia",
+                "servicos-subtitle": "Soluções completas adaptadas às suas necessidades técnicas",
+                
+                // PCB Card
+                "pcb-card-title": "Projetos de PCB",
                 "pcb-descricao": "Desenvolvimento completo com:",
+                "pcb-item1": "Diagrama Esquemático",
+                "pcb-detail1": "(Análise de requisitos, seleção de componentes, simulações)",
+                "pcb-item2": "Desenho da Placa",
+                "pcb-detail2": "(Layout multilayer, alta frequência, impedância controlada)",
+                "pcb-item3": "Gerbers Industriais",
+                "pcb-detail3": "(Padrão IPC-2581, camadas de solda, máscara, silk screen)",
+                "pcb-item4": "Lista de Materiais (BOM)",
+                "pcb-detail4": "(Cotações com fornecedores, alternativas de componentes)",
+                "pcb-item5": "Documentação Técnica",
+                "pcb-detail5": "(Manuais de montagem, testes de validação)",
                 "pcb-destaque": "Compatível com padrões IPC-7351 e Class 3 para aplicações críticas.",
+                
+                // Firmware Card
+                "firmware-title": "Programação em C/C++",
                 "programacao-texto": "Plataformas suportadas:",
                 "programacao-destaque": "Otimização para baixo consumo, RTOS e comunicação sem fio (Wi-Fi/BLE).",
+                
+                // IoT Devices Card
+                "iot-devices-title": "Dispositivos IoT",
+                "iot-devices-desc": "Soluções completas para dispositivos conectados:",
+                "iot-mcu": "Wireless MCU",
+                "iot-mcu-desc": "ESP32, ESP8266",
+                "iot-wifi": "Wi-Fi",
+                "iot-wifi-desc": "Conectividade 2.4/5GHz",
+                "iot-ethernet": "Ethernet",
+                "iot-ethernet-desc": "Conexão cabeada",
+                "iot-lte": "4G LTE",
+                "iot-lte-desc": "Conectividade móvel",
+                "iot-devices-destaque": "Desenvolvimento de hardware e firmware para soluções IoT completas.",
+                
+                // App Card
+                "app-title": "Aplicativo IoT",
+                "app-desc": "Soluções mobile para dispositivos IoT:",
+                "app-destaque": "Controle remoto, monitoramento em tempo real e dashboards personalizados.",
+                
+                // Cloud Card
+                "cloud-title": "Servidor IoT",
+                "cloud-desc": "Soluções completas para Internet das Coisas:",
+                "cloud-service1": "Realtime Database",
+                "cloud-service2": "Authentication",
+                "cloud-service3": "Cloud Functions",
+                "cloud-service4": "Cloud Messaging",
+                "cloud-service5": "IoT Core",
+                "cloud-destaque": "Sincronização em tempo real e processamento de dados de dispositivos conectados.",
+                
+                // Team
                 "equipe-title": "Nossa Equipe Técnica",
+                "equipe-subtitle": "Conheça nossos profissionais qualificados",
+                "team-member1": "Danilo Miguel Neves Adur",
+                "team-title1": "Engenheiro Eletricista | Diretor",
+                "team-crea1": "CREA-PR Nº PR-87205/D",
+                "team-member2": "Gisely Bellozupko Adur",
+                "team-title2": "Engenheira Eletricista | Diretora",
+                "team-crea2": "CREA-PR Nº PR-87210/D",
+                "email-label1": "Email:",
+                "phone-label1": "Telefone:",
+                "email-label2": "Email:",
+                "phone-label2": "Telefone:",
+                
+                // Institutional
                 "institucional-title": "Informações Institucionais",
-                "footer-text": "© 2024 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados.",
-                "header-subtitle": "Soluções em Engenharia",
-                "header-tagline": "Precisão em Projetos Elétricos e Eletrônicos"
+                "legal-name": "Razão Social",
+                "legal-value": "Engeletron Engenharia Elétrica Ltda",
+                "cnpj": "CNPJ: 37.912.040/0001-10",
+                "address-title": "Endereço",
+                "address-value": "Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz",
+                "city": "Matinhos - PR",
+                "zip": "CEP: 83260-000",
+                "contact-title": "Contato Geral",
+                "contact-email": "Email: engeletronltda@gmail.com",
+                "contact-phone": "Telefones: (41) 99904-2302 | (41) 99904-2212",
+                "business-area": "Ramo: Engenharia Elétrica e Eletrônica",
+                
+                // Footer
+                "footer-email": "engeletronltda@gmail.com",
+                "footer-text": "© 2024 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados."
             },
             "en": {
+                // Header
+                "header-subtitle": "Engineering Solutions",
+                "header-tagline": "Precision Electrical & Electronic Design",
+                "header-phone": "+55 41 99904-2212",
+                
+                // Hero
                 "hero-title": "Innovative Electrical & Electronic Engineering Solutions",
                 "hero-subtitle": "Custom PCB design, firmware development, IoT solutions and cloud integration",
-                "hero-cta": "Get a Free Quote",
+                "hero-cta": "Request a Quote",
+                
+                // Services
                 "servicos-title": "Our Engineering Services",
+                "servicos-subtitle": "Comprehensive solutions tailored to your technical requirements",
+                
+                // PCB Card
+                "pcb-card-title": "PCB Design Services",
                 "pcb-descricao": "Complete PCB development services:",
+                "pcb-item1": "Schematic Design",
+                "pcb-detail1": "(Requirements analysis, component selection, simulations)",
+                "pcb-item2": "Board Layout",
+                "pcb-detail2": "(Multilayer design, high frequency, controlled impedance)",
+                "pcb-item3": "Industrial Gerbers",
+                "pcb-detail3": "(IPC-2581 standard, solder mask, silk screen)",
+                "pcb-item4": "Bill of Materials (BOM)",
+                "pcb-detail4": "(Supplier quotations, component alternatives)",
+                "pcb-item5": "Technical Documentation",
+                "pcb-detail5": "(Assembly manuals, validation tests)",
                 "pcb-destaque": "IPC-7351 and Class 3 compliant designs for critical applications.",
-                "programacao-texto": "Supported microcontroller platforms:",
+                
+                // Firmware Card
+                "firmware-title": "Embedded Firmware",
+                "programacao-texto": "Supported platforms:",
                 "programacao-destaque": "Optimized for low power consumption, RTOS and wireless communication (Wi-Fi/BLE).",
+                
+                // IoT Devices Card
+                "iot-devices-title": "IoT Devices",
+                "iot-devices-desc": "Complete solutions for connected devices:",
+                "iot-mcu": "Wireless MCU",
+                "iot-mcu-desc": "ESP32, ESP8266",
+                "iot-wifi": "Wi-Fi",
+                "iot-wifi-desc": "2.4/5GHz connectivity",
+                "iot-ethernet": "Ethernet",
+                "iot-ethernet-desc": "Wired connection",
+                "iot-lte": "4G LTE",
+                "iot-lte-desc": "Mobile connectivity",
+                "iot-devices-destaque": "Complete hardware and firmware development for IoT solutions.",
+                
+                // App Card
+                "app-title": "IoT Mobile App",
+                "app-desc": "Mobile solutions for IoT devices:",
+                "app-destaque": "Remote control, real-time monitoring and custom dashboards.",
+                
+                // Cloud Card
+                "cloud-title": "IoT Server",
+                "cloud-desc": "Complete solutions for Internet of Things:",
+                "cloud-service1": "Realtime Database",
+                "cloud-service2": "Authentication",
+                "cloud-service3": "Cloud Functions",
+                "cloud-service4": "Cloud Messaging",
+                "cloud-service5": "IoT Core",
+                "cloud-destaque": "Real-time synchronization and data processing from connected devices.",
+                
+                // Team
                 "equipe-title": "Our Engineering Team",
+                "equipe-subtitle": "Meet our qualified professionals",
+                "team-member1": "Danilo Miguel Neves Adur",
+                "team-title1": "Electrical Engineer | Director",
+                "team-crea1": "Professional License PR-87205/D",
+                "team-member2": "Gisely Bellozupko Adur",
+                "team-title2": "Electrical Engineer | Director",
+                "email-label1": "Email:",
+                "phone-label1": "Phone:",
+                "email-label2": "Email:",
+                "phone-label2": "Phone:",
+                
+                // Institutional
                 "institucional-title": "Company Information",
-                "footer-text": "© 2024 Engeletron Electrical Engineering Ltd. All rights reserved.",
-                "header-subtitle": "Engineering Solutions",
-                "header-tagline": "Precision in Electrical & Electronic Design"
+                "legal-name": "Legal Name",
+                "legal-value": "Engeletron Electrical Engineering Ltd",
+                "cnpj": "Tax ID: 37.912.040/0001-10",
+                "address-title": "Headquarters",
+                "address-value": "Avenida Beira Mar, 9009, Office 1, Balneário Albatroz",
+                "city": "Matinhos - Paraná, Brazil",
+                "zip": "ZIP Code: 83260-000",
+                "contact-title": "General Contact",
+                "contact-email": "Email: engeletronltda@gmail.com",
+                "contact-phone": "Phones: +55 41 99904-2302 | +55 41 99904-2212",
+                "business-area": "Field: Electrical and Electronic Engineering",
+                
+                // Footer
+                "footer-email": "engeletronltda@gmail.com",
+                "footer-text": "© 2024 Engeletron Electrical Engineering Ltd. All rights reserved."
             }
         };
 
         function changeLanguage(lang) {
-            // Atualiza o botão ativo
+            // Update active button
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
             
-            // Atualiza todos os elementos traduzíveis
+            // Update all translatable elements
             for (const [key, value] of Object.entries(translations[lang])) {
                 const elements = document.querySelectorAll(`[id="${key}"]`);
                 elements.forEach(el => {
-                    el.innerText = value;
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.value = value;
+                    } else {
+                        el.innerText = value;
+                    }
                 });
             }
             
-            // Atualiza formato dos telefones
-            const phones = document.querySelectorAll('.contato p:nth-child(2)');
-            if (lang === 'en') {
-                phones.forEach(phone => {
-                    phone.innerHTML = phone.innerHTML.replace(/\(\d{2}\) (\d{4})-(\d{4})/g, '+55 $1 $2-$3');
-                });
-                
-                // Atualiza informações institucionais em inglês
-                document.querySelector('.info-card:nth-child(1) h3').textContent = 'Legal Name';
-                document.querySelector('.info-card:nth-child(1) p:nth-child(2)').textContent = 'Tax ID: 37.912.040/0001-10';
-                document.querySelector('.info-card:nth-child(2) h3').textContent = 'Headquarters';
-                document.querySelector('.info-card:nth-child(2) p:nth-child(2)').textContent = 'Matinhos - Paraná, Brazil';
-                document.querySelector('.info-card:nth-child(2) p:nth-child(3)').textContent = 'ZIP Code: 83260-000';
-                document.querySelector('.info-card:nth-child(3) h3').textContent = 'General Contact';
-                document.querySelector('.info-card:nth-child(3) p:nth-child(3)').textContent = 'Field: Electrical and Electronic Engineering';
-            } else {
-                phones.forEach(phone => {
-                    phone.innerHTML = phone.innerHTML.replace(/\+55 (\d{2}) (\d{4})-(\d{4})/g, '($1) $2-$3');
-                });
-                
-                // Restaura informações institucionais em português
-                document.querySelector('.info-card:nth-child(1) h3').textContent = 'Razão Social';
-                document.querySelector('.info-card:nth-child(1) p:nth-child(2)').textContent = 'CNPJ: 37.912.040/0001-10';
-                document.querySelector('.info-card:nth-child(2) h3').textContent = 'Endereço';
-                document.querySelector('.info-card:nth-child(2) p:nth-child(2)').textContent = 'Matinhos - PR';
-                document.querySelector('.info-card:nth-child(2) p:nth-child(3)').textContent = 'CEP: 83260-000';
-                document.querySelector('.info-card:nth-child(3) h3').textContent = 'Contato Geral';
-                document.querySelector('.info-card:nth-child(3) p:nth-child(3)').textContent = 'Ramo: Engenharia Elétrica e Eletrônica';
-            }
+            // Update phone number formats
+            const phones = document.querySelectorAll('[id^="phone-label"], #header-phone span, #contact-phone');
+            phones.forEach(phone => {
+                if (lang === 'en') {
+                    phone.innerHTML = phone.innerHTML.replace(/\(\d{2}\) (\d{5})-(\d{4})/g, '+55 $1 $2-$3');
+                } else {
+                    phone.innerHTML = phone.innerHTML.replace(/\+55 (\d{2}) (\d{5})-(\d{4})/g, '($1) $2-$3');
+                }
+            });
         }
+
+        // Initialize with Portuguese
+        document.addEventListener('DOMContentLoaded', function() {
+            changeLanguage('pt');
+        });
     </script>
 </body>
 </html>
