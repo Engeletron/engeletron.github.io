@@ -4,17 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engeletron Engenharia Elétrica Ltda</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header, nav, footer { background: #0a3d62; color: #fff; padding: 1em; }
-        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
-        .container { padding: 2em; }
-        .lang-select { float: right; }
-        .slogan { font-style: italic; color: #2980b9; margin-bottom: 1em;}
-        .card { background: #f5f6fa; margin: 1.5em 0; padding: 1.5em; border-radius: 8px; }
-        @media (max-width: 600px) {
-            .container { padding: 1em; }
-            nav { font-size: 0.95em; }
+        :root {
+            --primary: #1156a2;
+            --secondary: #f7f9fb;
+            --accent: #e8f0fe;
+            --dark: #22334c;
+            --light: #ffffff;
+        }
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: var(--primary);
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5em 2em;
+            box-shadow: 0 2px 8px rgba(17,86,162,0.07);
+            z-index: 100;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.3em;
+            letter-spacing: 1px;
+        }
+        nav {
+            display: flex;
+            gap: 1.2em;
+        }
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 3px;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: var(--accent);
+            transition: 0.3s;
+            position: absolute;
+            left: 0; bottom: 0;
+        }
+        nav a:hover::after { width: 100%; }
+        .lang-select {
+            background: var(--accent);
+            border: none;
+            border-radius: 5px;
+            padding: 0.3em 0.7em;
+            font-size: 1em;
+            color: var(--primary);
+            margin-left: 2em;
+        }
+        .hero {
+            padding-top: 100px;
+            min-height: 350px;
+            background: linear-gradient(90deg, var(--primary) 50%, var(--accent) 100%);
+            color: var(--light);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 2em;
+            border-bottom-left-radius: 40px;
+            box-shadow: 0 4px 16px rgba(17,86,162,0.10);
+        }
+        .hero h1 { font-size: 2.4em; margin-bottom: 0.2em; }
+        .hero .slogan { font-size: 1.3em; font-style: italic; margin-bottom: 1.7em;}
+        .btn-main {
+            background: var(--light);
+            color: var(--primary);
+            font-weight: bold;
+            border: none;
+            border-radius: 24px;
+            padding: 0.7em 2em;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(17,86,162,0.07);
+            transition: background 0.2s;
+        }
+        .btn-main:hover { background: var(--accent); }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2em 1.2em;
+            margin-top: 2em;
+        }
+        .card-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2em;
+        }
+        .card {
+            background: var(--light);
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(17,86,162,0.09);
+            padding: 2em 1.3em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px) scale(1.03);}
+        .card h3 { color: var(--primary); margin-top: 0;}
+        footer {
+            background: var(--primary);
+            color: var(--light);
+            text-align: center;
+            padding: 1.5em 0 0.6em 0;
+            margin-top: 3em;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            font-size: 1em;
+        }
+        @media(max-width:900px){
+            .container { padding: 2em 0.2em;}
+            .hero { padding-left: 1em;}
+        }
+        @media(max-width:600px){
+            header { flex-direction: column; align-items: flex-start; padding: 0.5em 1em;}
+            .hero { min-height: 250px; padding-top: 90px; border-bottom-left-radius: 18px;}
+            .container { margin-top: 1em; }
+            .card-list { grid-template-columns: 1fr; }
         }
     </style>
     <script>
@@ -34,53 +157,94 @@
 </head>
 <body>
     <header>
-        <span style="font-weight:bold;">Engeletron Engenharia Elétrica Ltda</span>
-        <select class="lang-select" onchange="changeLang(this.value)">
-            <option value="pt">Português</option>
-            <option value="en">English</option>
-        </select>
+        <span class="logo">Engeletron</span>
         <nav>
             <a href="index.html">Home</a>
             <a href="sobre.html">Sobre / About</a>
             <a href="servicos.html">Serviços / Services</a>
             <a href="contato.html">Contatos / Contact</a>
         </nav>
+        <select class="lang-select" onchange="changeLang(this.value)">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+        </select>
     </header>
-    <div class="container">
-        <!-- Slogan -->
-        <div class="slogan" data-lang="pt">Inovação e Engenharia para um Futuro Conectado</div>
-        <div class="slogan" data-lang="en" style="display:none;">Innovation and Engineering for a Connected Future</div>
-
-        <!-- Home Português -->
+    <!-- HERO SECTION -->
+    <div class="hero">
         <div data-lang="pt">
             <h1>Bem-vindo à Engeletron</h1>
+            <div class="slogan">Inovação e Engenharia para um Futuro Conectado</div>
             <p>
-                Somos uma empresa de desenvolvimento de projetos eletrônicos. Atuamos em hardware analógico e digital, microcontroladores, eletrônica de potência, comunicação por RF, servidores IoT com Firebase e aplicativos multiplataforma com Flutter.
+                Soluções em projetos eletrônicos, hardware, IoT e aplicativos multiplataforma para sua empresa crescer com tecnologia de ponta.
             </p>
+            <a href="contato.html"><button class="btn-main">Solicite um orçamento</button></a>
         </div>
-        <!-- Home English -->
         <div data-lang="en" style="display:none;">
             <h1>Welcome to Engeletron</h1>
+            <div class="slogan">Innovation and Engineering for a Connected Future</div>
             <p>
-                We are a company specialized in electronic project development. We work with analog and digital hardware, microcontrollers, power electronics, RF communication, IoT servers with Firebase, and cross-platform apps with Flutter.
+                Solutions in electronic projects, hardware, IoT and cross-platform apps to boost your business with cutting-edge technology.
             </p>
+            <a href="contato.html"><button class="btn-main">Request a quote</button></a>
         </div>
-        <div class="card">
-            <div data-lang="pt">
-                <h2>Destaques</h2>
-                <ul>
-                    <li>Projetos personalizados para sua necessidade</li>
-                    <li>Atendimento técnico especializado</li>
-                    <li>Equipe capacitada e experiente</li>
-                </ul>
+    </div>
+    <div class="container">
+        <div data-lang="pt">
+            <h2 style="color:#1156a2;">Nossos Serviços</h2>
+            <div class="card-list">
+                <div class="card">
+                    <h3>Desenvolvimento de Hardware</h3>
+                    <ul>
+                        <li>Projetos eletrônicos analógicos e digitais</li>
+                        <li>Layout de PCB (Autodesk Eagle)</li>
+                        <li>Radiofrequência e eletrônica de potência</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Firmware e Microcontroladores</h3>
+                    <ul>
+                        <li>Firmware para 8 e 32 bits (ST, HOLTEK, ESPRESSIF)</li>
+                        <li>Programação em C/C++</li>
+                        <li>Testes e validação</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>IoT e Aplicativos</h3>
+                    <ul>
+                        <li>Servidor IoT com Google Firebase</li>
+                        <li>Apps Android & iOS com Flutter</li>
+                        <li>Integração e automação</li>
+                    </ul>
+                </div>
             </div>
-            <div data-lang="en" style="display:none;">
-                <h2>Highlights</h2>
-                <ul>
-                    <li>Custom projects for your needs</li>
-                    <li>Specialized technical support</li>
-                    <li>Experienced and qualified team</li>
-                </ul>
+        </div>
+        <div data-lang="en" style="display:none;">
+            <h2 style="color:#1156a2;">Our Services</h2>
+            <div class="card-list">
+                <div class="card">
+                    <h3>Hardware Development</h3>
+                    <ul>
+                        <li>Analog and digital electronic projects</li>
+                        <li>PCB layout (Autodesk Eagle)</li>
+                        <li>RF and power electronics</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Firmware & Microcontrollers</h3>
+                    <ul>
+                        <li>Firmware for 8 and 32 bit (ST, HOLTEK, ESPRESSIF)</li>
+                        <li>Programming in C/C++</li>
+                        <li>Testing and validation</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>IoT & Apps</h3>
+                    <ul>
+                        <li>IoT server with Google Firebase</li>
+                        <li>Android & iOS apps with Flutter</li>
+                        <li>Integration and automation</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
