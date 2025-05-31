@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engeletron | Engenharia Elétrica e Projetos Eletrônicos</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset e Fontes */
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -216,6 +217,18 @@
         .android { color: #3DDC84; }
         .ios { color: #000000; }
         
+        /* Badges IoT */
+        .iot-badge {
+            background: #FFC107;
+            color: #1A237E;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
         /* Informações Institucionais */
         .institucional {
             padding: 50px 5%;
@@ -379,13 +392,13 @@
             </div>
 
             <div class="card">
-                <h3>Aplicativos Flutter</h3>
+                <h3>Aplicativo IoT <span class="iot-badge">Flutter</span></h3>
                 
                 <div style="text-align: center; margin: 15px 0;">
                     <img src="https://storage.googleapis.com/cms-storage-bucket/6a07d8a62f4308d2b854.svg" alt="Flutter" class="logo-img">
                 </div>
                 
-                <p>Desenvolvimento mobile multiplataforma:</p>
+                <p>Soluções mobile para dispositivos IoT:</p>
                 
                 <div class="plataformas-flutter">
                     <div class="plataforma-flutter">
@@ -393,23 +406,23 @@
                         <span>Android</span>
                     </div>
                     <div class="plataforma-flutter">
-                        <i class="material-icons ios">phone_iphone</i>
+                        <i class="fab fa-apple apple-icon"></i>
                         <span>iOS</span>
                     </div>
                 </div>
                 
-                <p class="destaque">Integração com Firebase e APIs RESTful.</p>
+                <p class="destaque">Controle remoto, monitoramento em tempo real e dashboards personalizados.</p>
             </div>
 
             <div class="card">
-                <h3>Cloud Firebase</h3>
+                <h3>Servidor IoT <span class="iot-badge">Google Firebase</span></h3>
                 
                 <div class="logos-container">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="logo-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg" alt="Firebase" class="logo-img">
+                    <i class="fab fa-google-cloud google-cloud-icon"></i>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Firebase_Logo.svg" alt="Firebase" class="logo-img" style="height: 40px;">
                 </div>
                 
-                <p>Serviços que utilizamos:</p>
+                <p>Soluções completas para Internet das Coisas:</p>
                 
                 <div class="servicos-firebase">
                     <div class="servico-firebase">
@@ -428,9 +441,13 @@
                         <i class="material-icons">notifications</i>
                         <span>Cloud Messaging</span>
                     </div>
+                    <div class="servico-firebase">
+                        <i class="material-icons">device_hub</i>
+                        <span>IoT Core</span>
+                    </div>
                 </div>
                 
-                <p class="destaque">Implementação de IoT e sincronização em tempo real.</p>
+                <p class="destaque">Sincronização em tempo real e processamento de dados de dispositivos conectados.</p>
             </div>
         </div>
     </section>
@@ -531,14 +548,4 @@
             document.getElementById("servicos-title").innerText = translations[lang]["servicos-title"];
             document.getElementById("pcb-descricao").innerText = translations[lang]["pcb-descricao"];
             document.getElementById("pcb-destaque").innerText = translations[lang]["pcb-destaque"];
-            document.getElementById("programacao-texto").innerText = translations[lang]["programacao-texto"];
-            document.getElementById("programacao-destaque").innerText = translations[lang]["programacao-destaque"];
-            
-            // Institutional
-            document.getElementById("equipe-title").innerText = translations[lang]["equipe-title"];
-            document.getElementById("institucional-title").innerText = translations[lang]["institucional-title"];
-            document.getElementById("footer-text").innerText = translations[lang]["footer-text"];
-        }
-    </script>
-</body>
-</html>
+            document.getElementById("progr
