@@ -244,6 +244,7 @@
             margin-bottom: 12px;
             padding-left: 30px;
             position: relative;
+            line-height: 1.5;
         }
         
         .servicos-pcb li:before {
@@ -268,6 +269,11 @@
             border-left: 4px solid #4CAF50;
             margin-top: 20px;
             font-size: 0.9rem;
+        }
+        
+        .destaque i {
+            vertical-align: middle;
+            margin-right: 8px;
         }
         
         /* Fabricantes Microcontroladores */
@@ -320,6 +326,7 @@
         .ethernet { color: #FBBC05; }
         .lte { color: #34A853; }
         .mcu { color: #EA4335; }
+        .tools { color: #FF9800; }
         
         /* Logos - Cores Oficiais */
         .logos-container {
@@ -491,6 +498,27 @@
             margin-bottom: 15px;
         }
         
+        .membro .formacao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 8px 0 15px 0;
+            color: #555;
+            font-size: 0.95em;
+        }
+        
+        .logo-utfpr {
+            height: 24px;
+            opacity: 0.9;
+        }
+        
+        .logo-crea {
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
         .membro .contato {
             margin-top: 20px;
             padding-top: 20px;
@@ -564,6 +592,11 @@
             
             #contato-form {
                 padding: 20px;
+            }
+            
+            .membro .formacao {
+                flex-direction: column;
+                gap: 5px;
             }
         }
     </style>
@@ -694,6 +727,40 @@
                 <p class="destaque" id="iot-devices-destaque">Desenvolvimento de hardware e firmware para soluções IoT completas.</p>
             </div>
 
+            <!-- Card GIGAS de Teste -->
+            <div class="card">
+                <h3><i class="fas fa-tools tools"></i> <span id="test-rigs-title">GIGAS de Testes para Produção</span></h3>
+                <p id="test-rigs-desc">Soluções completas para validação de produtos:</p>
+                
+                <ul class="servicos-pcb">
+                    <li>
+                        <strong id="test-item1">Gabinete Industrial Personalizado</strong>
+                        <span class="detalhe" id="test-detail1">(Projeto mecânico robusto com interfaces de operação)</span>
+                    </li>
+                    <li>
+                        <strong id="test-item2">Cama de Pinos (Bed-of-Nails)</strong>
+                        <span class="detalhe" id="test-detail2">(Matriz de contatos para teste elétrico completo)</span>
+                    </li>
+                    <li>
+                        <strong id="test-item3">Interface para Programador Standalone</strong>
+                        <span class="detalhe" id="test-detail3">(Compatível com PIC, AVR, STM32 e outros)</span>
+                    </li>
+                    <li>
+                        <strong id="test-item4">Circuito de Teste Automatizado</strong>
+                        <span class="detalhe" id="test-detail4">(Verificação de continuidade, tensões e funcionamento)</span>
+                    </li>
+                    <li>
+                        <strong id="test-item5">Display de Resultados</strong>
+                        <span class="detalhe" id="test-detail5">(Interface visual com LEDs/TFT para status de teste)</span>
+                    </li>
+                </ul>
+                
+                <div class="destaque" id="test-rigs-destaque">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Sistemas completos com relatório de teste automatizado (PDF/Excel)</span>
+                </div>
+            </div>
+
             <!-- Card Aplicativo IoT -->
             <div class="card">
                 <h3><i class="fas fa-mobile-alt"></i> <span id="app-title">Aplicativo IoT</span> <span class="iot-badge">Flutter</span></h3>
@@ -707,11 +774,11 @@
                 <div class="plataformas-flutter">
                     <div class="plataforma-flutter">
                         <i class="material-icons android">android</i>
-                        <span>Android</span>
+                        <span id="android-label">Android</span>
                     </div>
                     <div class="plataforma-flutter">
                         <i class="fab fa-apple apple-icon"></i>
-                        <span>iOS</span>
+                        <span id="ios-label">iOS</span>
                     </div>
                 </div>
                 
@@ -766,7 +833,20 @@
             <div class="membro">
                 <h3 id="team-member1">Danilo Miguel Neves Adur</h3>
                 <div class="cargo" id="team-title1">Engenheiro Eletricista | Diretor</div>
-                <div class="crea" id="team-crea1">CREA-PR Nº PR-87205/D</div>
+                
+                <div class="formacao">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/UTFPR_logo.png/320px-UTFPR_logo.png" 
+                         alt="Logo UTFPR" 
+                         class="logo-utfpr">
+                    <span id="formacao-text1">Formado pela Universidade Tecnológica Federal do Paraná</span>
+                </div>
+                
+                <div class="crea" id="team-crea1">
+                    <img src="https://www.crea-pr.org.br/wp-content/uploads/2020/04/crea-pr-logo.png" 
+                         alt="Logo CREA-PR" 
+                         class="logo-crea">
+                    <span>CREA-PR Nº PR-87205/D</span>
+                </div>
                 <div class="contato">
                     <p><strong id="email-label1">Email:</strong> danilo.engeletron@gmail.com</p>
                     <p><strong id="phone-label1">Telefone:</strong> (41) 99904-2212</p>
@@ -775,7 +855,20 @@
             <div class="membro">
                 <h3 id="team-member2">Gisely Bellozupko Adur</h3>
                 <div class="cargo" id="team-title2">Engenheira Eletricista | Diretora</div>
-                <div class="crea" id="team-crea2">CREA-PR Nº PR-87210/D</div>
+                
+                <div class="formacao">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/UTFPR_logo.png/320px-UTFPR_logo.png" 
+                         alt="Logo UTFPR" 
+                         class="logo-utfpr">
+                    <span id="formacao-text2">Formada pela Universidade Tecnológica Federal do Paraná</span>
+                </div>
+                
+                <div class="crea" id="team-crea2">
+                    <img src="https://www.crea-pr.org.br/wp-content/uploads/2020/04/crea-pr-logo.png" 
+                         alt="Logo CREA-PR" 
+                         class="logo-crea">
+                    <span>CREA-PR Nº PR-87210/D</span>
+                </div>
                 <div class="contato">
                     <p><strong id="email-label2">Email:</strong> gisely.engeletron@gmail.com</p>
                     <p><strong id="phone-label2">Telefone:</strong> (41) 99904-2302</p>
@@ -789,13 +882,13 @@
         <h2 id="contato-title">Entre em Contato</h2>
         <div class="info-grid">
             <div class="info-card">
-                <h3>Solicite um Orçamento</h3>
+                <h3 id="orcamento-title">Solicite um Orçamento</h3>
                 <form id="contato-form">
                     <input type="text" id="nome" placeholder="Seu nome" required>
                     <input type="email" id="email" placeholder="Seu email" required>
                     <input type="tel" id="telefone" placeholder="Seu telefone">
                     <textarea id="mensagem" placeholder="Descreva seu projeto" required></textarea>
-                    <button type="submit" class="btn">Enviar Solicitação</button>
+                    <button type="submit" class="btn" id="form-submit">Enviar Solicitação</button>
                 </form>
             </div>
             <div class="info-card">
@@ -840,10 +933,106 @@
                 "hero-subtitle": "Projetos personalizados em PCB, desenvolvimento de firmware, soluções IoT e integração em nuvem",
                 "hero-cta": "Solicite um Orçamento",
                 
-                // Contact
-                "contato-title": "Entre em Contato",
+                // Serviços
+                "servicos-title": "Nossos Serviços de Engenharia",
+                "servicos-subtitle": "Soluções completas adaptadas às suas necessidades técnicas",
                 
-                // [Restante das traduções em português...]
+                // PCB Card
+                "pcb-card-title": "Projetos de PCB",
+                "pcb-descricao": "Desenvolvimento completo com:",
+                "pcb-item1": "Diagrama Esquemático",
+                "pcb-detail1": "(Análise de requisitos, seleção de componentes, simulações)",
+                "pcb-item2": "Desenho da Placa",
+                "pcb-detail2": "(Layout multilayer, alta frequência, impedância controlada)",
+                "pcb-item3": "Gerbers Industriais",
+                "pcb-detail3": "(Padrão IPC-2581, camadas de solda, máscara, silk screen)",
+                "pcb-item4": "Lista de Materiais (BOM)",
+                "pcb-detail4": "(Cotações com fornecedores, alternativas de componentes)",
+                "pcb-item5": "Documentação Técnica",
+                "pcb-detail5": "(Manuais de montagem, testes de validação)",
+                "pcb-destaque": "Compatível com padrões IPC-7351 e Class 3 para aplicações críticas.",
+                
+                // Firmware Card
+                "firmware-title": "Programação em C/C++",
+                "programacao-texto": "Plataformas suportadas:",
+                "programacao-destaque": "Otimização para baixo consumo, RTOS e comunicação sem fio (Wi-Fi/BLE).",
+                
+                // IoT Devices Card
+                "iot-devices-title": "Dispositivos IoT",
+                "iot-devices-desc": "Soluções completas para dispositivos conectados:",
+                "iot-mcu": "Wireless MCU",
+                "iot-mcu-desc": "ESP32, ESP8266",
+                "iot-wifi": "Wi-Fi",
+                "iot-wifi-desc": "Conectividade 2.4/5GHz",
+                "iot-ethernet": "Ethernet",
+                "iot-ethernet-desc": "Conexão cabeada",
+                "iot-lte": "4G LTE",
+                "iot-lte-desc": "Conectividade móvel",
+                "iot-devices-destaque": "Desenvolvimento de hardware e firmware para soluções IoT completas.",
+                
+                // Test Rigs Card
+                "test-rigs-title": "GIGAS de Testes para Produção",
+                "test-rigs-desc": "Soluções completas para validação de produtos:",
+                "test-item1": "Gabinete Industrial Personalizado",
+                "test-detail1": "(Projeto mecânico robusto com interfaces de operação)",
+                "test-item2": "Cama de Pinos (Bed-of-Nails)",
+                "test-detail2": "(Matriz de contatos para teste elétrico completo)",
+                "test-item3": "Interface para Programador Standalone",
+                "test-detail3": "(Compatível com PIC, AVR, STM32 e outros)",
+                "test-item4": "Circuito de Teste Automatizado",
+                "test-detail4": "(Verificação de continuidade, tensões e funcionamento)",
+                "test-item5": "Display de Resultados",
+                "test-detail5": "(Interface visual com LEDs/TFT para status de teste)",
+                "test-rigs-destaque": "Sistemas completos com relatório de teste automatizado (PDF/Excel)",
+                
+                // App Card
+                "app-title": "Aplicativo IoT",
+                "app-desc": "Soluções mobile para dispositivos IoT:",
+                "android-label": "Android",
+                "ios-label": "iOS",
+                "app-destaque": "Controle remoto, monitoramento em tempo real e dashboards personalizados.",
+                
+                // Cloud Card
+                "cloud-title": "Servidor IoT",
+                "cloud-desc": "Soluções completas para Internet das Coisas:",
+                "cloud-service1": "Realtime Database",
+                "cloud-service2": "Authentication",
+                "cloud-service3": "Cloud Functions",
+                "cloud-service4": "Cloud Messaging",
+                "cloud-service5": "IoT Core",
+                "cloud-destaque": "Sincronização em tempo real e processamento de dados de dispositivos conectados.",
+                
+                // Equipe
+                "equipe-title": "Nossa Equipe Técnica",
+                "equipe-subtitle": "Conheça nossos profissionais qualificados",
+                "team-member1": "Danilo Miguel Neves Adur",
+                "team-title1": "Engenheiro Eletricista | Diretor",
+                "formacao-text1": "Formado pela Universidade Tecnológica Federal do Paraná",
+                "team-crea1": "CREA-PR Nº PR-87205/D",
+                "email-label1": "Email:",
+                "phone-label1": "Telefone:",
+                "team-member2": "Gisely Bellozupko Adur",
+                "team-title2": "Engenheira Eletricista | Diretora",
+                "formacao-text2": "Formada pela Universidade Tecnológica Federal do Paraná",
+                "team-crea2": "CREA-PR Nº PR-87210/D",
+                "email-label2": "Email:",
+                "phone-label2": "Telefone:",
+                
+                // Contato
+                "contato-title": "Entre em Contato",
+                "orcamento-title": "Solicite um Orçamento",
+                "institucional-title": "Informações Institucionais",
+                "legal-value": "Engeletron Engenharia Elétrica Ltda",
+                "cnpj": "CNPJ: 37.912.040/0001-10",
+                "address-title": "Endereço",
+                "address-value": "Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz",
+                "city": "Matinhos - PR",
+                "zip": "CEP: 83260-000",
+                "form-submit": "Enviar Solicitação",
+                
+                // Footer
+                "footer-email": "engeletronltda@gmail.com",
+                "footer-text": "© 2024 Engeletron Engenharia Elétrica Ltda. Todos os direitos reservados."
             },
             "en": {
                 // Header
@@ -856,10 +1045,106 @@
                 "hero-subtitle": "Custom PCB design, firmware development, IoT solutions and cloud integration",
                 "hero-cta": "Request a Quote",
                 
-                // Contact
-                "contato-title": "Contact Us",
+                // Serviços
+                "servicos-title": "Our Engineering Services",
+                "servicos-subtitle": "Complete solutions tailored to your technical needs",
                 
-                // [Restante das traduções em inglês...]
+                // PCB Card
+                "pcb-card-title": "PCB Design",
+                "pcb-descricao": "Complete development with:",
+                "pcb-item1": "Schematic Diagram",
+                "pcb-detail1": "(Requirements analysis, component selection, simulations)",
+                "pcb-item2": "Board Layout",
+                "pcb-detail2": "(Multilayer layout, high frequency, controlled impedance)",
+                "pcb-item3": "Industrial Gerbers",
+                "pcb-detail3": "(IPC-2581 standard, solder mask, silk screen)",
+                "pcb-item4": "Bill of Materials (BOM)",
+                "pcb-detail4": "(Supplier quotes, component alternatives)",
+                "pcb-item5": "Technical Documentation",
+                "pcb-detail5": "(Assembly manuals, validation tests)",
+                "pcb-destaque": "Compatible with IPC-7351 and Class 3 standards for critical applications.",
+                
+                // Firmware Card
+                "firmware-title": "C/C++ Programming",
+                "programacao-texto": "Supported platforms:",
+                "programacao-destaque": "Optimization for low power, RTOS and wireless communication (Wi-Fi/BLE).",
+                
+                // IoT Devices Card
+                "iot-devices-title": "IoT Devices",
+                "iot-devices-desc": "Complete solutions for connected devices:",
+                "iot-mcu": "Wireless MCU",
+                "iot-mcu-desc": "ESP32, ESP8266",
+                "iot-wifi": "Wi-Fi",
+                "iot-wifi-desc": "2.4/5GHz connectivity",
+                "iot-ethernet": "Ethernet",
+                "iot-ethernet-desc": "Wired connection",
+                "iot-lte": "4G LTE",
+                "iot-lte-desc": "Mobile connectivity",
+                "iot-devices-destaque": "Hardware and firmware development for complete IoT solutions.",
+                
+                // Test Rigs Card
+                "test-rigs-title": "Test RIGS for Production",
+                "test-rigs-desc": "Complete solutions for product validation:",
+                "test-item1": "Custom Industrial Enclosure",
+                "test-detail1": "(Robust mechanical design with operation interfaces)",
+                "test-item2": "Bed-of-Nails Test Fixture",
+                "test-detail2": "(Contact matrix for complete electrical testing)",
+                "test-item3": "Standalone Programmer Interface",
+                "test-detail3": "(Compatible with PIC, AVR, STM32 and others)",
+                "test-item4": "Automated Test Circuit",
+                "test-detail4": "(Continuity, voltage and functionality verification)",
+                "test-item5": "Results Display",
+                "test-detail5": "(Visual interface with LEDs/TFT for test status)",
+                "test-rigs-destaque": "Complete systems with automated test report (PDF/Excel)",
+                
+                // App Card
+                "app-title": "IoT Application",
+                "app-desc": "Mobile solutions for IoT devices:",
+                "android-label": "Android",
+                "ios-label": "iOS",
+                "app-destaque": "Remote control, real-time monitoring and custom dashboards.",
+                
+                // Cloud Card
+                "cloud-title": "IoT Server",
+                "cloud-desc": "Complete solutions for Internet of Things:",
+                "cloud-service1": "Realtime Database",
+                "cloud-service2": "Authentication",
+                "cloud-service3": "Cloud Functions",
+                "cloud-service4": "Cloud Messaging",
+                "cloud-service5": "IoT Core",
+                "cloud-destaque": "Real-time synchronization and processing of connected device data.",
+                
+                // Equipe
+                "equipe-title": "Our Technical Team",
+                "equipe-subtitle": "Meet our qualified professionals",
+                "team-member1": "Danilo Miguel Neves Adur",
+                "team-title1": "Electrical Engineer | Director",
+                "formacao-text1": "Graduated from Federal Technological University of Paraná",
+                "team-crea1": "CREA-PR No. PR-87205/D",
+                "email-label1": "Email:",
+                "phone-label1": "Phone:",
+                "team-member2": "Gisely Bellozupko Adur",
+                "team-title2": "Electrical Engineer | Director",
+                "formacao-text2": "Graduated from Federal Technological University of Paraná",
+                "team-crea2": "CREA-PR No. PR-87210/D",
+                "email-label2": "Email:",
+                "phone-label2": "Phone:",
+                
+                // Contato
+                "contato-title": "Contact Us",
+                "orcamento-title": "Request a Quote",
+                "institucional-title": "Institutional Information",
+                "legal-value": "Engeletron Electrical Engineering Ltd",
+                "cnpj": "CNPJ: 37.912.040/0001-10",
+                "address-title": "Address",
+                "address-value": "Avenida Beira Mar, 9009, Room 1, Balneário Albatroz",
+                "city": "Matinhos - PR",
+                "zip": "ZIP: 83260-000",
+                "form-submit": "Submit Request",
+                
+                // Footer
+                "footer-email": "engeletronltda@gmail.com",
+                "footer-text": "© 2024 Engeletron Electrical Engineering Ltd. All rights reserved."
             }
         };
 
@@ -874,7 +1159,11 @@
             for (const [key, value] of Object.entries(translations[lang])) {
                 const elements = document.querySelectorAll(`[id="${key}"]`);
                 elements.forEach(el => {
-                    el.innerText = value;
+                    if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+                        el.placeholder = value;
+                    } else {
+                        el.innerText = value;
+                    }
                 });
             }
             
@@ -895,7 +1184,12 @@
             
             // Simulação de envio
             const nome = document.getElementById('nome').value;
-            alert(`Obrigado, ${nome}! Sua solicitação foi enviada com sucesso. Entraremos em contato em breve.`);
+            const currentLang = document.querySelector('.lang-btn.active').textContent.includes('PT') ? 'pt' : 'en';
+            const message = currentLang === 'pt' 
+                ? `Obrigado, ${nome}! Sua solicitação foi enviada com sucesso. Entraremos em contato em breve.`
+                : `Thank you, ${nome}! Your request has been sent successfully. We will contact you soon.`;
+            
+            alert(message);
             
             // Reset do formulário
             this.reset();
