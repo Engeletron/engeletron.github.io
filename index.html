@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENGEletron | Engenharia Elétrica e Projetos Eletrônicos</title>
+    <title>ENGEletron | ENGENHARIA ELÉTRICA E PROJETOS ELETRÔNICOS</title>
     <meta name="description" content="Soluções profissionais em projetos elétricos, desenvolvimento de PCB, firmware e sistemas IoT">
-    <meta name="keywords" content="engenharia elétrica, projetos PCB, desenvolvimento firmware, IoT, automação industrial">
+    <meta property="og:title" content="ENGEletron | ENGENHARIA ELÉTRICA">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+    <link rel="canonical" href="https://www.engeletron.com.br">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Variáveis CSS */
-        :root {
-            --primary: #1A237E;
-            --secondary: #4CAF50;
-            --text: #333;
-            --light-bg: #f9f9f9;
-            --dark-bg: #111;
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "ENGEletron",
+            "serviceType": "ENGENHARIA ELÉTRICA"
         }
-
+    </script>
+    <style>
         /* Reset e Estilos Base */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text); }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
         
         /* Cabeçalho Moderno */
         header {
@@ -29,7 +30,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background: linear-gradient(135deg, var(--primary) 0%, #283593 100%);
+            background: linear-gradient(135deg, #1A237E 0%, #283593 100%);
             color: white;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             position: sticky;
@@ -47,7 +48,6 @@
             font-weight: 800;
             letter-spacing: 1px;
             color: white;
-            text-transform: uppercase;
         }
         
         .logo-subtitle {
@@ -55,7 +55,7 @@
             font-weight: 500;
             letter-spacing: 2px;
             margin-top: 2px;
-            color: var(--secondary);
+            color: #4CAF50;
         }
         
         .logo-tagline {
@@ -105,7 +105,7 @@
         }
         
         .lang-btn.active {
-            background: var(--secondary);
+            background: #4CAF50;
             color: white;
         }
         
@@ -121,6 +121,7 @@
             text-align: center; 
             color: white; 
             padding: 0 20px; 
+            position: relative;
         }
         
         .hero h1 { 
@@ -135,8 +136,22 @@
             margin-bottom: 30px; 
         }
         
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
         .btn { 
-            background: var(--secondary); 
+            background: #4CAF50; 
             color: white; 
             padding: 12px 30px; 
             border: none; 
@@ -157,16 +172,26 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
         /* Seção de Serviços */
         .servicos { 
             padding: 80px 5%; 
             text-align: center; 
-            background: var(--light-bg); 
+            background: #f9f9f9; 
         }
         
         .section-title {
             font-size: 2rem;
-            color: var(--primary);
+            color: #1A237E;
             margin-bottom: 10px;
             position: relative;
             display: inline-block;
@@ -177,7 +202,7 @@
             position: absolute;
             width: 50%;
             height: 3px;
-            background: var(--secondary);
+            background: #4CAF50;
             bottom: -10px;
             left: 25%;
         }
@@ -202,6 +227,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
             transition: 0.3s; 
             text-align: left;
+            position: relative;
+            overflow: hidden;
         }
         
         .card:hover { 
@@ -209,10 +236,26 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
         }
         
+        .card::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #4CAF50;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover::after {
+            transform: scaleX(1);
+        }
+        
         .card h3 { 
             margin: 20px 0; 
             font-size: 1.3rem; 
-            color: var(--primary); 
+            color: #1A237E; 
             display: flex;
             align-items: center;
             gap: 10px;
@@ -220,7 +263,7 @@
         
         .card h3 i {
             font-size: 1.5rem;
-            color: var(--secondary);
+            color: #4CAF50;
         }
         
         .card p { 
@@ -238,7 +281,7 @@
         
         .tag-ferramenta {
             background: #e3f2fd;
-            color: var(--primary);
+            color: #1A237E;
             padding: 6px 15px;
             border-radius: 20px;
             font-size: 0.9em;
@@ -260,7 +303,7 @@
         
         .servicos-pcb li:before {
             content: "✓";
-            color: var(--secondary);
+            color: #4CAF50;
             font-weight: bold;
             position: absolute;
             left: 0;
@@ -277,7 +320,7 @@
         .destaque {
             background: #f0f7f0;
             padding: 12px;
-            border-left: 4px solid var(--secondary);
+            border-left: 4px solid #4CAF50;
             margin-top: 20px;
             font-size: 0.9rem;
         }
@@ -299,11 +342,11 @@
             background: #f5f5f5;
             padding: 15px;
             border-radius: 8px;
-            border-left: 4px solid var(--secondary);
+            border-left: 4px solid #4CAF50;
         }
         
         .plataforma strong {
-            color: var(--primary);
+            color: #1A237E;
         }
 
         /* Dispositivos IoT */
@@ -333,10 +376,16 @@
             display: block;
         }
         
+        .wifi { color: #4285F4; }
+        .ethernet { color: #FBBC05; }
+        .lte { color: #34A853; }
+        .mcu { color: #EA4335; }
+        .tools { color: #FF9800; }
+        
         /* Informações Institucionais */
         .institucional {
             padding: 50px 5%;
-            background: var(--primary);
+            background: #1A237E;
             color: white;
         }
         
@@ -367,7 +416,7 @@
         
         .info-card h3 {
             margin-bottom: 15px;
-            color: var(--secondary);
+            color: #4CAF50;
         }
         
         /* Formulário de Contato */
@@ -402,7 +451,7 @@
         
         .equipe h2 {
             text-align: center;
-            color: var(--primary);
+            color: #1A237E;
             margin-bottom: 40px;
         }
         
@@ -427,12 +476,12 @@
         }
         
         .membro h3 {
-            color: var(--primary);
+            color: #1A237E;
             margin-bottom: 5px;
         }
         
         .membro .cargo {
-            color: var(--secondary);
+            color: #4CAF50;
             font-weight: bold;
             margin-bottom: 15px;
         }
@@ -461,7 +510,7 @@
         
         /* Footer */
         footer { 
-            background: var(--dark-bg); 
+            background: #111; 
             color: white; 
             text-align: center; 
             padding: 30px 20px; 
@@ -471,7 +520,7 @@
         .email-geral {
             margin: 15px 0;
             font-weight: bold;
-            color: var(--secondary);
+            color: #4CAF50;
             font-size: 1.1rem;
         }
         
@@ -489,25 +538,7 @@
         }
         
         .social-links a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Botão WhatsApp Fixo */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 100;
+            color: #4CAF50;
         }
         
         /* Ajustes Responsivos */
@@ -552,8 +583,8 @@
     <header>
         <div class="logo-container">
             <div class="logo-main">ENGEletron</div>
-            <div class="logo-subtitle" id="header-subtitle">Soluções em Engenharia</div>
-            <div class="logo-tagline" id="header-tagline">Precisão em Projetos Elétricos e Eletrônicos</div>
+            <div class="logo-subtitle" id="header-subtitle">SOLUÇÕES EM ENGENHARIA</div>
+            <div class="logo-tagline" id="header-tagline">PREVISÃO EM PROJETOS ELÉTRICOS E ELETRÔNICOS</div>
         </div>
         
         <div class="header-right">
@@ -570,172 +601,69 @@
 
     <!-- Seção Hero -->
     <section class="hero" id="hero">
-        <h1 id="hero-title">Soluções Inovadoras em Engenharia Elétrica e Eletrônica</h1>
-        <p id="hero-subtitle">Projetos personalizados em PCB, desenvolvimento de firmware, soluções IoT e integração em nuvem</p>
-        <a href="#contato" class="btn" id="hero-cta">Solicite um Orçamento</a>
+        <h1 id="hero-title">SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA</h1>
+        <p id="hero-subtitle">PROJETOS PERSONALIZADOS EM PCB, DESENVOLVIMENTO DE FIRMWARE, SOLUÇÕES IOT E INTEGRAÇÃO EM NUVEM</p>
+        <a href="#contato" class="btn" id="hero-cta">SOLICITE UM ORÇAMENTO</a>
+        <a href="#servicos" class="btn btn-secondary" id="hero-cta-secondary">CONHEÇA NOSSOS SERVIÇOS</a>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down" style="font-size: 24px;"></i>
+        </div>
     </section>
 
     <!-- Seção de Serviços -->
-    <section class="servicos">
-        <h2 class="section-title" id="servicos-title">Nossos Serviços de Engenharia</h2>
-        <p class="section-subtitle" id="servicos-subtitle">Soluções completas adaptadas às suas necessidades técnicas</p>
+    <section class="servicos" id="servicos">
+        <h2 class="section-title" id="servicos-title">NOSSOS SERVIÇOS DE ENGENHARIA</h2>
+        <p class="section-subtitle" id="servicos-subtitle">SOLUÇÕES COMPLETAS ADAPTADAS ÀS SUAS NECESSIDADES TÉCNICAS</p>
         
         <div class="grid">
             <!-- Card Projetos PCB -->
             <div class="card">
-                <h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">Projetos de PCB</span></h3>
-                <p id="pcb-descricao">Desenvolvimento completo com:</p>
+                <h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">PROJETOS DE PCB</span></h3>
+                <p id="pcb-descricao">DESENVOLVIMENTO COMPLETO COM:</p>
                 
                 <div class="ferramentas-lista">
-                    <span class="tag-ferramenta">Autodesk Eagle</span>
-                    <span class="tag-ferramenta">KiCad</span>
+                    <span class="tag-ferramenta">AUTODESK EAGLE</span>
+                    <span class="tag-ferramenta">KICAD</span>
                 </div>
 
                 <ul class="servicos-pcb">
-                    <li><strong id="pcb-item1">Diagrama Esquemático</strong> 
-                        <span class="detalhe" id="pcb-detail1">(Análise de requisitos, seleção de componentes, simulações)</span>
+                    <li><strong id="pcb-item1">DIAGRAMA ESQUEMÁTICO</strong> 
+                        <span class="detalhe" id="pcb-detail1">(ANÁLISE DE REQUISITOS, SELEÇÃO DE COMPONENTES, SIMULAÇÕES)</span>
                     </li>
-                    <li><strong id="pcb-item2">Desenho da Placa</strong> 
-                        <span class="detalhe" id="pcb-detail2">(Layout multilayer, alta frequência, impedância controlada)</span>
+                    <li><strong id="pcb-item2">DESENHO DA PLACA</strong> 
+                        <span class="detalhe" id="pcb-detail2">(LAYOUT MULTILAYER, ALTA FREQUÊNCIA, IMPEDÂNCIA CONTROLADA)</span>
                     </li>
-                    <li><strong id="pcb-item3">Gerbers Industriais</strong> 
-                        <span class="detalhe" id="pcb-detail3">(Padrão IPC-2581, camadas de solda, máscara, silk screen)</span>
+                    <li><strong id="pcb-item3">GERBERS INDUSTRIAIS</strong> 
+                        <span class="detalhe" id="pcb-detail3">(PADRÃO IPC-2581, CAMADAS DE SOLDA, MÁSCARA, SILK SCREEN)</span>
                     </li>
-                    <li><strong id="pcb-item4">Lista de Materiais (BOM)</strong> 
-                        <span class="detalhe" id="pcb-detail4">(Cotações com fornecedores, alternativas de componentes)</span>
+                    <li><strong id="pcb-item4">LISTA DE MATERIAIS (BOM)</strong> 
+                        <span class="detalhe" id="pcb-detail4">(COTAÇÕES COM FORNECEDORES, ALTERNATIVAS DE COMPONENTES)</span>
                     </li>
-                    <li><strong id="pcb-item5">Documentação Técnica</strong> 
-                        <span class="detalhe" id="pcb-detail5">(Manuais de montagem, testes de validação)</span>
+                    <li><strong id="pcb-item5">DOCUMENTAÇÃO TÉCNICA</strong> 
+                        <span class="detalhe" id="pcb-detail5">(MANUAIS DE MONTAGEM, TESTES DE VALIDAÇÃO)</span>
                     </li>
                 </ul>
-                <p class="destaque" id="pcb-destaque">Compatível com padrões IPC-7351 e Class 3 para aplicações críticas.</p>
+                <p class="destaque" id="pcb-destaque">COMPATÍVEL COM PADRÕES IPC-7351 E CLASS 3 PARA APLICAÇÕES CRÍTICAS.</p>
             </div>
 
             <!-- Card Programação C/C++ -->
             <div class="card">
-                <h3><i class="fas fa-microchip"></i> <span id="firmware-title">Programação em C/C++</span></h3>
-                <p id="programacao-texto">Plataformas suportadas:</p>
+                <h3><i class="fas fa-microchip"></i> <span id="firmware-title">PROGRAMAÇÃO EM C/C++</span></h3>
+                <p id="programacao-texto">PLATAFORMAS SUPORTADAS:</p>
                 
                 <div class="plataformas-lista">
                     <div class="plataforma">
-                        <strong>Microchip</strong> (PIC, AVR, dsPIC)
+                        <strong>MICROCHIP</strong> (PIC, AVR, DSPIC)
                     </div>
                     <div class="plataforma">
-                        <strong>STMicroelectronics</strong> (STM32, STM8)
+                        <strong>STMICROELECTRONICS</strong> (STM32, STM8)
                     </div>
                     <div class="plataforma">
-                        <strong>Espressif</strong> (ESP32, ESP8266)
+                        <strong>ESPRESSIF</strong> (ESP32, ESP8266)
                     </div>
                     <div class="plataforma">
-                        <strong>Holtek</strong> (HT66, HT32)
+                        <strong>HOLTEK</strong> (HT66, HT32)
                     </div>
                 </div>
 
-                <p id="firmware-descricao">Desenvolvimento de:</p>
-                <ul class="servicos-pcb">
-                    <li><strong id="firmware-item1">Firmware bare-metal</strong></li>
-                    <li><strong id="firmware-item2">Drivers para periféricos</strong></li>
-                    <li><strong id="firmware-item3">Protocolos de comunicação</strong> (UART, I2C, SPI, USB)</li>
-                    <li><strong id="firmware-item4">Bootloaders customizados</strong></li>
-                </ul>
-            </div>
-
-            <!-- Card IoT -->
-            <div class="card">
-                <h3><i class="fas fa-wifi"></i> <span id="iot-title">Sistemas IoT</span></h3>
-                <p id="iot-descricao">Soluções completas para Internet das Coisas:</p>
-                
-                <div class="dispositivos-iot">
-                    <div class="dispositivo">
-                        <i class="fas fa-wifi wifi"></i>
-                        <span>Wi-Fi</span>
-                    </div>
-                    <div class="dispositivo">
-                        <i class="fas fa-network-wired ethernet"></i>
-                        <span>Ethernet</span>
-                    </div>
-                    <div class="dispositivo">
-                        <i class="fas fa-sim-card lte"></i>
-                        <span>LTE</span>
-                    </div>
-                </div>
-
-                <p class="destaque" id="iot-destaque">
-                    <i class="fas fa-server"></i>
-                    <strong>Servidor IoT:</strong> Armazenamento em nuvem e análise de dados.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Informações Institucionais -->
-    <section class="institucional">
-        <h2 id="institucional-title">Nossa Expertise</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <h3 id="info1-title">Projetos Elétricos</h3>
-                <p id="info1-texto">Dimensionamento de circuitos, quadros de distribuição e projetos conforme NR-10.</p>
-            </div>
-            <div class="info-card">
-                <h3 id="info2-title">Certificações</h3>
-                <p id="info2-texto">Produtos desenvolvidos atendem às normas ABNT, IEC e FCC.</p>
-            </div>
-            <div class="info-card">
-                <h3 id="info3-title">Suporte Técnico</h3>
-                <p id="info3-texto">Assistência especializada desde o protótipo até a produção em escala.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formulário de Contato -->
-    <section class="servicos" id="contato">
-        <h2 class="section-title" id="contato-title">Entre em Contato</h2>
-        <p class="section-subtitle" id="contato-subtitle">Solicite um orçamento ou tire suas dúvidas</p>
-        
-        <form id="contato-form" onsubmit="return validateForm()">
-            <input type="text" id="nome" placeholder="Nome completo" required>
-            <input type="email" id="email" placeholder="E-mail" required>
-            <input type="tel" id="telefone" placeholder="Telefone">
-            <textarea id="mensagem" placeholder="Descreva seu projeto ou necessidade" required></textarea>
-            <button type="submit" class="btn" id="form-cta">Enviar Mensagem</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="email-geral">contato@engeletron.com.br</div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        </div>
-        <p id="copyright">© 2019 ENGEletron - Todos os direitos reservados</p>
-    </footer>
-
-    <!-- Botão WhatsApp -->
-    <a href="https://wa.me/5541999042212" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script>
-        // Validação do Formulário
-        function validateForm() {
-            const email = document.getElementById('email').value;
-            if (!email.includes('@')) {
-                alert('Por favor, insira um e-mail válido.');
-                return false;
-            }
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            return true;
-        }
-
-        // Troca de Idioma (exemplo básico)
-        function changeLanguage(lang) {
-            // Implementação real requer arquivos de tradução
-            console.log(`Idioma alterado para: ${lang}`);
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.textContent.includes(lang === 'pt' ? 'PT' : 'EN'));
-            });
-        }
-    </script>
-</body>
-</html>
+                <p id="programacao-descricao">SERVIÇOS
