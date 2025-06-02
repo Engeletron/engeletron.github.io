@@ -180,6 +180,26 @@
         .social-links a { color: white; font-size: 20px; transition: color 0.3s; }
         .social-links a:hover { color: #4CAF50; }
         
+        /* === NOVOS ESTILOS ADITIVOS (WhatsApp) === */
+        a[href^="https://wa.me"] {
+            color: inherit;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+        
+        a[href^="https://wa.me"] .fa-whatsapp {
+            color: #25D366;
+            font-size: 1.1em;
+        }
+        
+        a[href^="https://wa.me"]:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; gap: 15px; padding: 15px; }
             .header-right { width: 100%; justify-content: center; }
@@ -188,6 +208,12 @@
             .grid { grid-template-columns: 1fr; }
             #contato-form { padding: 20px; }
             .membro .formacao { flex-direction: column; gap: 5px; }
+            
+            /* Ajuste mobile para WhatsApp */
+            a[href^="https://wa.me"] {
+                min-width: 44px;
+                min-height: 44px;
+            }
         }
     </style>
 </head>
@@ -706,14 +732,8 @@
                 });
             }
             
-            const phones = document.querySelectorAll('[id*="phone"], #header-phone span');
-            phones.forEach(phone => {
-                if (lang === 'en') {
-                    phone.textContent = phone.textContent.replace(/\(\d{2}\) (\d{5})-(\d{4})/, '+55 $1 $2-$3');
-                } else {
-                    phone.textContent = phone.textContent.replace(/\+55 (\d{2}) (\d{5})-(\d{4})/, '($1) $2-$3');
-                }
-            });
+            // Atualiza os links do WhatsApp
+            transformarTelefonesEmWhatsApp();
         }
 
         document.getElementById('contato-form').addEventListener('submit', function(e) {
@@ -729,8 +749,57 @@
             this.reset();
         });
 
+        // ====== FUNÇÃO PARA TRANSFORMAR TELEFONES EM LINKS WHATSAPP ======
+        function transformarTelefonesEmWhatsApp() {
+            const formatarNumero = (numero) => {
+                return numero.replace(/\D/g, ''); // Remove tudo que não é dígito
+            };
+
+            // Atualiza o telefone no header
+            const phoneElement = document.querySelector('#header-phone span');
+            if (phoneElement) {
+                const numeroOriginal = phoneElement.textContent.trim();
+                const numeroFormatado = formatarNumero(numeroOriginal);
+                
+                phoneElement.innerHTML = `
+                    <a href="https://wa.me/55${numeroFormatado}" 
+                       style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                       <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                       ${numeroOriginal}
+                    </a>
+                `;
+            }
+
+            // Atualiza telefones na seção de equipe
+            document.querySelectorAll('.contato p:has(strong)').forEach(el => {
+                if (el.textContent.includes('TELEFONE') || el.textContent.includes('PHONE')) {
+                    const parts = el.innerHTML.split(':');
+                    const numeroOriginal = parts[1] ? parts[1].trim() : '';
+                    const numeroFormatado = formatarNumero(numeroOriginal);
+                    
+                    if (numeroFormatado) {
+                        el.innerHTML = `
+                            <strong>${parts[0]}:</strong>
+                            <a href="https://wa.me/55${numeroFormatado}" 
+                               style="color: #4CAF50; text-decoration: none; display: inline-flex; align-items: center; gap: 3px;">
+                               <i class="fab fa-whatsapp"></i>
+                               ${numeroOriginal}
+                            </a>
+                        `;
+                    }
+                }
+            });
+        }
+
+        // Executa quando o DOM estiver pronto
         document.addEventListener('DOMContentLoaded', function() {
             changeLanguage('pt');
+            transformarTelefonesEmWhatsApp();
+            
+            // Atualiza também quando mudar o idioma
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', transformarTelefonesEmWhatsApp);
+            });
         });
     </script>
 </body>
