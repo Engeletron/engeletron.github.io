@@ -39,10 +39,10 @@
             gap: 15px;
         }
         .logo-container {
-            background: #fff;
-            padding: 10px 18px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 250px;
         }
         .logo-img {
             height: 60px;
@@ -80,11 +80,16 @@
             color: white;
         }
         .contact-pill:hover { background: rgba(255,255,255,0.2); }
-        .language-selector { display: flex; background: rgba(255,255,255,0.1); border-radius: 8px; padding: 4px; }
+        .language-selector {
+            background: #f3f6fa;
+            border-radius: 8px;
+            padding: 4px;
+        }
+        
         .lang-btn {
             background: none;
             border: none;
-            color: white;
+            color: var(--cor-primaria);
             padding: 6px 12px;
             border-radius: 6px;
             cursor: pointer;
@@ -94,7 +99,11 @@
             align-items: center;
             gap: 5px;
         }
-        .lang-btn.active { background: var(--cor-secundaria); color: var(--cor-primaria); }
+        
+        .lang-btn.active {
+            background: var(--cor-secundaria);
+            color: var(--cor-primaria);
+        }
         .flag-icon {
             width: 16px;
             height: 12px;
