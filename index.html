@@ -193,15 +193,29 @@
     </style>
 <link href="assets/icon_engeletron.svg" rel="icon" type="image/svg+xml"/><link href="assets/icon_engeletron.png" rel="icon" sizes="32x32" type="image/png"/></head>
 <body>
-<header>
-<div class="logo-container"><img alt="Logomarca Engeletron" src="assets/logomark_engeletron.svg" style="height:56px;width:auto;display:block;margin-bottom:2px;"/></div>
-<div class="header-right">
-<div class="contact-pill" id="header-phone">
-<i class="fas fa-phone-alt"></i>
-<span>(41) 99904-2212</span>
-</div>
-<div class="language-selector"><button class="lang-btn active" onclick="changeLanguage('pt')"><img alt="Brasil" class="lang-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/br.svg"/>PT</button><button class="lang-btn" onclick="changeLanguage('en')"><img alt="USA" class="lang-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/us.svg"/>EN</button></div>
-</div>
+<header style="background: linear-gradient(90deg, #1743c0 90%, #277df1 100%); display: flex; justify-content: space-between; align-items: center; padding: 26px 5vw 26px 3vw; min-height: 110px;">
+  <div style="display: flex; align-items: center; gap: 34px;">
+    <img src="assets/logomark_engeletron.svg" alt="Logomarca Engeletron" style="height: 96px; width: auto; display: block; background: none; box-shadow: 0 2px 10px rgba(23,67,192,0.07);" />
+    <div style="display: flex; flex-direction: column;">
+      <span style="font-size: 2.3rem; font-weight: bold; letter-spacing: 1.5px; color: #fff;">ENGELETRON</span>
+      <span style="font-size: 1.10rem; color: #5ce1e6; font-weight: 500; letter-spacing: 2px;">SOLUÇÕES EM ENGENHARIA</span>
+      <span style="font-size: 0.99rem; color: #e7f4fd; opacity: .89; font-weight: 300; margin-top: 3px;">EXCELÊNCIA EM PROJETOS ELÉTRICOS E ELETRÔNICOS</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="contact-pill" id="header-phone">
+      <i class="fab fa-whatsapp"></i>
+      <a href="https://wa.me/5541999042212" target="_blank">(41) 99904-2212</a>
+    </div>
+    <div class="contact-pill">
+      <i class="fa fa-envelope"></i>
+      <a href="mailto:contato@engeletron.com.br">contato@engeletron.com.br</a>
+    </div>
+    <div class="language-selector">
+      <button class="lang-btn active" onclick="changeLanguage('pt')"><img class="lang-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/br.svg" alt="Brasil" />PT</button>
+      <button class="lang-btn" onclick="changeLanguage('en')"><img class="lang-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/us.svg" alt="USA" />EN</button>
+    </div>
+  </div>
 </header>
 <section class="hero" id="hero">
 <h1 id="hero-title">SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA</h1>
