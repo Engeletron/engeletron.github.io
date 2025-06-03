@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
 <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
+        body { font-family: 'roboto', sans-serif; line-height: 1.6; color: #333; }
         
         header {
             display: flex;
@@ -86,7 +86,7 @@
         }
         .btn:hover { 
             background: #277df1; 
-            transform: translateY(-2px);
+            transform: translatey(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
@@ -117,7 +117,7 @@
             transition: 0.3s; 
             text-align: left;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .card:hover { transform: translatey(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
         .card h3 { margin: 20px 0; font-size: 1.3rem; color: #1743c0; display: flex; align-items: center; gap: 10px; }
         .card h3 i { font-size: 1.5rem; color: #5ce1e6; }
         .card p { color: #666; margin-bottom: 15px; }
@@ -138,19 +138,19 @@
 
         .dispositivos-iot { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin: 25px 0; }
         .dispositivo { background: #f8f9fa; border-radius: 8px; padding: 15px; text-align: center; transition: transform 0.3s; }
-        .dispositivo:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .dispositivo:hover { transform: translatey(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .dispositivo i { font-size: 32px; margin-bottom: 10px; display: block; }
-        .wifi { color: #4285F4; }
-        .ethernet { color: #FBBC05; }
-        .lte { color: #34A853; }
-        .mcu { color: #EA4335; }
-        .tools { color: #FF9800; }
+        .wifi { color: #4285f4; }
+        .ethernet { color: #fbbc05; }
+        .lte { color: #34a853; }
+        .mcu { color: #ea4335; }
+        .tools { color: #ff9800; }
         
         .institucional { padding: 50px 5%; background: #1743c0; color: white; }
         .institucional h2 { text-align: center; margin-bottom: 30px; font-size: 1.8rem; color: white; }
         .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .info-card { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; transition: transform 0.3s; }
-        .info-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.15); }
+        .info-card:hover { transform: translatey(-5px); background: rgba(255,255,255,0.15); }
         .info-card h3 { margin-bottom: 15px; color: #5ce1e6; }
         
         #contato-form { background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: 0 auto; }
@@ -160,7 +160,7 @@
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'roboto', sans-serif;
         }
         #contato-form textarea { height: 150px; resize: vertical; }
         
@@ -168,7 +168,7 @@
         .equipe h2 { text-align: center; color: #1743c0; margin-bottom: 40px; }
         .membros { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .membro { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; transition: transform 0.3s; }
-        .membro:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .membro:hover { transform: translatey(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .membro h3 { color: #1743c0; margin-bottom: 5px; }
         .membro .cargo { color: #5ce1e6; font-weight: bold; margin-bottom: 15px; }
         .membro .formacao { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 8px 0 15px 0; color: #555; font-size: 0.95em; }
@@ -191,10 +191,10 @@
             .membro .formacao { flex-direction: column; gap: 5px; }
         }
     </style>
-<link href="assets/icon_engeletron.svg" rel="icon" type="image/svg+xml"/></head>
+<link href="assets/icon_engeletron.svg" rel="icon" type="image/svg+xml"/><link href="assets/icon_engeletron_512.png" rel="icon" sizes="512x512" type="image/png"/></head>
 <body>
 <header>
-<div class="logo-container"><img alt="Logomarca Engeletron" src="assets/logomark_engeletron.svg" style="height: auto; width: 120px; margin-bottom: 5px;"/>
+<div class="logo-container"><img alt="Logomarca Engeletron" src="assets/logomark_engeletron.svg" style="width: 140px; height: auto; background: rgba(255,255,255,0.9); padding: 6px 12px; border-radius: 10px; margin-bottom: 5px;"/>
 <div class="logo-main">ENGELETRON</div>
 <div class="logo-subtitle" id="header-subtitle">SOLUÇÕES EM ENGENHARIA</div>
 <div class="logo-tagline" id="header-tagline">EXCELÊNCIA EM PROJETOS ELÉTRICOS E ELETRÔNICOS</div>
@@ -202,7 +202,7 @@
 <div class="header-right">
 <div class="contact-pill" id="header-phone">
 <i class="fas fa-phone-alt"></i>
-<span>(41) 99904-2212</span>
+<a href="https://wa.me/5541999042212" target="_blank">(41) 99904-2212</a>
 </div>
 <div class="language-selector">
 <button class="lang-btn active" onclick="changeLanguage('pt')">🇧🇷 PT</button>
@@ -378,8 +378,8 @@
 <span>CREA-PR Nº PR-87205/D</span>
 </div>
 <div class="contato">
-<p><strong id="email-label1">EMAIL:</strong> DANILO.ENGELETRON@GMAIL.COM</p>
-<p><strong id="phone-label1">TELEFONE:</strong> (41) 99904-2212</p>
+<p><strong id="email-label1">EMAIL:</strong> danilo.engeletron@gmail.com</p>
+<p><strong id="phone-label1">TELEFONE:</strong> <a href="https://wa.me/5541999042212" target="_blank">(41) 99904-2212</a></p>
 </div>
 </div>
 <div class="membro">
@@ -392,8 +392,8 @@
 <span>CREA-PR Nº PR-87210/D</span>
 </div>
 <div class="contato">
-<p><strong id="email-label2">EMAIL:</strong> GISELY.ENGELETRON@GMAIL.COM</p>
-<p><strong id="phone-label2">TELEFONE:</strong> (41) 99904-2302</p>
+<p><strong id="email-label2">EMAIL:</strong> gisely.engeletron@gmail.com</p>
+<p><strong id="phone-label2">TELEFONE:</strong> <a href="https://wa.me/5541999042302" target="_blank">(41) 99904-2302</a></p>
 </div>
 </div>
 </div>
@@ -425,7 +425,7 @@
 </div>
 </section>
 <footer>
-<div class="email-geral" id="footer-email">ENGELETRONLTDA@GMAIL.COM</div>
+<div class="email-geral" id="footer-email">engeletronltda@gmail.com</div>
 <div class="social-links">
 <a aria-label="LinkedIn" href="#"><i class="fab fa-linkedin-in"></i></a>
 <a aria-label="WhatsApp" href="#"><i class="fab fa-whatsapp"></i></a>
@@ -435,271 +435,271 @@
 <script>
         const translations = {
             "pt": {
-                // Header
-                "header-subtitle": "SOLUÇÕES EM ENGENHARIA",
-                "header-tagline": "PREVISÃO EM PROJETOS ELÉTRICOS E ELETRÔNICOS",
+                // header
+                "header-subtitle": "soluções em engenharia",
+                "header-tagline": "previsão em projetos elétricos e eletrônicos",
                 "header-phone": "(41) 99904-2212",
                 
-                // Hero
-                "hero-title": "SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA",
-                "hero-subtitle": "PROJETOS PERSONALIZADOS EM PCB, DESENVOLVIMENTO DE FIRMWARE, SOLUÇÕES IOT E INTEGRAÇÃO EM NUVEM",
-                "hero-cta": "SOLICITE UM ORÇAMENTO",
+                // hero
+                "hero-title": "soluções inovadoras em engenharia elétrica e eletrônica",
+                "hero-subtitle": "projetos personalizados em pcb, desenvolvimento de firmware, soluções iot e integração em nuvem",
+                "hero-cta": "solicite um orçamento",
                 
-                // Serviços
-                "servicos-title": "NOSSOS SERVIÇOS DE ENGENHARIA",
-                "servicos-subtitle": "SOLUÇÕES COMPLETAS ADAPTADAS ÀS SUAS NECESSIDADES TÉCNICAS",
+                // serviços
+                "servicos-title": "nossos serviços de engenharia",
+                "servicos-subtitle": "soluções completas adaptadas às suas necessidades técnicas",
                 
-                // PCB Card
-                "pcb-card-title": "PROJETOS DE PCB",
-                "pcb-descricao": "DESENVOLVIMENTO COMPLETO COM:",
-                "pcb-item1": "DIAGRAMA ESQUEMÁTICO",
-                "pcb-detail1": "(ANÁLISE DE REQUISITOS, SELEÇÃO DE COMPONENTES, SIMULAÇÕES)",
-                "pcb-item2": "DESENHO DA PLACA",
-                "pcb-detail2": "(LAYOUT MULTILAYER, ALTA FREQUÊNCIA, IMPEDÂNCIA CONTROLADA)",
-                "pcb-item3": "GERBERS INDUSTRIAIS",
-                "pcb-detail3": "(PADRÃO IPC-2581, CAMADAS DE SOLDA, MÁSCARA, SILK SCREEN)",
-                "pcb-item4": "LISTA DE MATERIAIS (BOM)",
-                "pcb-detail4": "(COTAÇÕES COM FORNECEDORES, ALTERNATIVAS DE COMPONENTES)",
-                "pcb-item5": "DOCUMENTAÇÃO TÉCNICA",
-                "pcb-detail5": "(MANUAIS DE MONTAGEM, TESTES DE VALIDAÇÃO)",
-                "pcb-destaque": "COMPATÍVEL COM PADRÕES IPC-7351 E CLASS 3 PARA APLICAÇÕES CRÍTICAS.",
+                // pcb card
+                "pcb-card-title": "projetos de pcb",
+                "pcb-descricao": "desenvolvimento completo com:",
+                "pcb-item1": "diagrama esquemático",
+                "pcb-detail1": "(análise de requisitos, seleção de componentes, simulações)",
+                "pcb-item2": "desenho da placa",
+                "pcb-detail2": "(layout multilayer, alta frequência, impedância controlada)",
+                "pcb-item3": "gerbers industriais",
+                "pcb-detail3": "(padrão ipc-2581, camadas de solda, máscara, silk screen)",
+                "pcb-item4": "lista de materiais (bom)",
+                "pcb-detail4": "(cotações com fornecedores, alternativas de componentes)",
+                "pcb-item5": "documentação técnica",
+                "pcb-detail5": "(manuais de montagem, testes de validação)",
+                "pcb-destaque": "compatível com padrões ipc-7351 e class 3 para aplicações críticas.",
                 
-                // Firmware Card
-                "firmware-title": "PROGRAMAÇÃO EM C/C++",
-                "programacao-texto": "PLATAFORMAS SUPORTADAS:",
-                "programacao-destaque": "OTIMIZAÇÃO PARA BAIXO CONSUMO, RTOS E COMUNICAÇÃO SEM FIO (WI-FI/BLE).",
+                // firmware card
+                "firmware-title": "programação em c/c++",
+                "programacao-texto": "plataformas suportadas:",
+                "programacao-destaque": "otimização para baixo consumo, rtos e comunicação sem fio (wi-fi/ble).",
                 
-                // IoT Devices Card
-                "iot-devices-title": "DISPOSITIVOS IOT",
-                "iot-devices-desc": "SOLUÇÕES COMPLETAS PARA DISPOSITIVOS CONECTADOS:",
-                "iot-mcu": "WIRELESS MCU",
-                "iot-mcu-desc": "ESP32, ESP8266",
-                "iot-wifi": "WI-FI",
-                "iot-wifi-desc": "CONECTIVIDADE 2.4/5GHZ",
-                "iot-ethernet": "ETHERNET",
-                "iot-ethernet-desc": "CONEXÃO CABEADA",
-                "iot-lte": "4G LTE",
-                "iot-lte-desc": "CONECTIVIDADE MÓVEL",
-                "iot-devices-destaque": "DESENVOLVIMENTO DE HARDWARE E FIRMWARE PARA SOLUÇÕES IOT COMPLETAS.",
+                // iot devices card
+                "iot-devices-title": "dispositivos iot",
+                "iot-devices-desc": "soluções completas para dispositivos conectados:",
+                "iot-mcu": "wireless mcu",
+                "iot-mcu-desc": "esp32, esp8266",
+                "iot-wifi": "wi-fi",
+                "iot-wifi-desc": "conectividade 2.4/5ghz",
+                "iot-ethernet": "ethernet",
+                "iot-ethernet-desc": "conexão cabeada",
+                "iot-lte": "4g lte",
+                "iot-lte-desc": "conectividade móvel",
+                "iot-devices-destaque": "desenvolvimento de hardware e firmware para soluções iot completas.",
                 
-                // Test Rigs Card
-                "test-rigs-title": "GIGAS DE TESTES PARA PRODUÇÃO",
-                "test-rigs-desc": "SOLUÇÕES COMPLETAS PARA VALIDAÇÃO DE PRODUTOS:",
-                "test-item1": "GABINETE INDUSTRIAL PERSONALIZADO",
-                "test-detail1": "(PROJETO MECÂNICO ROBUSTO COM INTERFACES DE OPERAÇÃO)",
-                "test-item2": "CAMA DE PINOS (BED-OF-NAILS)",
-                "test-detail2": "(MATRIZ DE CONTATOS PARA TESTE ELÉTRICO COMPLETO)",
-                "test-item3": "INTERFACE PARA PROGRAMADOR STANDALONE",
-                "test-detail3": "(COMPATÍVEL COM PIC, AVR, STM32 E OUTROS)",
-                "test-item4": "CIRCUITO DE TESTE AUTOMATIZADO",
-                "test-detail4": "(VERIFICAÇÃO DE CONTINUIDADE, TENSÕES E FUNCIONAMENTO)",
-                "test-item5": "DISPLAY DE RESULTADOS",
-                "test-detail5": "(INTERFACE VISUAL COM LEDS/TFT PARA STATUS DE TESTE)",
-                "test-rigs-destaque": "SISTEMAS COMPLETOS COM RELATÓRIO DE TESTE AUTOMATIZADO (PDF/EXCEL)",
+                // test rigs card
+                "test-rigs-title": "gigas de testes para produção",
+                "test-rigs-desc": "soluções completas para validação de produtos:",
+                "test-item1": "gabinete industrial personalizado",
+                "test-detail1": "(projeto mecânico robusto com interfaces de operação)",
+                "test-item2": "cama de pinos (bed-of-nails)",
+                "test-detail2": "(matriz de contatos para teste elétrico completo)",
+                "test-item3": "interface para programador standalone",
+                "test-detail3": "(compatível com pic, avr, stm32 e outros)",
+                "test-item4": "circuito de teste automatizado",
+                "test-detail4": "(verificação de continuidade, tensões e funcionamento)",
+                "test-item5": "display de resultados",
+                "test-detail5": "(interface visual com leds/tft para status de teste)",
+                "test-rigs-destaque": "sistemas completos com relatório de teste automatizado (pdf/excel)",
                 
-                // App Card
-                "app-title": "APLICATIVO IOT",
-                "app-desc": "SOLUÇÕES MOBILE PARA DISPOSITIVOS IOT:",
-                "android-label": "ANDROID",
-                "ios-label": "IOS",
-                "app-destaque": "CONTROLE REMOTO, MONITORAMENTO EM TEMPO REAL E DASHBOARDS PERSONALIZADOS.",
+                // app card
+                "app-title": "aplicativo iot",
+                "app-desc": "soluções mobile para dispositivos iot:",
+                "android-label": "android",
+                "ios-label": "ios",
+                "app-destaque": "controle remoto, monitoramento em tempo real e dashboards personalizados.",
                 
-                // Cloud Card
-                "cloud-title": "SERVIDOR IOT",
-                "cloud-desc": "SOLUÇÕES COMPLETAS PARA INTERNET DAS COISAS:",
-                "cloud-service1": "REALTIME DATABASE",
-                "cloud-service2": "AUTHENTICATION",
-                "cloud-service3": "CLOUD FUNCTIONS",
-                "cloud-service4": "CLOUD MESSAGING",
-                "cloud-destaque": "SINCRONIZAÇÃO EM TEMPO REAL E PROCESSAMENTO DE DADOS DE DISPOSITIVOS CONECTADOS.",
+                // cloud card
+                "cloud-title": "servidor iot",
+                "cloud-desc": "soluções completas para internet das coisas:",
+                "cloud-service1": "realtime database",
+                "cloud-service2": "authentication",
+                "cloud-service3": "cloud functions",
+                "cloud-service4": "cloud messaging",
+                "cloud-destaque": "sincronização em tempo real e processamento de dados de dispositivos conectados.",
                 
-                // Equipe
-                "equipe-title": "NOSSA EQUIPE TÉCNICA",
-                "equipe-subtitle": "CONHEÇA NOSSOS PROFISSIONAIS QUALIFICADOS",
-                "team-member1": "DANILO MIGUEL NEVES ADUR",
-                "team-title1": "ENGENHEIRO ELETRICISTA | DIRETOR",
-                "formacao-text1": "FORMADO PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ",
-                "team-crea1": "CREA-PR Nº PR-87205/D",
-                "email-label1": "EMAIL:",
-                "phone-label1": "TELEFONE:",
-                "team-member2": "GISELY BELLOZUPKO ADUR",
-                "team-title2": "ENGENHEIRA ELETRICISTA | DIRETORA",
-                "formacao-text2": "FORMADA PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ",
-                "team-crea2": "CREA-PR Nº PR-87210/D",
-                "email-label2": "EMAIL:",
-                "phone-label2": "TELEFONE:",
+                // equipe
+                "equipe-title": "nossa equipe técnica",
+                "equipe-subtitle": "conheça nossos profissionais qualificados",
+                "team-member1": "danilo miguel neves adur",
+                "team-title1": "engenheiro eletricista | diretor",
+                "formacao-text1": "formado pela universidade tecnológica federal do paraná",
+                "team-crea1": "crea-pr nº pr-87205/d",
+                "email-label1": "email:",
+                "phone-label1": "telefone:",
+                "team-member2": "gisely bellozupko adur",
+                "team-title2": "engenheira eletricista | diretora",
+                "formacao-text2": "formada pela universidade tecnológica federal do paraná",
+                "team-crea2": "crea-pr nº pr-87210/d",
+                "email-label2": "email:",
+                "phone-label2": "telefone:",
                 
-                // Contato
-                "contato-title": "ENTRE EM CONTATO",
-                "orcamento-title": "SOLICITE UM ORÇAMENTO",
-                "institucional-title": "INFORMAÇÕES INSTITUCIONAIS",
-                "legal-value": "ENGELETRON ENGENHARIA ELÉTRICA LTDA",
-                "cnpj": "CNPJ: 37.912.040/0001-10",
-                "address-title": "ENDEREÇO",
-                "address-value": "AVENIDA BEIRA MAR, 9009, SALA 1, BALNEÁRIO ALBATROZ",
-                "city": "MATINHOS - PR",
-                "zip": "CEP: 83260-000",
-                "form-submit": "ENVIAR SOLICITAÇÃO",
+                // contato
+                "contato-title": "entre em contato",
+                "orcamento-title": "solicite um orçamento",
+                "institucional-title": "informações institucionais",
+                "legal-value": "engeletron engenharia elétrica ltda",
+                "cnpj": "cnpj: 37.912.040/0001-10",
+                "address-title": "endereço",
+                "address-value": "avenida beira mar, 9009, sala 1, balneário albatroz",
+                "city": "matinhos - pr",
+                "zip": "cep: 83260-000",
+                "form-submit": "enviar solicitação",
                 
-                // Footer
-                "footer-email": "ENGELETRONLTDA@GMAIL.COM",
-                "footer-text": "© 2019 ENGELETRON ENGENHARIA ELÉTRICA LTDA. TODOS OS DIREITOS RESERVADOS."
+                // footer
+                "footer-email": "engeletronltda@gmail.com",
+                "footer-text": "© 2019 engeletron engenharia elétrica ltda. todos os direitos reservados."
             },
             "en": {
-                // Header
-                "header-subtitle": "ENGINEERING SOLUTIONS",
-                "header-tagline": "EXCELLENCE IN ELECTRICAL AND ELECTRONIC ENGINEERING",
+                // header
+                "header-subtitle": "engineering solutions",
+                "header-tagline": "excellence in electrical and electronic engineering",
                 "header-phone": "+55 41 99904-2212",
                 
-                // Hero
-                "hero-title": "INNOVATIVE ELECTRICAL & ELECTRONIC ENGINEERING SOLUTIONS",
-                "hero-subtitle": "CUSTOM PCB DESIGN, FIRMWARE DEVELOPMENT, IOT SOLUTIONS AND CLOUD INTEGRATION",
-                "hero-cta": "REQUEST A QUOTE",
+                // hero
+                "hero-title": "innovative electrical & electronic engineering solutions",
+                "hero-subtitle": "custom pcb design, firmware development, iot solutions and cloud integration",
+                "hero-cta": "request a quote",
                 
-                // Serviços
-                "servicos-title": "OUR ENGINEERING SERVICES",
-                "servicos-subtitle": "COMPLETE SOLUTIONS TAILORED TO YOUR TECHNICAL NEEDS",
+                // serviços
+                "servicos-title": "our engineering services",
+                "servicos-subtitle": "complete solutions tailored to your technical needs",
                 
-                // PCB Card
-                "pcb-card-title": "PCB DESIGN",
-                "pcb-descricao": "COMPLETE DEVELOPMENT WITH:",
-                "pcb-item1": "SCHEMATIC DIAGRAM",
-                "pcb-detail1": "(REQUIREMENTS ANALYSIS, COMPONENT SELECTION, SIMULATIONS)",
-                "pcb-item2": "BOARD LAYOUT",
-                "pcb-detail2": "(MULTILAYER LAYOUT, HIGH FREQUENCY, CONTROLLED IMPEDANCE)",
-                "pcb-item3": "INDUSTRIAL GERBERS",
-                "pcb-detail3": "(IPC-2581 STANDARD, SOLDER MASK, SILK SCREEN)",
-                "pcb-item4": "BILL OF MATERIALS (BOM)",
-                "pcb-detail4": "(SUPPLIER QUOTES, COMPONENT ALTERNATIVES)",
-                "pcb-item5": "TECHNICAL DOCUMENTATION",
-                "pcb-detail5": "(ASSEMBLY MANUALS, VALIDATION TESTS)",
-                "pcb-destaque": "COMPATIBLE WITH IPC-7351 AND CLASS 3 STANDARDS FOR CRITICAL APPLICATIONS.",
+                // pcb card
+                "pcb-card-title": "pcb design",
+                "pcb-descricao": "complete development with:",
+                "pcb-item1": "schematic diagram",
+                "pcb-detail1": "(requirements analysis, component selection, simulations)",
+                "pcb-item2": "board layout",
+                "pcb-detail2": "(multilayer layout, high frequency, controlled impedance)",
+                "pcb-item3": "industrial gerbers",
+                "pcb-detail3": "(ipc-2581 standard, solder mask, silk screen)",
+                "pcb-item4": "bill of materials (bom)",
+                "pcb-detail4": "(supplier quotes, component alternatives)",
+                "pcb-item5": "technical documentation",
+                "pcb-detail5": "(assembly manuals, validation tests)",
+                "pcb-destaque": "compatible with ipc-7351 and class 3 standards for critical applications.",
                 
-                // Firmware Card
-                "firmware-title": "C/C++ PROGRAMMING",
-                "programacao-texto": "SUPPORTED PLATFORMS:",
-                "programacao-destaque": "OPTIMIZATION FOR LOW POWER, RTOS AND WIRELESS COMMUNICATION (WI-FI/BLE).",
+                // firmware card
+                "firmware-title": "c/c++ programming",
+                "programacao-texto": "supported platforms:",
+                "programacao-destaque": "optimization for low power, rtos and wireless communication (wi-fi/ble).",
                 
-                // IoT Devices Card
-                "iot-devices-title": "IOT DEVICES",
-                "iot-devices-desc": "COMPLETE SOLUTIONS FOR CONNECTED DEVICES:",
-                "iot-mcu": "WIRELESS MCU",
-                "iot-mcu-desc": "ESP32, ESP8266",
-                "iot-wifi": "WI-FI",
-                "iot-wifi-desc": "2.4/5GHZ CONNECTIVITY",
-                "iot-ethernet": "ETHERNET",
-                "iot-ethernet-desc": "WIRED CONNECTION",
-                "iot-lte": "4G LTE",
-                "iot-lte-desc": "MOBILE CONNECTIVITY",
-                "iot-devices-destaque": "HARDWARE AND FIRMWARE DEVELOPMENT FOR COMPLETE IOT SOLUTIONS.",
+                // iot devices card
+                "iot-devices-title": "iot devices",
+                "iot-devices-desc": "complete solutions for connected devices:",
+                "iot-mcu": "wireless mcu",
+                "iot-mcu-desc": "esp32, esp8266",
+                "iot-wifi": "wi-fi",
+                "iot-wifi-desc": "2.4/5ghz connectivity",
+                "iot-ethernet": "ethernet",
+                "iot-ethernet-desc": "wired connection",
+                "iot-lte": "4g lte",
+                "iot-lte-desc": "mobile connectivity",
+                "iot-devices-destaque": "hardware and firmware development for complete iot solutions.",
                 
-                // Test Rigs Card
-                "test-rigs-title": "TEST RIGS FOR PRODUCTION",
-                "test-rigs-desc": "COMPLETE SOLUTIONS FOR PRODUCT VALIDATION:",
-                "test-item1": "CUSTOM INDUSTRIAL ENCLOSURE",
-                "test-detail1": "(ROBUST MECHANICAL DESIGN WITH OPERATION INTERFACES)",
-                "test-item2": "BED-OF-NAILS TEST FIXTURE",
-                "test-detail2": "(CONTACT MATRIX FOR COMPLETE ELECTRICAL TESTING)",
-                "test-item3": "STANDALONE PROGRAMMER INTERFACE",
-                "test-detail3": "(COMPATIBLE WITH PIC, AVR, STM32 AND OTHERS)",
-                "test-item4": "AUTOMATED TEST CIRCUIT",
-                "test-detail4": "(CONTINUITY, VOLTAGE AND FUNCTIONALITY VERIFICATION)",
-                "test-item5": "RESULTS DISPLAY",
-                "test-detail5": "(VISUAL INTERFACE WITH LEDS/TFT FOR TEST STATUS)",
-                "test-rigs-destaque": "COMPLETE SYSTEMS WITH AUTOMATED TEST REPORT (PDF/EXCEL)",
+                // test rigs card
+                "test-rigs-title": "test rigs for production",
+                "test-rigs-desc": "complete solutions for product validation:",
+                "test-item1": "custom industrial enclosure",
+                "test-detail1": "(robust mechanical design with operation interfaces)",
+                "test-item2": "bed-of-nails test fixture",
+                "test-detail2": "(contact matrix for complete electrical testing)",
+                "test-item3": "standalone programmer interface",
+                "test-detail3": "(compatible with pic, avr, stm32 and others)",
+                "test-item4": "automated test circuit",
+                "test-detail4": "(continuity, voltage and functionality verification)",
+                "test-item5": "results display",
+                "test-detail5": "(visual interface with leds/tft for test status)",
+                "test-rigs-destaque": "complete systems with automated test report (pdf/excel)",
                 
-                // App Card
-                "app-title": "IOT APPLICATION",
-                "app-desc": "MOBILE SOLUTIONS FOR IOT DEVICES:",
-                "android-label": "ANDROID",
-                "ios-label": "IOS",
-                "app-destaque": "REMOTE CONTROL, REAL-TIME MONITORING AND CUSTOM DASHBOARDS.",
+                // app card
+                "app-title": "iot application",
+                "app-desc": "mobile solutions for iot devices:",
+                "android-label": "android",
+                "ios-label": "ios",
+                "app-destaque": "remote control, real-time monitoring and custom dashboards.",
                 
-                // Cloud Card
-                "cloud-title": "IOT SERVER",
-                "cloud-desc": "COMPLETE SOLUTIONS FOR INTERNET OF THINGS:",
-                "cloud-service1": "REALTIME DATABASE",
-                "cloud-service2": "AUTHENTICATION",
-                "cloud-service3": "CLOUD FUNCTIONS",
-                "cloud-service4": "CLOUD MESSAGING",
-                "cloud-destaque": "REAL-TIME SYNCHRONIZATION AND PROCESSING OF CONNECTED DEVICE DATA.",
+                // cloud card
+                "cloud-title": "iot server",
+                "cloud-desc": "complete solutions for internet of things:",
+                "cloud-service1": "realtime database",
+                "cloud-service2": "authentication",
+                "cloud-service3": "cloud functions",
+                "cloud-service4": "cloud messaging",
+                "cloud-destaque": "real-time synchronization and processing of connected device data.",
                 
-                // Equipe
-                "equipe-title": "OUR TECHNICAL TEAM",
-                "equipe-subtitle": "MEET OUR QUALIFIED PROFESSIONALS",
-                "team-member1": "DANILO MIGUEL NEVES ADUR",
-                "team-title1": "ELECTRICAL ENGINEER | DIRECTOR",
-                "formacao-text1": "GRADUATED FROM FEDERAL TECHNOLOGICAL UNIVERSITY OF PARANÁ",
-                "team-crea1": "CREA-PR NO. PR-87205/D",
-                "email-label1": "EMAIL:",
-                "phone-label1": "PHONE:",
-                "team-member2": "GISELY BELLOZUPKO ADUR",
-                "team-title2": "ELECTRICAL ENGINEER | DIRECTOR",
-                "formacao-text2": "GRADUATED FROM FEDERAL TECHNOLOGICAL UNIVERSITY OF PARANÁ",
-                "team-crea2": "CREA-PR NO. PR-87210/D",
-                "email-label2": "EMAIL:",
-                "phone-label2": "PHONE:",
+                // equipe
+                "equipe-title": "our technical team",
+                "equipe-subtitle": "meet our qualified professionals",
+                "team-member1": "danilo miguel neves adur",
+                "team-title1": "electrical engineer | director",
+                "formacao-text1": "graduated from federal technological university of paraná",
+                "team-crea1": "crea-pr no. pr-87205/d",
+                "email-label1": "email:",
+                "phone-label1": "phone:",
+                "team-member2": "gisely bellozupko adur",
+                "team-title2": "electrical engineer | director",
+                "formacao-text2": "graduated from federal technological university of paraná",
+                "team-crea2": "crea-pr no. pr-87210/d",
+                "email-label2": "email:",
+                "phone-label2": "phone:",
                 
-                // Contato
-                "contato-title": "CONTACT US",
-                "orcamento-title": "REQUEST A QUOTE",
-                "institucional-title": "INSTITUTIONAL INFORMATION",
-                "legal-value": "ENGELETRON ELECTRICAL ENGINEERING LTD",
-                "cnpj": "CNPJ: 37.912.040/0001-10",
-                "address-title": "ADDRESS",
-                "address-value": "AVENIDA BEIRA MAR, 9009, ROOM 1, BALNEÁRIO ALBATROZ",
-                "city": "MATINHOS - PR",
-                "zip": "ZIP: 83260-000",
-                "form-submit": "SUBMIT REQUEST",
+                // contato
+                "contato-title": "contact us",
+                "orcamento-title": "request a quote",
+                "institucional-title": "institutional information",
+                "legal-value": "engeletron electrical engineering ltd",
+                "cnpj": "cnpj: 37.912.040/0001-10",
+                "address-title": "address",
+                "address-value": "avenida beira mar, 9009, room 1, balneário albatroz",
+                "city": "matinhos - pr",
+                "zip": "zip: 83260-000",
+                "form-submit": "submit request",
                 
-                // Footer
-                "footer-email": "ENGELETRONLTDA@GMAIL.COM",
-                "footer-text": "© 2019 ENGELETRON ELECTRICAL ENGINEERING LTD. ALL RIGHTS RESERVED."
+                // footer
+                "footer-email": "engeletronltda@gmail.com",
+                "footer-text": "© 2019 engeletron electrical engineering ltd. all rights reserved."
             }
         };
 
-        function changeLanguage(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
+        function changelanguage(lang) {
+            document.queryselectorall('.lang-btn').foreach(btn => {
+                btn.classlist.remove('active');
             });
-            event.target.classList.add('active');
+            event.target.classlist.add('active');
             
-            for (const [key, value] of Object.entries(translations[lang])) {
-                const elements = document.querySelectorAll(`[id="${key}"]`);
-                elements.forEach(el => {
-                    if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+            for (const [key, value] of object.entries(translations[lang])) {
+                const elements = document.queryselectorall(`[id="${key}"]`);
+                elements.foreach(el => {
+                    if (el.tagname === 'input' && el.hasattribute('placeholder')) {
                         el.placeholder = value;
                     } else {
-                        el.innerText = value;
+                        el.innertext = value;
                     }
                 });
             }
             
-            const phones = document.querySelectorAll('[id*="phone"], #header-phone span');
-            phones.forEach(phone => {
+            const phones = document.queryselectorall('[id*="phone"], #header-phone span');
+            phones.foreach(phone => {
                 if (lang === 'en') {
-                    phone.textContent = phone.textContent.replace(/\(\d{2}\) (\d{5})-(\d{4})/, '+55 $1 $2-$3');
+                    phone.textcontent = phone.textcontent.replace(/\(\d{2}\) (\d{5})-(\d{4})/, '+55 $1 $2-$3');
                 } else {
-                    phone.textContent = phone.textContent.replace(/\+55 (\d{2}) (\d{5})-(\d{4})/, '($1) $2-$3');
+                    phone.textcontent = phone.textcontent.replace(/\+55 (\d{2}) (\d{5})-(\d{4})/, '($1) $2-$3');
                 }
             });
         }
 
-        document.getElementById('contato-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        document.getelementbyid('contato-form').addeventlistener('submit', function(e) {
+            e.preventdefault();
             
-            const nome = document.getElementById('nome').value;
-            const currentLang = document.querySelector('.lang-btn.active').textContent.includes('PT') ? 'pt' : 'en';
-            const message = currentLang === 'pt' 
-                ? `OBRIGADO, ${nome.toUpperCase()}! SUA SOLICITAÇÃO FOI ENVIADA COM SUCESSO. ENTRAREMOS EM CONTATO EM BREVE.`
-                : `THANK YOU, ${nome.toUpperCase()}! YOUR REQUEST HAS BEEN SENT SUCCESSFULLY. WE WILL CONTACT YOU SOON.`;
+            const nome = document.getelementbyid('nome').value;
+            const currentlang = document.queryselector('.lang-btn.active').textcontent.includes('pt') ? 'pt' : 'en';
+            const message = currentlang === 'pt' 
+                ? `obrigado, ${nome.touppercase()}! sua solicitação foi enviada com sucesso. entraremos em contato em breve.`
+                : `thank you, ${nome.touppercase()}! your request has been sent successfully. we will contact you soon.`;
             
             alert(message);
             this.reset();
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            changeLanguage('pt');
+        document.addeventlistener('domcontentloaded', function() {
+            changelanguage('pt');
         });
     </script>
 </body>
