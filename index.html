@@ -1,15 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENGELETRON | ENGENHARIA ELÉTRICA E PROJETOS ELETRÔNICOS</title>
-    <meta name="description" content="SOLUÇÕES PROFISSIONAIS EM PROJETOS ELÉTRICOS, DESENVOLVIMENTO DE PCB, FIRMWARE E SISTEMAS IOT">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/icon_engeletron.svg" type="image/svg+xml">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ENGELETRON | ENGENHARIA ELÉTRICA E PROJETOS ELETRÔNICOS</title>
+<meta content="SOLUÇÕES PROFISSIONAIS EM PROJETOS ELÉTRICOS, DESENVOLVIMENTO DE PCB, FIRMWARE E SISTEMAS IOT" name="description"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
         
@@ -26,39 +26,10 @@
             z-index: 100;
         }
         
-        .logo-container { 
-            display: flex; 
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-img {
-            height: 50px;
-            width: auto;
-            filter: brightness(0) invert(1);
-        }
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        .logo-main { 
-            font-size: 28px; 
-            font-weight: 800; 
-            letter-spacing: 1px; 
-            color: white; 
-        }
-        .logo-subtitle { 
-            font-size: 14px; 
-            font-weight: 500; 
-            letter-spacing: 2px; 
-            margin-top: 2px; 
-            color: #5ce1e6; 
-        }
-        .logo-tagline { 
-            font-size: 12px; 
-            font-weight: 300; 
-            margin-top: 4px; 
-            opacity: 0.9; 
-        }
+        .logo-container { display: flex; flex-direction: column; }
+        .logo-main { font-size: 28px; font-weight: 800; letter-spacing: 1px; color: white; }
+        .logo-subtitle { font-size: 14px; font-weight: 500; letter-spacing: 2px; margin-top: 2px; color: #5ce1e6; }
+        .logo-tagline { font-size: 12px; font-weight: 300; margin-top: 4px; opacity: 0.9; }
         .header-right { display: flex; align-items: center; gap: 20px; }
         .contact-pill {
             background: rgba(255,255,255,0.1);
@@ -69,8 +40,6 @@
             gap: 8px;
             font-size: 14px;
             transition: all 0.3s ease;
-            text-decoration: none;
-            color: white;
         }
         .contact-pill:hover { background: rgba(255,255,255,0.2); }
         .language-selector { display: flex; background: rgba(255,255,255,0.1); border-radius: 8px; padding: 4px; }
@@ -83,44 +52,11 @@
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
-        .lang-btn.active { background: #5ce1e6; color: #1743c0; }
-        .flag-icon {
-            width: 16px;
-            height: 12px;
-            object-fit: cover;
-            border-radius: 2px;
-        }
-        
-        /* Botão flutuante do WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-        }
+        .lang-btn.active { background: #5ce1e6; color: white; }
         
         .hero { 
-            background: linear-gradient(rgba(23,67,192,0.8), rgba(39,125,241,0.8)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                       url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover; 
             height: 70vh; 
             display: flex; 
@@ -135,7 +71,7 @@
         .hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 30px; }
         .btn { 
             background: #5ce1e6; 
-            color: #1743c0; 
+            color: white; 
             padding: 12px 30px; 
             border: none; 
             border-radius: 5px; 
@@ -149,7 +85,7 @@
             display: inline-block;
         }
         .btn:hover { 
-            background: #4ccfd4; 
+            background: #277df1; 
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
@@ -180,15 +116,14 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
             transition: 0.3s; 
             text-align: left;
-            border-top: 4px solid #277df1;
         }
         .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
         .card h3 { margin: 20px 0; font-size: 1.3rem; color: #1743c0; display: flex; align-items: center; gap: 10px; }
-        .card h3 i { font-size: 1.5rem; color: #277df1; }
+        .card h3 i { font-size: 1.5rem; color: #5ce1e6; }
         .card p { color: #666; margin-bottom: 15px; }
         
         .ferramentas-lista { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
-        .tag-ferramenta { background: #e3f2fd; color: #1743c0; padding: 6px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
+        .tag-ferramenta { background: #d8faff; color: #1743c0; padding: 6px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
         
         .servicos-pcb { margin: 15px 0; list-style-type: none; }
         .servicos-pcb li { margin-bottom: 12px; padding-left: 30px; position: relative; line-height: 1.5; }
@@ -235,7 +170,7 @@
         .membro { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; transition: transform 0.3s; }
         .membro:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .membro h3 { color: #1743c0; margin-bottom: 5px; }
-        .membro .cargo { color: #277df1; font-weight: bold; margin-bottom: 15px; }
+        .membro .cargo { color: #5ce1e6; font-weight: bold; margin-bottom: 15px; }
         .membro .formacao { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 8px 0 15px 0; color: #555; font-size: 0.95em; }
         .membro .contato { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
         .crea { font-size: 14px; color: #666; margin-top: 5px; }
@@ -254,303 +189,243 @@
             .grid { grid-template-columns: 1fr; }
             #contato-form { padding: 20px; }
             .membro .formacao { flex-direction: column; gap: 5px; }
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 24px;
-            }
         }
     </style>
-</head>
+<link href="assets/icon_engeletron.svg" rel="icon" type="image/svg+xml"/><link href="assets/icon_engeletron.png" rel="icon" sizes="32x32" type="image/png"/></head>
 <body>
-    <!-- Botão flutuante do WhatsApp -->
-    <a href="https://wa.me/5541999042212" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <header>
-       <div class="logo-container">
-            <img src="assets/logomark_engeletron.png" alt="ENGELETRON Logo" class="logo-img">
-            <div class="logo-text">
-                <div class="logo-main">ENGELETRON</div>
-                <div class="logo-subtitle" id="header-subtitle">SOLUÇÕES EM ENGENHARIA</div>
-                <div class="logo-tagline" id="header-tagline">EXCELÊNCIA EM PROJETOS ELÉTRICOS E ELETRÔNICOS</div>
-            </div>
-        </div>
-        
-        <div class="header-right">
-            <a href="https://wa.me/5541999042212" class="contact-pill" id="header-phone">
-                <i class="fab fa-whatsapp"></i>
-                <span>(41) 99904-2212</span>
-            </a>
-            <div class="language-selector">
-                <button class="lang-btn active" onclick="changeLanguage('pt')">
-                    <img src="https://flagcdn.com/w20/br.png" alt="Português" class="flag-icon">
-                    PT
-                </button>
-                <button class="lang-btn" onclick="changeLanguage('en')">
-                    <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
-                    EN
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero" id="hero">
-        <h1 id="hero-title">SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA</h1>
-        <p id="hero-subtitle">PROJETOS PERSONALIZADOS EM PCB, DESENVOLVIMENTO DE FIRMWARE, SOLUÇÕES IOT E INTEGRAÇÃO EM NUVEM</p>
-        <a href="#contato" class="btn" id="hero-cta">SOLICITE UM ORÇAMENTO</a>
-    </section>
-
-    <section class="servicos">
-        <h2 class="section-title" id="servicos-title">NOSSOS SERVIÇOS DE ENGENHARIA</h2>
-        <p class="section-subtitle" id="servicos-subtitle">SOLUÇÕES COMPLETAS ADAPTADAS ÀS SUAS NECESSIDADES TÉCNICAS</p>
-        
-        <div class="grid">
-            <div class="card">
-                <h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">PROJETOS DE PCB</span></h3>
-                <p id="pcb-descricao">DESENVOLVIMENTO COMPLETO COM:</p>
-                
-                <div class="ferramentas-lista">
-                    <span class="tag-ferramenta">AUTODESK EAGLE</span>
-                    <span class="tag-ferramenta">KICAD</span>
-                </div>
-
-                <ul class="servicos-pcb">
-                    <li><strong id="pcb-item1">DIAGRAMA ESQUEMÁTICO</strong> 
-                        <span class="detalhe" id="pcb-detail1">(ANÁLISE DE REQUISITOS, SELEÇÃO DE COMPONENTES, SIMULAÇÕES)</span>
-                    </li>
-                    <li><strong id="pcb-item2">DESENHO DA PLACA</strong> 
-                        <span class="detalhe" id="pcb-detail2">(LAYOUT MULTILAYER, ALTA FREQUÊNCIA, IMPEDÂNCIA CONTROLADA)</span>
-                    </li>
-                    <li><strong id="pcb-item3">GERBERS INDUSTRIAIS</strong> 
-                        <span class="detalhe" id="pcb-detail3">(PADRÃO IPC-2581, CAMADAS DE SOLDA, MÁSCARA, SILK SCREEN)</span>
-                    </li>
-                    <li><strong id="pcb-item4">LISTA DE MATERIAIS (BOM)</strong> 
-                        <span class="detalhe" id="pcb-detail4">(COTAÇÕES COM FORNECEDORES, ALTERNATIVAS DE COMPONENTES)</span>
-                    </li>
-                    <li><strong id="pcb-item5">DOCUMENTAÇÃO TÉCNICA</strong> 
-                        <span class="detalhe" id="pcb-detail5">(MANUAIS DE MONTAGEM, TESTES DE VALIDAÇÃO)</span>
-                    </li>
-                </ul>
-                <p class="destaque" id="pcb-destaque">COMPATÍVEL COM PADRÕES IPC-7351 E CLASS 3 PARA APLICAÇÕES CRÍTICAS.</p>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-microchip"></i> <span id="firmware-title">PROGRAMAÇÃO EM C/C++</span></h3>
-                <p id="programacao-texto">PLATAFORMAS SUPORTADAS:</p>
-                
-                <div class="plataformas-lista">
-                    <div class="plataforma">
-                        <strong>MICROCHIP</strong> (PIC, AVR, DSPIC)
+<header>
+<div class="logo-container"><img alt="Logomarca Engeletron" src="assets/logomark_engeletron.svg" style="height:56px;width:auto;display:block;margin-bottom:2px;"/></div>
+<div class="header-right">
+<div class="contact-pill" id="header-phone">
+<i class="fas fa-phone-alt"></i>
+<span>(41) 99904-2212</span>
+</div>
+<div class="language-selector"><button class="lang-btn active" onclick="changeLanguage('pt')"><img alt="Brasil" class="lang-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/br.svg"/>PT</button><button class="lang-btn" onclick="changeLanguage('en')"><img alt="USA" class="lang-flag" src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/us.svg"/>EN</button></div>
+</div>
+</header>
+<section class="hero" id="hero">
+<h1 id="hero-title">SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA</h1>
+<p id="hero-subtitle">PROJETOS PERSONALIZADOS EM PCB, DESENVOLVIMENTO DE FIRMWARE, SOLUÇÕES IOT E INTEGRAÇÃO EM NUVEM</p>
+<a class="btn" href="#contato" id="hero-cta">SOLICITE UM ORÇAMENTO</a>
+</section>
+<section class="servicos">
+<h2 class="section-title" id="servicos-title">NOSSOS SERVIÇOS DE ENGENHARIA</h2>
+<p class="section-subtitle" id="servicos-subtitle">SOLUÇÕES COMPLETAS ADAPTADAS ÀS SUAS NECESSIDADES TÉCNICAS</p>
+<div class="grid">
+<div class="card">
+<h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">PROJETOS DE PCB</span></h3>
+<p id="pcb-descricao">DESENVOLVIMENTO COMPLETO COM:</p>
+<div class="ferramentas-lista">
+<span class="tag-ferramenta">AUTODESK EAGLE</span>
+<span class="tag-ferramenta">KICAD</span>
+</div>
+<ul class="servicos-pcb">
+<li><strong id="pcb-item1">DIAGRAMA ESQUEMÁTICO</strong>
+<span class="detalhe" id="pcb-detail1">(ANÁLISE DE REQUISITOS, SELEÇÃO DE COMPONENTES, SIMULAÇÕES)</span>
+</li>
+<li><strong id="pcb-item2">DESENHO DA PLACA</strong>
+<span class="detalhe" id="pcb-detail2">(LAYOUT MULTILAYER, ALTA FREQUÊNCIA, IMPEDÂNCIA CONTROLADA)</span>
+</li>
+<li><strong id="pcb-item3">GERBERS INDUSTRIAIS</strong>
+<span class="detalhe" id="pcb-detail3">(PADRÃO IPC-2581, CAMADAS DE SOLDA, MÁSCARA, SILK SCREEN)</span>
+</li>
+<li><strong id="pcb-item4">LISTA DE MATERIAIS (BOM)</strong>
+<span class="detalhe" id="pcb-detail4">(COTAÇÕES COM FORNECEDORES, ALTERNATIVAS DE COMPONENTES)</span>
+</li>
+<li><strong id="pcb-item5">DOCUMENTAÇÃO TÉCNICA</strong>
+<span class="detalhe" id="pcb-detail5">(MANUAIS DE MONTAGEM, TESTES DE VALIDAÇÃO)</span>
+</li>
+</ul>
+<p class="destaque" id="pcb-destaque">COMPATÍVEL COM PADRÕES IPC-7351 E CLASS 3 PARA APLICAÇÕES CRÍTICAS.</p>
+</div>
+<div class="card">
+<h3><i class="fas fa-microchip"></i> <span id="firmware-title">PROGRAMAÇÃO EM C/C++</span></h3>
+<p id="programacao-texto">PLATAFORMAS SUPORTADAS:</p>
+<div class="plataformas-lista">
+<div class="plataforma">
+<strong>MICROCHIP</strong> (PIC, AVR, DSPIC)
                     </div>
-                    <div class="plataforma">
-                        <strong>STMICROELECTRONICS</strong> (STM32, STM8)
+<div class="plataforma">
+<strong>STMICROELECTRONICS</strong> (STM32, STM8)
                     </div>
-                    <div class="plataforma">
-                        <strong>ESPRESSIF</strong> (ESP32, ESP8266)
+<div class="plataforma">
+<strong>ESPRESSIF</strong> (ESP32, ESP8266)
                     </div>
-                    <div class="plataforma">
-                        <strong>HOLTEK</strong> (HT66, HT32)
+<div class="plataforma">
+<strong>HOLTEK</strong> (HT66, HT32)
                     </div>
-                    <div class="plataforma">
-                        <strong>NXP</strong> (ARM CORTEX-M)
+<div class="plataforma">
+<strong>NXP</strong> (ARM CORTEX-M)
                     </div>
-                </div>
-                <p class="destaque" id="programacao-destaque">OTIMIZAÇÃO PARA BAIXO CONSUMO, RTOS E COMUNICAÇÃO SEM FIO (WI-FI/BLE).</p>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-wifi"></i> <span id="iot-devices-title">DISPOSITIVOS IOT</span></h3>
-                <p id="iot-devices-desc">SOLUÇÕES COMPLETAS PARA DISPOSITIVOS CONECTADOS:</p>
-                
-                <div class="dispositivos-iot">
-                    <div class="dispositivo">
-                        <i class="fas fa-microchip mcu"></i>
-                        <strong id="iot-mcu">WIRELESS MCU</strong>
-                        <p id="iot-mcu-desc">ESP32, ESP8266</p>
-                    </div>
-                    <div class="dispositivo">
-                        <i class="fas fa-wifi wifi"></i>
-                        <strong id="iot-wifi">WI-FI</strong>
-                        <p id="iot-wifi-desc">CONECTIVIDADE 2.4/5GHZ</p>
-                    </div>
-                    <div class="dispositivo">
-                        <i class="fas fa-network-wired ethernet"></i>
-                        <strong id="iot-ethernet">ETHERNET</strong>
-                        <p id="iot-ethernet-desc">CONEXÃO CABEADA</p>
-                    </div>
-                    <div class="dispositivo">
-                        <i class="fas fa-sim-card lte"></i>
-                        <strong id="iot-lte">4G LTE</strong>
-                        <p id="iot-lte-desc">CONECTIVIDADE MÓVEL</p>
-                    </div>
-                </div>
-                <p class="destaque" id="iot-devices-destaque">DESENVOLVIMENTO DE HARDWARE E FIRMWARE PARA SOLUÇÕES IOT COMPLETAS.</p>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-tools tools"></i> <span id="test-rigs-title">GIGAS DE TESTES PARA PRODUÇÃO</span></h3>
-                <p id="test-rigs-desc">SOLUÇÕES COMPLETAS PARA VALIDAÇÃO DE PRODUTOS:</p>
-                
-                <ul class="servicos-pcb">
-                    <li>
-                        <strong id="test-item1">GABINETE INDUSTRIAL PERSONALIZADO</strong>
-                        <span class="detalhe" id="test-detail1">(PROJETO MECÂNICO ROBUSTO COM INTERFACES DE OPERAÇÃO)</span>
-                    </li>
-                    <li>
-                        <strong id="test-item2">CAMA DE PINOS (BED-OF-NAILS)</strong>
-                        <span class="detalhe" id="test-detail2">(MATRIZ DE CONTATOS PARA TESTE ELÉTRICO COMPLETO)</span>
-                    </li>
-                    <li>
-                        <strong id="test-item3">INTERFACE PARA PROGRAMADOR STANDALONE</strong>
-                        <span class="detalhe" id="test-detail3">(COMPATÍVEL COM PIC, AVR, STM32 E OUTROS)</span>
-                    </li>
-                    <li>
-                        <strong id="test-item4">CIRCUITO DE TESTE AUTOMATIZADO</strong>
-                        <span class="detalhe" id="test-detail4">(VERIFICAÇÃO DE CONTINUIDADE, TENSÕES E FUNCIONAMENTO)</span>
-                    </li>
-                    <li>
-                        <strong id="test-item5">DISPLAY DE RESULTADOS</strong>
-                        <span class="detalhe" id="test-detail5">(INTERFACE VISUAL COM LEDS/TFT PARA STATUS DE TESTE)</span>
-                    </li>
-                </ul>
-                
-                <div class="destaque" id="test-rigs-destaque">
-                    <i class="fas fa-check-circle"></i>
-                    <span>SISTEMAS COMPLETOS COM RELATÓRIO DE TESTE AUTOMATIZADO (PDF/EXCEL)</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-mobile-alt"></i> <span id="app-title">APLICATIVO IOT</span></h3>
-                
-                <p id="app-desc">SOLUÇÕES MOBILE PARA DISPOSITIVOS IOT:</p>
-                
-                <div class="plataformas-flutter">
-                    <div class="plataforma-flutter">
-                        <i class="material-icons android">android</i>
-                        <span id="android-label">ANDROID</span>
-                    </div>
-                    <div class="plataforma-flutter">
-                        <i class="fab fa-apple apple-icon"></i>
-                        <span id="ios-label">IOS</span>
-                    </div>
-                </div>
-                
-                <p class="destaque" id="app-destaque">CONTROLE REMOTO, MONITORAMENTO EM TEMPO REAL E DASHBOARDS PERSONALIZADOS.</p>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-cloud"></i> <span id="cloud-title">SERVIDOR IOT</span></h3>
-                
-                <p id="cloud-desc">SOLUÇÕES COMPLETAS PARA INTERNET DAS COISAS:</p>
-                
-                <div class="servicos-firebase">
-                    <div class="servico-firebase">
-                        <i class="material-icons">storage</i>
-                        <span id="cloud-service1">REALTIME DATABASE</span>
-                    </div>
-                    <div class="servico-firebase">
-                        <i class="material-icons">fingerprint</i>
-                        <span id="cloud-service2">AUTHENTICATION</span>
-                    </div>
-                    <div class="servico-firebase">
-                        <i class="material-icons">functions</i>
-                        <span id="cloud-service3">CLOUD FUNCTIONS</span>
-                    </div>
-                    <div class="servico-firebase">
-                        <i class="material-icons">notifications</i>
-                        <span id="cloud-service4">CLOUD MESSAGING</span>
-                    </div>
-                </div>
-                
-                <p class="destaque" id="cloud-destaque">SINCRONIZAÇÃO EM TEMPO REAL E PROCESSAMENTO DE DADOS DE DISPOSITIVOS CONECTADOS.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="equipe" id="equipe">
-        <h2 class="section-title" id="equipe-title">NOSSA EQUIPE TÉCNICA</h2>
-        <p class="section-subtitle" id="equipe-subtitle">CONHEÇA NOSSOS PROFISSIONAIS QUALIFICADOS</p>
-        
-        <div class="membros">
-            <div class="membro">
-                <h3 id="team-member1">DANILO MIGUEL NEVES ADUR</h3>
-                <div class="cargo" id="team-title1">ENGENHEIRO ELETRICISTA | DIRETOR</div>
-                
-                <div class="formacao">
-                    <span id="formacao-text1">FORMADO PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ</span>
-                </div>
-                
-                <div class="crea" id="team-crea1">
-                    <span>CREA-PR Nº PR-87205/D</span>
-                </div>
-                <div class="contato">
-                    <p><strong id="email-label1">EMAIL:</strong> danilo.engeletron@gmail.com</p>
-                    <p><strong id="phone-label1">TELEFONE:</strong> <a href="https://wa.me/5541999042212"><i class="fab fa-whatsapp"></i> (41) 99904-2212</a></p>
-                </div>
-            </div>
-            <div class="membro">
-                <h3 id="team-member2">GISELY BELLOZUPKO ADUR</h3>
-                <div class="cargo" id="team-title2">ENGENHEIRA ELETRICISTA | DIRETORA</div>
-                
-                <div class="formacao">
-                    <span id="formacao-text2">FORMADA PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ</span>
-                </div>
-                
-                <div class="crea" id="team-crea2">
-                    <span>CREA-PR Nº PR-87210/D</span>
-                </div>
-                <div class="contato">
-                    <p><strong id="email-label2">EMAIL:</strong> gisely.engeletron@gmail.com</p>
-                    <p><strong id="phone-label2">TELEFONE:</strong> <a href="https://wa.me/5541999042302"><i class="fab fa-whatsapp"></i> (41) 99904-2302</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="institucional">
-        <h2 id="contato-title">ENTRE EM CONTATO</h2>
-        <div class="info-grid">
-            <div class="info-card">
-                <h3 id="orcamento-title">SOLICITE UM ORÇAMENTO</h3>
-                <form id="contato-form">
-                    <input type="text" id="nome" placeholder="SEU NOME" required>
-                    <input type="email" id="email" placeholder="SEU EMAIL" required>
-                    <input type="tel" id="telefone" placeholder="SEU TELEFONE">
-                    <textarea id="mensagem" placeholder="DESCREVA SEU PROJETO" required></textarea>
-                    <button type="submit" class="btn" id="form-submit">ENVIAR SOLICITAÇÃO</button>
-                </form>
-            </div>
-            <div class="info-card">
-                <h3 id="institucional-title">INFORMAÇÕES INSTITUCIONAIS</h3>
-                <p id="legal-value">ENGELETRON ENGENHARIA ELÉTRICA LTDA</p>
-                <p id="cnpj">CNPJ: 37.912.040/0001-10</p>
-            </div>
-            <div class="info-card">
-                <h3 id="address-title">ENDEREÇO</h3>
-                <p id="address-value">AVENIDA BEIRA MAR, 9009, SALA 1, BALNEÁRIO ALBATROZ</p>
-                <p id="city">MATINHOS - PR</p>
-                <p id="zip">CEP: 83260-000</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="email-geral" id="footer-email">engeletronltda@gmail.com</div>
-        
-        <div class="social-links">
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/5541999042212" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        
-        <p id="footer-text">© 2019 ENGELETRON ENGENHARIA ELÉTRICA LTDA. TODOS OS DIREITOS RESERVADOS.</p>
-    </footer>
-
-    <script>
+</div>
+<p class="destaque" id="programacao-destaque">OTIMIZAÇÃO PARA BAIXO CONSUMO, RTOS E COMUNICAÇÃO SEM FIO (WI-FI/BLE).</p>
+</div>
+<div class="card">
+<h3><i class="fas fa-wifi"></i> <span id="iot-devices-title">DISPOSITIVOS IOT</span></h3>
+<p id="iot-devices-desc">SOLUÇÕES COMPLETAS PARA DISPOSITIVOS CONECTADOS:</p>
+<div class="dispositivos-iot">
+<div class="dispositivo">
+<i class="fas fa-microchip mcu"></i>
+<strong id="iot-mcu">WIRELESS MCU</strong>
+<p id="iot-mcu-desc">ESP32, ESP8266</p>
+</div>
+<div class="dispositivo">
+<i class="fas fa-wifi wifi"></i>
+<strong id="iot-wifi">WI-FI</strong>
+<p id="iot-wifi-desc">CONECTIVIDADE 2.4/5GHZ</p>
+</div>
+<div class="dispositivo">
+<i class="fas fa-network-wired ethernet"></i>
+<strong id="iot-ethernet">ETHERNET</strong>
+<p id="iot-ethernet-desc">CONEXÃO CABEADA</p>
+</div>
+<div class="dispositivo">
+<i class="fas fa-sim-card lte"></i>
+<strong id="iot-lte">4G LTE</strong>
+<p id="iot-lte-desc">CONECTIVIDADE MÓVEL</p>
+</div>
+</div>
+<p class="destaque" id="iot-devices-destaque">DESENVOLVIMENTO DE HARDWARE E FIRMWARE PARA SOLUÇÕES IOT COMPLETAS.</p>
+</div>
+<div class="card">
+<h3><i class="fas fa-tools tools"></i> <span id="test-rigs-title">GIGAS DE TESTES PARA PRODUÇÃO</span></h3>
+<p id="test-rigs-desc">SOLUÇÕES COMPLETAS PARA VALIDAÇÃO DE PRODUTOS:</p>
+<ul class="servicos-pcb">
+<li>
+<strong id="test-item1">GABINETE INDUSTRIAL PERSONALIZADO</strong>
+<span class="detalhe" id="test-detail1">(PROJETO MECÂNICO ROBUSTO COM INTERFACES DE OPERAÇÃO)</span>
+</li>
+<li>
+<strong id="test-item2">CAMA DE PINOS (BED-OF-NAILS)</strong>
+<span class="detalhe" id="test-detail2">(MATRIZ DE CONTATOS PARA TESTE ELÉTRICO COMPLETO)</span>
+</li>
+<li>
+<strong id="test-item3">INTERFACE PARA PROGRAMADOR STANDALONE</strong>
+<span class="detalhe" id="test-detail3">(COMPATÍVEL COM PIC, AVR, STM32 E OUTROS)</span>
+</li>
+<li>
+<strong id="test-item4">CIRCUITO DE TESTE AUTOMATIZADO</strong>
+<span class="detalhe" id="test-detail4">(VERIFICAÇÃO DE CONTINUIDADE, TENSÕES E FUNCIONAMENTO)</span>
+</li>
+<li>
+<strong id="test-item5">DISPLAY DE RESULTADOS</strong>
+<span class="detalhe" id="test-detail5">(INTERFACE VISUAL COM LEDS/TFT PARA STATUS DE TESTE)</span>
+</li>
+</ul>
+<div class="destaque" id="test-rigs-destaque">
+<i class="fas fa-check-circle"></i>
+<span>SISTEMAS COMPLETOS COM RELATÓRIO DE TESTE AUTOMATIZADO (PDF/EXCEL)</span>
+</div>
+</div>
+<div class="card">
+<h3><i class="fas fa-mobile-alt"></i> <span id="app-title">APLICATIVO IOT</span></h3>
+<p id="app-desc">SOLUÇÕES MOBILE PARA DISPOSITIVOS IOT:</p>
+<div class="plataformas-flutter">
+<div class="plataforma-flutter">
+<i class="material-icons android">android</i>
+<span id="android-label">ANDROID</span>
+</div>
+<div class="plataforma-flutter">
+<i class="fab fa-apple apple-icon"></i>
+<span id="ios-label">IOS</span>
+</div>
+</div>
+<p class="destaque" id="app-destaque">CONTROLE REMOTO, MONITORAMENTO EM TEMPO REAL E DASHBOARDS PERSONALIZADOS.</p>
+</div>
+<div class="card">
+<h3><i class="fas fa-cloud"></i> <span id="cloud-title">SERVIDOR IOT</span></h3>
+<p id="cloud-desc">SOLUÇÕES COMPLETAS PARA INTERNET DAS COISAS:</p>
+<div class="servicos-firebase">
+<div class="servico-firebase">
+<i class="material-icons">storage</i>
+<span id="cloud-service1">REALTIME DATABASE</span>
+</div>
+<div class="servico-firebase">
+<i class="material-icons">fingerprint</i>
+<span id="cloud-service2">AUTHENTICATION</span>
+</div>
+<div class="servico-firebase">
+<i class="material-icons">functions</i>
+<span id="cloud-service3">CLOUD FUNCTIONS</span>
+</div>
+<div class="servico-firebase">
+<i class="material-icons">notifications</i>
+<span id="cloud-service4">CLOUD MESSAGING</span>
+</div>
+</div>
+<p class="destaque" id="cloud-destaque">SINCRONIZAÇÃO EM TEMPO REAL E PROCESSAMENTO DE DADOS DE DISPOSITIVOS CONECTADOS.</p>
+</div>
+</div>
+</section>
+<section class="equipe" id="equipe">
+<h2 class="section-title" id="equipe-title">NOSSA EQUIPE TÉCNICA</h2>
+<p class="section-subtitle" id="equipe-subtitle">CONHEÇA NOSSOS PROFISSIONAIS QUALIFICADOS</p>
+<div class="membros">
+<div class="membro">
+<h3 id="team-member1">DANILO MIGUEL NEVES ADUR</h3>
+<div class="cargo" id="team-title1">ENGENHEIRO ELETRICISTA | DIRETOR</div>
+<div class="formacao">
+<span id="formacao-text1">FORMADO PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ</span>
+</div>
+<div class="crea" id="team-crea1">
+<span>CREA-PR Nº PR-87205/D</span>
+</div>
+<div class="contato">
+<p><strong id="email-label1">EMAIL:</strong> DANILO.ENGELETRON@GMAIL.COM</p>
+<p><strong id="phone-label1">TELEFONE:</strong> (41) 99904-2212</p>
+</div>
+</div>
+<div class="membro">
+<h3 id="team-member2">GISELY BELLOZUPKO ADUR</h3>
+<div class="cargo" id="team-title2">ENGENHEIRA ELETRICISTA | DIRETORA</div>
+<div class="formacao">
+<span id="formacao-text2">FORMADA PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ</span>
+</div>
+<div class="crea" id="team-crea2">
+<span>CREA-PR Nº PR-87210/D</span>
+</div>
+<div class="contato">
+<p><strong id="email-label2">EMAIL:</strong> GISELY.ENGELETRON@GMAIL.COM</p>
+<p><strong id="phone-label2">TELEFONE:</strong> (41) 99904-2302</p>
+</div>
+</div>
+</div>
+</section>
+<section class="institucional" id="contato">
+<h2 id="contato-title">ENTRE EM CONTATO</h2>
+<div class="info-grid">
+<div class="info-card">
+<h3 id="orcamento-title">SOLICITE UM ORÇAMENTO</h3>
+<form id="contato-form">
+<input id="nome" placeholder="SEU NOME" required="" type="text"/>
+<input id="email" placeholder="SEU EMAIL" required="" type="email"/>
+<input id="telefone" placeholder="SEU TELEFONE" type="tel"/>
+<textarea id="mensagem" placeholder="DESCREVA SEU PROJETO" required=""></textarea>
+<button class="btn" id="form-submit" type="submit">ENVIAR SOLICITAÇÃO</button>
+</form>
+</div>
+<div class="info-card">
+<h3 id="institucional-title">INFORMAÇÕES INSTITUCIONAIS</h3>
+<p id="legal-value">ENGELETRON ENGENHARIA ELÉTRICA LTDA</p>
+<p id="cnpj">CNPJ: 37.912.040/0001-10</p>
+</div>
+<div class="info-card">
+<h3 id="address-title">ENDEREÇO</h3>
+<p id="address-value">AVENIDA BEIRA MAR, 9009, SALA 1, BALNEÁRIO ALBATROZ</p>
+<p id="city">MATINHOS - PR</p>
+<p id="zip">CEP: 83260-000</p>
+</div>
+</div>
+</section>
+<footer>
+<div class="email-geral" id="footer-email">ENGELETRONLTDA@GMAIL.COM</div>
+<div class="social-links">
+<a aria-label="LinkedIn" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a aria-label="WhatsApp" href="#"><i class="fab fa-whatsapp"></i></a>
+</div>
+<p id="footer-text">© 2019 ENGELETRON ENGENHARIA ELÉTRICA LTDA. TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+<script>
         const translations = {
             "pt": {
                 // Header
@@ -660,7 +535,7 @@
                 "form-submit": "ENVIAR SOLICITAÇÃO",
                 
                 // Footer
-                "footer-email": "engeletronltda@gmail.com",
+                "footer-email": "ENGELETRONLTDA@GMAIL.COM",
                 "footer-text": "© 2019 ENGELETRON ENGENHARIA ELÉTRICA LTDA. TODOS OS DIREITOS RESERVADOS."
             },
             "en": {
@@ -771,7 +646,7 @@
                 "form-submit": "SUBMIT REQUEST",
                 
                 // Footer
-                "footer-email": "engeletronltda@gmail.com",
+                "footer-email": "ENGELETRONLTDA@GMAIL.COM",
                 "footer-text": "© 2019 ENGELETRON ELECTRICAL ENGINEERING LTD. ALL RIGHTS RESERVED."
             }
         };
