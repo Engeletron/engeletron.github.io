@@ -28,8 +28,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 12px 5%;
-            background: linear-gradient(135deg, #1743c0 0%, #5ce1e6 100%);
-            color: white;
+            background: #fff; /* Fundo branco puro */
+            /* background: #f9fafb;  // Se quiser um branco acinzentado, use esta linha em vez da de cima */
+            color: var(--cor-primaria); /* Textos em azul da marca */
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -56,12 +57,14 @@
         .logo-subtitle { 
             font-size: 16px; 
             font-weight: 600; 
-            color: var(--cor-secundaria);
+            /*color: var(--cor-secundaria);*/
+            color: var(--cor-primaria);
             letter-spacing: 1.5px;
         }
         .logo-tagline { 
             font-size: 12px; 
             opacity: 0.9;
+            color: var(--cor-primaria);
         }
         .header-right { display: flex; align-items: center; gap: 15px; }
         .contact-pill {
