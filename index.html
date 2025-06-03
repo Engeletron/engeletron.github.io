@@ -180,6 +180,50 @@
         .social-links a { color: white; font-size: 20px; transition: color 0.3s; }
         .social-links a:hover { color: #4CAF50; }
         
+        /* === BOTÃO WHATSAPP FLUTUANTE === */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* === LINKS WHATSAPP === */
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #25D366 !important;
+            text-decoration: none !important;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-link:hover {
+            transform: translateY(-1px);
+        }
+
+        .whatsapp-link i {
+            font-size: 1.2em;
+        }
+
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; gap: 15px; padding: 15px; }
             .header-right { width: 100%; justify-content: center; }
@@ -188,6 +232,13 @@
             .grid { grid-template-columns: 1fr; }
             #contato-form { padding: 20px; }
             .membro .formacao { flex-direction: column; gap: 5px; }
+            
+            /* Ajuste mobile para WhatsApp */
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
         }
     </style>
 </head>
@@ -222,6 +273,7 @@
         <p class="section-subtitle" id="servicos-subtitle">SOLUÇÕES COMPLETAS ADAPTADAS ÀS SUAS NECESSIDADES TÉCNICAS</p>
         
         <div class="grid">
+            <!-- Card 1 - PCB -->
             <div class="card">
                 <h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">PROJETOS DE PCB</span></h3>
                 <p id="pcb-descricao">DESENVOLVIMENTO COMPLETO COM:</p>
@@ -251,6 +303,7 @@
                 <p class="destaque" id="pcb-destaque">COMPATÍVEL COM PADRÕES IPC-7351 E CLASS 3 PARA APLICAÇÕES CRÍTICAS.</p>
             </div>
 
+            <!-- Card 2 - Firmware -->
             <div class="card">
                 <h3><i class="fas fa-microchip"></i> <span id="firmware-title">PROGRAMAÇÃO EM C/C++</span></h3>
                 <p id="programacao-texto">PLATAFORMAS SUPORTADAS:</p>
@@ -275,6 +328,7 @@
                 <p class="destaque" id="programacao-destaque">OTIMIZAÇÃO PARA BAIXO CONSUMO, RTOS E COMUNICAÇÃO SEM FIO (WI-FI/BLE).</p>
             </div>
 
+            <!-- Card 3 - IoT -->
             <div class="card">
                 <h3><i class="fas fa-wifi"></i> <span id="iot-devices-title">DISPOSITIVOS IOT</span></h3>
                 <p id="iot-devices-desc">SOLUÇÕES COMPLETAS PARA DISPOSITIVOS CONECTADOS:</p>
@@ -304,6 +358,7 @@
                 <p class="destaque" id="iot-devices-destaque">DESENVOLVIMENTO DE HARDWARE E FIRMWARE PARA SOLUÇÕES IOT COMPLETAS.</p>
             </div>
 
+            <!-- Card 4 - Testes -->
             <div class="card">
                 <h3><i class="fas fa-tools tools"></i> <span id="test-rigs-title">GIGAS DE TESTES PARA PRODUÇÃO</span></h3>
                 <p id="test-rigs-desc">SOLUÇÕES COMPLETAS PARA VALIDAÇÃO DE PRODUTOS:</p>
@@ -337,6 +392,7 @@
                 </div>
             </div>
 
+            <!-- Card 5 - App -->
             <div class="card">
                 <h3><i class="fas fa-mobile-alt"></i> <span id="app-title">APLICATIVO IOT</span></h3>
                 
@@ -356,6 +412,7 @@
                 <p class="destaque" id="app-destaque">CONTROLE REMOTO, MONITORAMENTO EM TEMPO REAL E DASHBOARDS PERSONALIZADOS.</p>
             </div>
 
+            <!-- Card 6 - Cloud -->
             <div class="card">
                 <h3><i class="fas fa-cloud"></i> <span id="cloud-title">SERVIDOR IOT</span></h3>
                 
@@ -464,6 +521,7 @@
     </footer>
 
     <script>
+        // ====== TRADUÇÕES ======
         const translations = {
             "pt": {
                 // Header
@@ -689,6 +747,7 @@
             }
         };
 
+        // ====== FUNÇÃO PARA MUDAR IDIOMA ======
         function changeLanguage(lang) {
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
@@ -706,16 +765,11 @@
                 });
             }
             
-            const phones = document.querySelectorAll('[id*="phone"], #header-phone span');
-            phones.forEach(phone => {
-                if (lang === 'en') {
-                    phone.textContent = phone.textContent.replace(/\(\d{2}\) (\d{5})-(\d{4})/, '+55 $1 $2-$3');
-                } else {
-                    phone.textContent = phone.textContent.replace(/\+55 (\d{2}) (\d{5})-(\d{4})/, '($1) $2-$3');
-                }
-            });
+            // Atualiza os links do WhatsApp quando mudar o idioma
+            transformarTelefonesEmWhatsApp();
         }
 
+        // ====== FORMULÁRIO ======
         document.getElementById('contato-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -729,8 +783,60 @@
             this.reset();
         });
 
+        // ====== WHATSAPP ======
+        function criarBotaoWhatsApp() {
+            const floatBtn = document.createElement('a');
+            floatBtn.href = 'https://wa.me/5541999042212';
+            floatBtn.className = 'whatsapp-float';
+            floatBtn.target = '_blank';
+            floatBtn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+            floatBtn.title = 'Fale conosco no WhatsApp';
+            document.body.appendChild(floatBtn);
+        }
+
+        function transformarTelefonesEmWhatsApp() {
+            const telefones = [
+                { seletor: '#header-phone span', numero: '(41) 99904-2212' },
+                { seletor: '#phone-label1', numero: '(41) 99904-2212', parent: true },
+                { seletor: '#phone-label2', numero: '(41) 99904-2302', parent: true }
+            ];
+
+            telefones.forEach(tel => {
+                const elemento = document.querySelector(tel.seletor);
+                if (elemento) {
+                    const numeroFormatado = tel.numero.replace(/\D/g, '');
+                    const linkWhatsApp = `https://wa.me/55${numeroFormatado}`;
+                    
+                    if (tel.parent) {
+                        elemento.parentElement.innerHTML = `
+                            <strong>${elemento.textContent.split(':')[0]}:</strong>
+                            <a href="${linkWhatsApp}" class="whatsapp-link">
+                                <i class="fab fa-whatsapp"></i>
+                                ${tel.numero}
+                            </a>
+                        `;
+                    } else {
+                        elemento.innerHTML = `
+                            <a href="${linkWhatsApp}" class="whatsapp-link">
+                                <i class="fab fa-whatsapp"></i>
+                                ${tel.numero}
+                            </a>
+                        `;
+                    }
+                }
+            });
+        }
+
+        // ====== INICIALIZAÇÃO ======
         document.addEventListener('DOMContentLoaded', function() {
+            // Carrega idioma padrão
             changeLanguage('pt');
+            
+            // Cria botão do WhatsApp
+            criarBotaoWhatsApp();
+            
+            // Transforma telefones em links
+            transformarTelefonesEmWhatsApp();
         });
     </script>
 </body>
