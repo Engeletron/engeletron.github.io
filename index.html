@@ -438,15 +438,16 @@
                 <span>(41) 99904-2212</span>
             </a>
             <div class="language-selector">
-                <button class="lang-btn active" onclick="changeLanguage('pt')">
+                <button class="lang-btn active" onclick="changeLanguage('pt', this)">
                     <img src="https://flagcdn.com/w20/br.png" alt="Português" class="flag-icon">
                     PT
                 </button>
-                <button class="lang-btn" onclick="changeLanguage('en')">
+                <button class="lang-btn" onclick="changeLanguage('en', this)">
                     <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
                     EN
                 </button>
-                <button class="lang-btn" onclick="changeLanguage('zh')">
+                <!-- For Chinese, if added: -->
+                <button class="lang-btn" onclick="changeLanguage('zh', this)">
                     <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
                     中文
                 </button>
@@ -1061,11 +1062,11 @@
             
         };
 
-        function changeLanguage(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
+        function changeLanguage(lang, btn) {
+            document.querySelectorAll('.lang-btn').forEach(button => {
+                button.classList.remove('active');
             });
-            event.target.classList.add('active');
+            btn.classList.add('active');
             
             for (const [key, value] of Object.entries(translations[lang])) {
                 const elements = document.querySelectorAll(`[id="${key}"]`);
