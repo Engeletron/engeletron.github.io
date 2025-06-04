@@ -28,7 +28,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 12px 5%;
-            background: #fff; /* Fundo branco puro */
+            /* background: #fff;  Fundo branco puro */
+            background: #f9f9f9;
             /* background: #f9fafb;  // Se quiser um branco acinzentado, use esta linha em vez da de cima */
             color: var(--cor-primaria); /* Textos em azul da marca */
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -81,9 +82,12 @@
         }
         .contact-pill:hover { background: rgba(255,255,255,0.2); }
         .language-selector {
+            display: flex;
+            gap: 0;
             background: #f3f6fa;
             border-radius: 8px;
             padding: 4px;
+            align-items: center;
         }
         
         .lang-btn {
@@ -98,6 +102,8 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            min-width: 40px;
+            text-align: center;
         }
         
         .lang-btn.active {
