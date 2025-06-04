@@ -303,6 +303,37 @@
         .social-links { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
         .social-links a { color: white; font-size: 32px; transition: color 0.3s; }
         .social-links a:hover { color: var(--cor-secundaria); }
+        /* Deixa o ícone do WhatsApp e LinkedIn do mesmo tamanho no rodapé */
+        .social-links .fa-whatsapp,
+        .social-links .fab.fa-whatsapp,
+        .social-links .fa-linkedin,
+        .social-links .fab.fa-linkedin,
+        .social-links .fa-linkedin-in,
+        .social-links .fab.fa-linkedin-in {
+            font-size: 32px !important;
+            width: 40px !important;
+            height: 40px !important;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Cor específica para WhatsApp */
+        .social-links .fa-whatsapp,
+        .social-links .fab.fa-whatsapp {
+            background: #25d366;
+            color: #fff !important;
+        }
+        
+        /* Cor específica para LinkedIn */
+        .social-links .fa-linkedin,
+        .social-links .fab.fa-linkedin,
+        .social-links .fa-linkedin-in,
+        .social-links .fab.fa-linkedin-in {
+            background: #0077b5;
+            color: #fff !important;
+        }
         @media (max-width: 768px) {
             header { flex-direction: column; text-align: center; gap: 15px; padding: 15px; }
             .header-right { width: 100%; justify-content: center; }
