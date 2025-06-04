@@ -311,8 +311,21 @@
         footer { background: #111; color: white; text-align: center; padding: 30px 20px; font-size: 14px; }
         .email-geral { margin: 15px 0; font-weight: bold; color: var(--cor-secundaria); font-size: 1.1rem; }
         .social-links { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
-        .social-links a { color: white; font-size: 32px; transition: color 0.3s; }
-        .social-links a:hover { color: var(--cor-secundaria); }
+        .social-links a {
+            color: white;
+            font-size: 32px;
+            transition: color 0.3s;
+            text-decoration: none !important;
+        }
+        
+        .social-links a:hover {
+            color: var(--cor-secundaria);
+            text-decoration: none !important;
+        }
+        
+        .social-links a i {
+            text-decoration: none !important;
+        }
         /* Deixa o ícone do WhatsApp e LinkedIn do mesmo tamanho no rodapé */
         .social-links .fa-whatsapp,
         .social-links .fab.fa-whatsapp,
