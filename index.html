@@ -1063,28 +1063,37 @@
         };
 
         function changeLanguage(lang, btn) {
-            document.querySelectorAll('.lang-btn').forEach(button => {
-                button.classList.remove('active');
-            });
-            btn.classList.add('active');
-            
-            for (const [key, value] of Object.entries(translations[lang])) {
-                const elements = document.querySelectorAll(`[id="${key}"]`);
-                elements.forEach(el => {
-                    if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
-                        el.placeholder = value;
+            // Remove 'active' de todos os botões e adiciona ao clicado
+            document.querySelectorAll('.lang-btn').forEach(button => button.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+        
+            // Carrega as traduções do idioma selecionado
+            const t = translations[lang];
+            if (!t) return;
+        
+            // Troca textos de todos os elementos com id presente no objeto de tradução
+            for (const key in t) {
+                const el = document.getElementById(key);
+                if (el) {
+                    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                        el.placeholder = t[key];
                     } else {
-                        el.innerText = value;
+                        el.textContent = t[key];
                     }
-                });
+                }
             }
-            
+        
+            // Ajusta formato do telefone conforme idioma (PT padrão nacional, EN/others internacional)
             const phones = document.querySelectorAll('[id*="phone"], #header-phone span');
             phones.forEach(phone => {
-                if (lang === 'en') {
-                    phone.textContent = phone.textContent.replace(/\(\d{2}\) (\d{5})-(\d{4})/, '+55 $1 $2-$3');
+                // Remove possíveis espaços extras
+                let phoneText = phone.textContent.trim();
+                if (lang === 'en' || lang === 'zh') {
+                    // Para inglês/chinês, converte para formato internacional
+                    phone.textContent = phoneText.replace(/\((\d{2})\)\s?(\d{5})-?(\d{4})/, '+55 $1 $2-$3');
                 } else {
-                    phone.textContent = phone.textContent.replace(/\+55 (\d{2}) (\d{5})-(\d{4})/, '($1) $2-$3');
+                    // Para português, converte para formato nacional
+                    phone.textContent = phoneText.replace(/\+55 (\d{2}) (\d{5})-?(\d{4})/, '($1) $2-$3');
                 }
             });
         }
