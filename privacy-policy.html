@@ -329,11 +329,27 @@
     </footer>
     <script>
         function setLanguage(lang) {
-            document.getElementById('privacy-pt').style.display = (lang === 'pt') ? '' : 'none';
-            document.getElementById('privacy-en').style.display = (lang === 'en') ? '' : 'none';
-            document.getElementById('policy-title').textContent = (lang === 'pt') ? 'Política de Privacidade' : 'Privacy Policy';
+            // Esconde todos os blocos
+            document.getElementById('privacy-pt').style.display = 'none';
+            document.getElementById('privacy-en').style.display = 'none';
+            document.getElementById('privacy-es').style.display = 'none';
+            document.getElementById('privacy-zh').style.display = 'none';
+        
+            // Exibe o bloco correto
+            document.getElementById('privacy-' + lang).style.display = '';
+        
+            // Atualiza o título do cabeçalho
+            const titles = {
+                pt: 'Política de Privacidade',
+                en: 'Privacy Policy',
+                es: 'Política de Privacidad',
+                zh: '隐私政策'
+            };
+            document.getElementById('policy-title').textContent = titles[lang] || 'Privacy Policy';
+        
+            // Atualiza botões ativos
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelector('.lang-btn' + (lang === 'pt' ? ':first-child' : ':last-child')).classList.add('active');
+            document.querySelectorAll('.lang-btn')[['pt','en','es','zh'].indexOf(lang)].classList.add('active');
         }
     </script>
 </body>
