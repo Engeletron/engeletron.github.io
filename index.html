@@ -637,12 +637,16 @@
         <div class="info-grid">
             <div class="info-card">
                 <h3 id="orcamento-title">SOLICITE UM ORÇAMENTO</h3>
-                <form id="contato-form">
-                    <input type="text" id="nome" placeholder="SEU NOME" required>
-                    <input type="email" id="email" placeholder="SEU EMAIL" required>
-                    <input type="tel" id="telefone" placeholder="SEU TELEFONE">
-                    <textarea id="mensagem" placeholder="DESCREVA SEU PROJETO" required></textarea>
-                    <button type="submit" class="btn" id="form-submit">ENVIAR SOLICITAÇÃO</button>
+                <form action="https://formsubmit.co/danilo.engeletron@gmail.com" method="POST">
+                    <input type="text" name="nome" placeholder="SEU NOME" required>
+                    <input type="email" name="email" placeholder="SEU EMAIL" required>
+                    <input type="tel" name="telefone" placeholder="SEU TELEFONE">
+                    <textarea name="mensagem" placeholder="DESCREVA SEU PROJETO" required></textarea>
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- (Opcional) Redirecionamento após envio:
+                    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+                    -->
+                    <button type="submit" class="btn">ENVIAR SOLICITAÇÃO</button>
                 </form>
             </div>
             <div class="info-card">
