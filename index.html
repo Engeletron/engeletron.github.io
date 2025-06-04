@@ -148,17 +148,17 @@
             object-fit: cover;
             border-radius: 2px;
         }
+        /* Tornar o botão flutuante do WhatsApp maior */
         .whatsapp-float {
+            width: 80px;         /* aumente conforme preferir */
+            height: 80px;
             position: fixed;
-            width: 60px;
-            height: 60px;
             bottom: 40px;
             right: 40px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             z-index: 100;
             display: flex;
@@ -166,9 +166,25 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
+        
+        /* Ajuste do ícone dentro do botão flutuante */
+        .whatsapp-float .fa-whatsapp {
+            font-size: 60px !important;     /* tamanho grande para o ícone */
+            background: none !important;    /* remove o círculo interno */
+            width: auto !important;
+            height: auto !important;
+            color: #fff !important;         /* mantém o ícone branco */
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
+            background-color: #1ebe57; /* Um verde um pouco mais escuro */
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25); /* Sombra mais forte */
+            transform: scale(1.07); /* Leve aumento de tamanho */
+            transition: all 0.2s;
         }
         .hero { 
             background: linear-gradient(rgba(23,67,192,0.8), rgba(39,125,241,0.8)), 
@@ -606,7 +622,7 @@
             "pt": {
                 // Header
                 "header-subtitle": "SOLUÇÕES EM ENGENHARIA",
-                "header-tagline": "PREVISÃO EM PROJETOS ELÉTRICOS E ELETRÔNICOS",
+                "header-tagline": "EXCELÊNCIA EM PROJETOS ELÉTRICOS E ELETRÔNICOS",
                 "header-phone": "(41) 99904-2212",
                 
                 // Hero
