@@ -69,7 +69,7 @@
         }
         .header-right { display: flex; align-items: center; gap: 15px; }
         .contact-pill {
-            background: rgba(255,255,255,0.1);
+            background: none; /* Sem fundo */
             padding: 8px 15px;
             border-radius: 20px;
             display: flex;
@@ -78,9 +78,26 @@
             font-size: 14px;
             transition: all 0.3s ease;
             text-decoration: none;
-            color: white;
+            color: var(--cor-primaria); /* Texto azul da marca */
+            font-weight: 500;
+            border: 1px solid var(--cor-secundaria);
         }
-        .contact-pill:hover { background: rgba(255,255,255,0.2); }
+        .contact-pill:hover {
+            background: var(--cor-secundaria);
+            color: var(--cor-primaria);
+        }
+
+        .contact-pill .fa-whatsapp {
+            background: #25d366;              /* Verde WhatsApp */
+            color: #fff;                      /* Ícone branco */
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
         .language-selector {
             display: flex;
             gap: 0;
