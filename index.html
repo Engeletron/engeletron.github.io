@@ -136,11 +136,18 @@
             min-width: 40px;
             text-align: center;
             background: #fff; /* Botão branco para contraste */
+            width: 75px; /* ajuste este valor para aumentar ou diminuir a largura */
+            justify-content: center;
         }
         
         .lang-btn.active {
             background: var(--cor-primaria); /* Azul escuro da marca */
             color: #fff; /* Texto branco no ativo */
+        }
+        .lang-btn:hover, .lang-btn:focus {
+            background: var(--cor-secundaria);
+            color: var(--cor-primaria);
+            outline: none;
         }
         .flag-icon {
             width: 16px;
@@ -150,8 +157,8 @@
         }
         /* Tornar o botão flutuante do WhatsApp maior */
         .whatsapp-float {
-            width: 80px;         /* aumente conforme preferir */
-            height: 80px;
+            width: 80px;   /* volta ao tamanho original */
+            height: 80px;  /* volta ao tamanho original */
             position: fixed;
             bottom: 40px;
             right: 40px;
@@ -171,7 +178,7 @@
         .whatsapp-float .tooltip-float {
             visibility: hidden;
             opacity: 0;
-            background: #222;
+            background: #25d366; /* Verde padrão WhatsApp */
             color: #fff;
             padding: 8px 14px;
             border-radius: 6px;
@@ -190,7 +197,7 @@
         /* Ajuste do ícone dentro do botão flutuante */
         .whatsapp-float 
         .fa-whatsapp {
-            font-size: 36px !important;     /* tamanho grande para o ícone */
+            font-size: 54px !important; /* 36px + 50% = 54px */
             background: none !important;    /* remove o círculo interno */
             width: auto !important;
             height: auto !important;
@@ -409,9 +416,7 @@
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 36px;
+                font-size: 54px;
             }
         }
         
@@ -425,35 +430,35 @@
     </a>
     <!-- CABEÇALHO -->
     <header>
-       <div class="logo-container">
-            <img src="assets/logomark_engeletron.png" alt="ENGELETRON" class="logo-img">
-            <div class="logo-text">
-                <div class="logo-subtitle" id="header-subtitle">SOLUÇÕES EM ENGENHARIA</div>
-                <div class="logo-tagline" id="header-tagline">EXCELÊNCIA EM PROJETOS ELÉTRICOS E ELETRÔNICOS</div>
-            </div>
+   <div class="logo-container">
+        <img src="assets/logomark_engeletron.png" alt="ENGELETRON" class="logo-img">
+        <div class="logo-text">
+            <div class="logo-subtitle" id="header-subtitle">SOLUÇÕES EM ENGENHARIA</div>
+            <div class="logo-tagline" id="header-tagline">EXCELÊNCIA EM PROJETOS ELÉTRICOS E ELETRÔNICOS</div>
         </div>
-        <div class="header-right">
-            <a href="https://wa.me/5541999042212" class="contact-pill" id="header-phone">
-                <i class="fab fa-whatsapp"></i>
-                <span>(41) 99904-2212</span>
-            </a>
-            <div class="language-selector">
-                <button class="lang-btn active" onclick="changeLanguage('pt', this)">
-                    <img src="https://flagcdn.com/w20/br.png" alt="Português" class="flag-icon">
-                    PT
-                </button>
-                <button class="lang-btn" onclick="changeLanguage('en', this)">
-                    <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
-                    EN
-                </button>
-                <!-- For Chinese, if added: -->
-                <button class="lang-btn" onclick="changeLanguage('zh', this)">
-                    <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
-                    中文
-                </button>
-            </div>
+    </div>
+    <div class="header-right">
+        <!-- telefone removido -->
+        <div class="language-selector">
+            <button class="lang-btn active" type="button" data-lang="pt">
+                <img src="https://flagcdn.com/w20/br.png" alt="Português" class="flag-icon">
+                PT
+            </button>
+            <button class="lang-btn" type="button" data-lang="en">
+                <img src="https://flagcdn.com/w20/us.png" alt="English" class="flag-icon">
+                EN
+            </button>
+            <button class="lang-btn" type="button" data-lang="es">
+                <img src="https://flagcdn.com/w20/es.png" alt="Español" class="flag-icon">
+                ES
+            </button>
+            <button class="lang-btn" type="button" data-lang="zh">
+                <img src="https://flagcdn.com/w20/cn.png" alt="中文" class="flag-icon">
+                中文
+            </button>
         </div>
-    </header>
+    </div>
+</header>
 
     <section class="hero" id="hero">
         <h1 id="hero-title">SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA</h1>
@@ -466,63 +471,10 @@
         <p class="section-subtitle" id="servicos-subtitle">SOLUÇÕES COMPLETAS ADAPTADAS ÀS SUAS NECESSIDADES TÉCNICAS</p>
         
         <div class="grid">
-            <div class="card">
-                <h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">PROJETOS DE PCB</span></h3>
-                <p id="pcb-descricao">DESENVOLVIMENTO COMPLETO COM:</p>
-                
-                <div class="ferramentas-lista">
-                    <span class="tag-ferramenta">AUTODESK EAGLE</span>
-                    <span class="tag-ferramenta">KICAD</span>
-                </div>
-
-                <ul class="servicos-pcb">
-                    <li><strong id="pcb-item1">DIAGRAMA ESQUEMÁTICO</strong> 
-                        <span class="detalhe" id="pcb-detail1">(ANÁLISE DE REQUISITOS, SELEÇÃO DE COMPONENTES, SIMULAÇÕES)</span>
-                    </li>
-                    <li><strong id="pcb-item2">DESENHO DA PLACA</strong> 
-                        <span class="detalhe" id="pcb-detail2">(LAYOUT MULTILAYER, ALTA FREQUÊNCIA, IMPEDÂNCIA CONTROLADA)</span>
-                    </li>
-                    <li><strong id="pcb-item3">GERBERS INDUSTRIAIS</strong> 
-                        <span class="detalhe" id="pcb-detail3">(PADRÃO IPC-2581, CAMADAS DE SOLDA, MÁSCARA, SILK SCREEN)</span>
-                    </li>
-                    <li><strong id="pcb-item4">LISTA DE MATERIAIS (BOM)</strong> 
-                        <span class="detalhe" id="pcb-detail4">(COTAÇÕES COM FORNECEDORES, ALTERNATIVAS DE COMPONENTES)</span>
-                    </li>
-                    <li><strong id="pcb-item5">DOCUMENTAÇÃO TÉCNICA</strong> 
-                        <span class="detalhe" id="pcb-detail5">(MANUAIS DE MONTAGEM, TESTES DE VALIDAÇÃO)</span>
-                    </li>
-                </ul>
-                <p class="destaque" id="pcb-destaque">COMPATÍVEL COM PADRÕES IPC-7351 E CLASS 3 PARA APLICAÇÕES CRÍTICAS.</p>
-            </div>
-
-            <div class="card">
-                <h3><i class="fas fa-microchip"></i> <span id="firmware-title">PROGRAMAÇÃO EM C/C++</span></h3>
-                <p id="programacao-texto">PLATAFORMAS SUPORTADAS:</p>
-                
-                <div class="plataformas-lista">
-                    <div class="plataforma">
-                        <strong>MICROCHIP</strong> (PIC, AVR, DSPIC)
-                    </div>
-                    <div class="plataforma">
-                        <strong>STMICROELECTRONICS</strong> (STM32, STM8)
-                    </div>
-                    <div class="plataforma">
-                        <strong>ESPRESSIF</strong> (ESP32, ESP8266)
-                    </div>
-                    <div class="plataforma">
-                        <strong>HOLTEK</strong> (HT66, HT32)
-                    </div>
-                    <div class="plataforma">
-                        <strong>NXP</strong> (ARM CORTEX-M)
-                    </div>
-                </div>
-                <p class="destaque" id="programacao-destaque">OTIMIZAÇÃO PARA BAIXO CONSUMO, RTOS E COMUNICAÇÃO SEM FIO (WI-FI/BLE).</p>
-            </div>
-
+            <!-- DISPOSITIVOS IOT -->
             <div class="card">
                 <h3><i class="fas fa-wifi"></i> <span id="iot-devices-title">DISPOSITIVOS IOT</span></h3>
                 <p id="iot-devices-desc">SOLUÇÕES COMPLETAS PARA DISPOSITIVOS CONECTADOS:</p>
-                
                 <div class="dispositivos-iot">
                     <div class="dispositivo">
                         <i class="fas fa-microchip mcu"></i>
@@ -548,56 +500,110 @@
                 <p class="destaque" id="iot-devices-destaque">DESENVOLVIMENTO DE HARDWARE E FIRMWARE PARA SOLUÇÕES IOT COMPLETAS.</p>
             </div>
 
-            <div class="card">
-                <h3><i class="fas fa-mobile-alt"></i> <span id="app-title">APLICATIVO IOT</span></h3>
-                
-                <p id="app-desc">SOLUÇÕES MOBILE PARA DISPOSITIVOS IOT:</p>
-                
-                <div class="plataformas-flutter">
-                    <div class="plataforma-flutter">
-                        <i class="material-icons android">android</i>
-                        <span id="android-label">ANDROID</span>
-                    </div>
-                    <div class="plataforma-flutter">
-                        <i class="fab fa-apple apple-icon"></i>
-                        <span id="ios-label">IOS</span>
-                    </div>
-                </div>
-                
-                <p class="destaque" id="app-destaque">CONTROLE REMOTO, MONITORAMENTO EM TEMPO REAL E DASHBOARDS PERSONALIZADOS.</p>
-            </div>
-
+            <!-- SERVIDOR IOT -->
             <div class="card">
                 <h3><i class="fas fa-cloud"></i> <span id="cloud-title">SERVIDOR IOT</span></h3>
-                
                 <p id="cloud-desc">SOLUÇÕES COMPLETAS PARA INTERNET DAS COISAS:</p>
-                
-                <div class="servicos-firebase">
-                    <div class="servico-firebase">
-                        <i class="material-icons">storage</i>
-                        <span id="cloud-service1">REALTIME DATABASE</span>
+                <div class="dispositivos-iot">
+                    <div class="dispositivo">
+                        <i class="material-icons" style="color: #039be5;">storage</i>
+                        <strong id="cloud-service1">REALTIME DATABASE</strong>
+                        <p style="color:#666; font-size:0.95em;">Banco de dados em tempo real</p>
                     </div>
-                    <div class="servico-firebase">
-                        <i class="material-icons">fingerprint</i>
-                        <span id="cloud-service2">AUTHENTICATION</span>
+                    <div class="dispositivo">
+                        <i class="material-icons" style="color: #ffb300;">fingerprint</i>
+                        <strong id="cloud-service2">AUTHENTICATION</strong>
+                        <p style="color:#666; font-size:0.95em;">Autenticação de usuários</p>
                     </div>
-                    <div class="servico-firebase">
-                        <i class="material-icons">functions</i>
-                        <span id="cloud-service3">CLOUD FUNCTIONS</span>
+                    <div class="dispositivo">
+                        <i class="material-icons" style="color: #43a047;">functions</i>
+                        <strong id="cloud-service3">CLOUD FUNCTIONS</strong>
+                        <p style="color:#666; font-size:0.95em;">Funções serverless</p>
                     </div>
-                    <div class="servico-firebase">
-                        <i class="material-icons">notifications</i>
-                        <span id="cloud-service4">CLOUD MESSAGING</span>
+                    <div class="dispositivo">
+                        <i class="material-icons" style="color: #fb8c00;">notifications</i>
+                        <strong id="cloud-service4">CLOUD MESSAGING</strong>
+                        <p style="color:#666; font-size:0.95em;">Notificações em tempo real</p>
                     </div>
                 </div>
-                
                 <p class="destaque" id="cloud-destaque">SINCRONIZAÇÃO EM TEMPO REAL E PROCESSAMENTO DE DADOS DE DISPOSITIVOS CONECTADOS.</p>
             </div>
 
-                        <div class="card">
+            <!-- APLICATIVO IOT -->
+            <div class="card">
+                <h3><i class="fas fa-mobile-alt"></i> <span id="app-title">APLICATIVO IOT</span></h3>
+                <p id="app-desc">SOLUÇÕES MOBILE PARA DISPOSITIVOS IOT:</p>
+                <div class="dispositivos-iot">
+                    <div class="dispositivo">
+                        <i class="material-icons android" style="color: #43a047;">android</i>
+                        <strong id="android-label">ANDROID</strong>
+                        <p style="color:#666; font-size:0.95em;">App para dispositivos Android</p>
+                    </div>
+                    <div class="dispositivo">
+                        <i class="fab fa-apple apple-icon" style="color: #222; font-size:32px;"></i>
+                        <strong id="ios-label">IOS</strong>
+                        <p style="color:#666; font-size:0.95em;">App para dispositivos iOS</p>
+                    </div>
+                </div>
+                <p class="destaque" id="app-destaque">CONTROLE REMOTO, MONITORAMENTO EM TEMPO REAL E DASHBOARDS PERSONALIZADOS.</p>
+            </div>
+
+            <!-- PROJETOS DE PCB -->
+            <div class="card">
+                <h3><i class="fas fa-project-diagram"></i> <span id="pcb-card-title">PROJETOS DE PCB</span></h3>
+                <p id="pcb-descricao">DESENVOLVIMENTO COMPLETO COM:</p>
+                <div class="ferramentas-lista">
+                    <span class="tag-ferramenta">AUTODESK EAGLE</span>
+                    <span class="tag-ferramenta">KICAD</span>
+                </div>
+                <ul class="servicos-pcb">
+                    <li><strong id="pcb-item1">DIAGRAMA ESQUEMÁTICO</strong> 
+                        <span class="detalhe" id="pcb-detail1">(ANÁLISE DE REQUISITOS, SELEÇÃO DE COMPONENTES, SIMULAÇÕES)</span>
+                    </li>
+                    <li><strong id="pcb-item2">DESENHO DA PLACA</strong> 
+                        <span class="detalhe" id="pcb-detail2">(LAYOUT MULTILAYER, ALTA FREQUÊNCIA, IMPEDÂNCIA CONTROLADA)</span>
+                    </li>
+                    <li><strong id="pcb-item3">GERBERS INDUSTRIAIS</strong> 
+                        <span class="detalhe" id="pcb-detail3">(PADRÃO IPC-2581, CAMADAS DE SOLDA, MÁSCARA, SILK SCREEN)</span>
+                    </li>
+                    <li><strong id="pcb-item4">LISTA DE MATERIAIS (BOM)</strong> 
+                        <span class="detalhe" id="pcb-detail4">(COTAÇÕES COM FORNECEDORES, ALTERNATIVAS DE COMPONENTES)</span>
+                    </li>
+                    <li><strong id="pcb-item5">DOCUMENTAÇÃO TÉCNICA</strong> 
+                        <span class="detalhe" id="pcb-detail5">(MANUAIS DE MONTAGEM, TESTES DE VALIDAÇÃO)</span>
+                    </li>
+                </ul>
+                <p class="destaque" id="pcb-destaque">COMPATÍVEL COM PADRÕES IPC-7351 E CLASS 3 PARA APLICAÇÕES CRÍTICAS.</p>
+            </div>
+
+            <!-- PROGRAMAÇÃO EM C/C++ -->
+            <div class="card">
+                <h3><i class="fas fa-microchip"></i> <span id="firmware-title">PROGRAMAÇÃO EM C/C++</span></h3>
+                <p id="programacao-texto">PLATAFORMAS SUPORTADAS:</p>
+                <div class="plataformas-lista">
+                    <div class="plataforma">
+                        <strong>MICROCHIP</strong> (PIC, AVR, DSPIC)
+                    </div>
+                    <div class="plataforma">
+                        <strong>STMICROELECTRONICS</strong> (STM32, STM8)
+                    </div>
+                    <div class="plataforma">
+                        <strong>ESPRESSIF</strong> (ESP32, ESP8266)
+                    </div>
+                    <div class="plataforma">
+                        <strong>HOLTEK</strong> (HT66, HT32)
+                    </div>
+                    <div class="plataforma">
+                        <strong>NXP</strong> (ARM CORTEX-M)
+                    </div>
+                </div>
+                <p class="destaque" id="programacao-destaque">OTIMIZAÇÃO PARA BAIXO CONSUMO, RTOS E COMUNICAÇÃO SEM FIO (WI-FI/BLE).</p>
+            </div>
+
+            <!-- GIGAS DE TESTE -->
+            <div class="card">
                 <h3><i class="fas fa-tools tools"></i> <span id="test-rigs-title">GIGAS DE TESTES PARA PRODUÇÃO</span></h3>
                 <p id="test-rigs-desc">SOLUÇÕES COMPLETAS PARA VALIDAÇÃO DE PRODUTOS:</p>
-                
                 <ul class="servicos-pcb">
                     <li>
                         <strong id="test-item1">GABINETE INDUSTRIAL PERSONALIZADO</strong>
@@ -620,13 +626,11 @@
                         <span class="detalhe" id="test-detail5">(INTERFACE VISUAL COM LEDS/TFT PARA STATUS DE TESTE)</span>
                     </li>
                 </ul>
-                
                 <div class="destaque" id="test-rigs-destaque">
                     <i class="fas fa-check-circle"></i>
                     <span>SISTEMAS COMPLETOS COM RELATÓRIO DE TESTE AUTOMATIZADO (PDF/EXCEL)</span>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -636,34 +640,34 @@
         
         <div class="membros">
             <div class="membro">
+                <img src="assets/danilo.jpg" alt="Danilo Miguel Neves Adur" style="width:180px;height:180px;object-fit:cover;border-radius:50%;margin-bottom:18px;border:4px solid #e3f2fd;">
                 <h3 id="team-member1">DANILO MIGUEL NEVES ADUR</h3>
                 <div class="cargo" id="team-title1">ENGENHEIRO ELETRICISTA | DIRETOR</div>
-                
                 <div class="formacao">
                     <span id="formacao-text1">FORMADO PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ</span>
                 </div>
-                
                 <div class="crea" id="team-crea1">
                     <span>CREA-PR Nº PR-87205/D</span>
                 </div>
                 <div class="contato">
                     <p><strong id="email-label1">EMAIL:</strong> <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a></p>
+                    <div style="height:8px"></div>
                     <p><strong id="phone-label1">TELEFONE:</strong> <a href="https://wa.me/5541999042212"><i class="fab fa-whatsapp"></i> (41) 99904-2212</a></p>
                 </div>
             </div>
             <div class="membro">
+                <img src="assets/gisely.jpg" alt="Gisely Bellozupko Adur" style="width:180px;height:180px;object-fit:cover;border-radius:50%;margin-bottom:18px;border:4px solid #e3f2fd;">
                 <h3 id="team-member2">GISELY BELLOZUPKO ADUR</h3>
                 <div class="cargo" id="team-title2">ENGENHEIRA ELETRICISTA | DIRETORA</div>
-                
                 <div class="formacao">
                     <span id="formacao-text2">FORMADA PELA UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ</span>
                 </div>
-                
                 <div class="crea" id="team-crea2">
                     <span>CREA-PR Nº PR-87210/D</span>
                 </div>
                 <div class="contato">
                     <p><strong id="email-label2">EMAIL:</strong> <a href="mailto:gisely.engeletron@gmail.com">gisely.engeletron@gmail.com</a></p>
+                    <div style="height:8px"></div>
                     <p><strong id="phone-label2">TELEFONE:</strong> <a href="https://wa.me/5541999042302"><i class="fab fa-whatsapp"></i> (41) 99904-2302</a></p>
                 </div>
             </div>
@@ -675,13 +679,13 @@
         <div class="info-grid">
             <div class="info-card">
                 <h3 id="orcamento-title">SOLICITE UM ORÇAMENTO</h3>
-                <form action="https://formsubmit.co/danilo.engeletron@gmail.com" method="POST">
-                    <input type="text" name="nome" placeholder="SEU NOME" required>
-                    <input type="tel" name="telefone" placeholder="SEU TELEFONE">
-                    <input type="email" name="email" placeholder="SEU EMAIL" required>
-                    <textarea name="mensagem" placeholder="DESCREVA SEU PROJETO" required></textarea>
+                <form action="https://formsubmit.co/danilo.engeletron@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
+                    <input type="text" name="nome" placeholder="SEU NOME" required style="background:#f9f9f9; border:1px solid #ddd; border-radius:6px; padding:12px; font-size:18px; font-family:'Roboto',sans-serif;">
+                    <input type="tel" name="telefone" placeholder="SEU TELEFONE" style="background:#f9f9f9; border:1px solid #ddd; border-radius:6px; padding:12px; font-size:18px; font-family:'Roboto',sans-serif;">
+                    <input type="email" name="email" placeholder="SEU EMAIL" required style="background:#f9f9f9; border:1px solid #ddd; border-radius:6px; padding:12px; font-size:18px; font-family:'Roboto',sans-serif;">
+                    <textarea name="mensagem" placeholder="DESCREVA SEU PROJETO" required style="background:#f9f9f9; border:1px solid #ddd; border-radius:6px; padding:12px; font-size:18px; height:160px; resize:vertical; font-family:'Roboto',sans-serif;"></textarea>
                     <input type="hidden" name="_captcha" value="false">
-                    <button type="submit" class="btn">ENVIAR SOLICITAÇÃO</button>
+                    <button type="submit" class="btn" style="margin-top:8px;">ENVIAR SOLICITAÇÃO</button>
                 </form>
             </div>
             <div class="info-card">
@@ -720,8 +724,7 @@
                 // Header
                 "header-subtitle": "SOLUÇÕES EM ENGENHARIA",
                 "header-tagline": "EXCELÊNCIA EM PROJETOS ELÉTRICOS E ELETRÔNICOS",
-                "header-phone": "(41) 99904-2212",
-                
+
                 // Hero
                 "hero-title": "SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA",
                 "hero-subtitle": "PROJETOS PERSONALIZADOS EM PCB, DESENVOLVIMENTO DE FIRMWARE, SOLUÇÕES IOT E INTEGRAÇÃO EM NUVEM",
@@ -834,8 +837,7 @@
                 // Header
                 "header-subtitle": "ENGINEERING SOLUTIONS",
                 "header-tagline": "EXCELLENCE IN ELECTRICAL AND ELECTRONIC ENGINEERING",
-                "header-phone": "+55 41 99904-2212",
-                
+
                 // Hero
                 "hero-title": "INNOVATIVE ELECTRICAL & ELECTRONIC ENGINEERING SOLUTIONS",
                 "hero-subtitle": "CUSTOM PCB DESIGN, FIRMWARE DEVELOPMENT, IOT SOLUTIONS AND CLOUD INTEGRATION",
@@ -943,14 +945,13 @@
                 // Footer
                 "footer-email": "engeletronltda@gmail.com",
                 "footer-text": "© 2019 ENGELETRON ELECTRICAL ENGINEERING LTD. ALL RIGHTS RESERVED."
-            }
+            },
 
             "zh": {
                 // Header
                 "header-subtitle": "工程解决方案",
                 "header-tagline": "电气和电子工程卓越",
-                "header-phone": "+55 41 99904-2212",
-            
+
                 // Hero
                 "hero-title": "创新的电气与电子工程解决方案",
                 "hero-subtitle": "定制PCB设计、固件开发、物联网解决方案与云集成",
@@ -1058,19 +1059,136 @@
                 // Footer
                 "footer-email": "engeletronltda@gmail.com",
                 "footer-text": "© 2019 ENGELETRON电气工程有限公司。保留所有权利。"
+            },
+            "es": {
+                // Header
+                "header-subtitle": "SOLUCIONES DE INGENIERÍA",
+                "header-tagline": "EXCELENCIA EN INGENIERÍA ELÉCTRICA Y ELECTRÓNICA",
+
+                // Hero
+                "hero-title": "SOLUÇÕES INNOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA",
+                "hero-subtitle": "DISEÑO DE PCB PERSONALIZADO, DESARROLLO DE FIRMWARE, SOLUÇÕES IOT E INTEGRAÇÃO EN LA NUBE",
+                "hero-cta": "SOLICITAR PRESUPUESTO",
+
+                // Serviços
+                "servicos-title": "NUESTROS SERVICIOS DE INGENIERÍA",
+                "servicos-subtitle": "SOLUCIONES COMPLETAS ADAPTADAS A SUS NECESIDADES TÉCNICAS",
+                
+                // PCB Card
+                "pcb-card-title": "DISEÑO DE PCB",
+                "pcb-descricao": "DESARROLLO COMPLETO CON:",
+                "pcb-item1": "DIAGRAMA ESQUEMÁTICO",
+                "pcb-detail1": "(ANÁLISIS DE REQUISITOS, SELECCIÓN DE COMPONENTES, SIMULACIONES)",
+                "pcb-item2": "DISEÑO DE LA PLACA",
+                "pcb-detail2": "(LAYOUT MULTICAPA, ALTA FRECUENCIA, IMPEDANCIA CONTROLADA)",
+                "pcb-item3": "ARCHIVOS GERBER INDUSTRIALES",
+                "pcb-detail3": "(ESTÁNDAR IPC-2581, CAPAS DE SOLDADURA, MÁSCARA, SERIGRAFÍA)",
+                "pcb-item4": "LISTA DE MATERIALES (BOM)",
+                "pcb-detail4": "(COTIZACIONES CON PROVEEDORES, ALTERNATIVAS DE COMPONENTES)",
+                "pcb-item5": "DOCUMENTACIÓN TÉCNICA",
+                "pcb-detail5": "(MANUALES DE MONTAJE, PRUEBAS DE VALIDACIÓN)",
+                "pcb-destaque": "COMPATIBLE CON LOS ESTÁNDARES IPC-7351 Y CLASE 3 PARA APLICAIONES CRÍTICAS.",
+                
+                // Firmware Card
+                "firmware-title": "PROGRAMACIÓN EN C/C++",
+                "programacao-texto": "PLATAFORMAS SOPORTADAS:",
+                "programacao-destaque": "OPTIMIZACIÓN PARA BAJO CONSUMO, RTOS Y COMUNICACIÓN INALÁMBRICA (WI-FI/BLE).",
+                
+                // IoT Devices Card
+                "iot-devices-title": "DISPOSITIVOS IOT",
+                "iot-devices-desc": "SOLUCIONES COMPLETAS PARA DISPOSITIVOS CONECTADOS:",
+                "iot-mcu": "MCU INALÁMBRICO",
+                "iot-mcu-desc": "ESP32, ESP8266",
+                "iot-wifi": "WI-FI",
+                "iot-wifi-desc": "CONECTIVIDAD 2.4/5GHZ",
+                "iot-ethernet": "ETHERNET",
+                "iot-ethernet-desc": "CONEXIÓN POR CABLE",
+                "iot-lte": "4G LTE",
+                "iot-lte-desc": "CONECTIVIDAD MÓVIL",
+                "iot-devices-destaque": "DESARROLLO DE HARDWARE Y FIRMWARE PARA SOLUCIONES IOT COMPLETAS.",
+                
+                // Test Rigs Card
+                "test-rigs-title": "BANCOS DE PRUEBA PARA PRODUCCIÓN",
+                "test-rigs-desc": "SOLUCIONES COMPLETAS PARA VALIDACIÓN DE PRODUCTOS:",
+                "test-item1": "GABINETE INDUSTRIAL PERSONALIZADO",
+                "test-detail1": "(DISEÑO MECÂNICO ROBUSTO COM INTERFACES DE OPERAÇÃO)",
+                "test-item2": "CAMA DE PINOS (BED-OF-NAILS)",
+                "test-detail2": "(MATRIZ DE CONTACTOS PARA PRUEBA ELÉCTRICA COMPLETA)",
+                "test-item3": "INTERFAZ PARA PROGRAMADOR AUTÓNOMO",
+                "test-detail3": "(COMPATIBLE CON PIC, AVR, STM32 Y OTROS)",
+                "test-item4": "CIRCUITO DE PRUEBA AUTOMATIZADO",
+                "test-detail4": "(VERIFICACIÓN DE CONTINUIDADE, VOLTAJES Y FUNCIONAMENTO)",
+                "test-item5": "PANTALLA DE RESULTADOS",
+                "test-detail5": "(INTERFAZ VISUAL CON LEDS/TFT PARA ESTADO DE PRUEBA)",
+                "test-rigs-destaque": "SISTEMAS COMPLETOS CON INFORME DE PRUEBA AUTOMATIZADO (PDF/EXCEL)",
+                
+                // App Card
+                "app-title": "APLICACIÓN IOT",
+                "app-desc": "SOLUCIONES MÓVILES PARA DISPOSITIVOS IOT:",
+                "android-label": "ANDROID",
+                "ios-label": "IOS",
+                "app-destaque": "CONTROL REMOTO, MONITOREO EN TIEMPO REAL Y DASHBOARDS PERSONALIZADOS.",
+                
+                // Cloud Card
+                "cloud-title": "SERVIDOR IOT",
+                "cloud-desc": "SOLUCIONES COMPLETAS PARA INTERNET DE LAS COSAS:",
+                "cloud-service1": "BASE DE DATOS EN TIEMPO REAL",
+                "cloud-service2": "AUTENTICACIÓN",
+                "cloud-service3": "FUNCIONES EN LA NUBE",
+                "cloud-service4": "MENSAJERÍA EN LA NUBE",
+                "cloud-destaque": "SINCRONIZACIÓN EN TIEMPO REAL Y PROCESAMIENTO DE DATOS DE DISPOSITIVOS CONECTADOS.",
+                
+                // Equipe
+                "equipe-title": "NUESTRO EQUIPO TÉCNICO",
+                "equipe-subtitle": "CONOZCA NUESTROS PROFESIONALES CALIFICADOS",
+                "team-member1": "DANILO MIGUEL NEVES ADUR",
+                "team-title1": "INGENIERO ELÉCTRICO | DIRECTOR",
+                "formacao-text1": "GRADUADO EN LA UNIVERSIDAD TECNOLÓGICA FEDERAL DE PARANÁ",
+                "team-crea1": "CREA-PR Nº PR-87205/D",
+                "email-label1": "EMAIL:",
+                "phone-label1": "TELÉFONO:",
+                "team-member2": "GISELY BELLOZUPKO ADUR",
+                "team-title2": "INGENIERA ELÉCTRICA | DIRECTORA",
+                "formacao-text2": "GRADUADA EN LA UNIVERSIDAD TECNOLÓGICA FEDERAL DE PARANÁ",
+                "team-crea2": "CREA-PR Nº PR-87210/D",
+                "email-label2": "EMAIL:",
+                "phone-label2": "TELÉFONO:",
+
+                // Contato
+                "contato-title": "CONTÁCTENOS",
+                "orcamento-title": "SOLICITAR PRESUPUESTO",
+                "institucional-title": "INFORMACIÓN INSTITUCIONAL",
+                "legal-value": "ENGELETRON INGENIERÍA ELÉCTRICA LTDA",
+                "cnpj": "CNPJ: 37.912.040/0001-10",
+                "address-title": "DIRECCIÓN",
+                "address-value": "AVENIDA BEIRA MAR, 9009, SALA 1, BALNEÁRIO ALBATROZ",
+                "city": "MATINHOS - PR",
+                "zip": "CP: 83260-000",
+                "form-submit": "ENVIAR SOLICITUD",
+
+                // Botao flutuante
+                "wa-tooltip": "Solicitar Presupuesto",
+
+                // Footer
+                "footer-email": "engeletronltda@gmail.com",
+                "footer-text": "© 2019 ENGELETRON INGENIERÍA ELÉCTRICA LTDA. TODOS LOS DERECHOS RESERVADOS."
             }
-            
         };
 
         function changeLanguage(lang, btn) {
             // Remove 'active' de todos os botões e adiciona ao clicado
             document.querySelectorAll('.lang-btn').forEach(button => button.classList.remove('active'));
             if (btn) btn.classList.add('active');
-        
+            else {
+                // Ativa o botão correto se chamado sem btn (ex: onload)
+                const btnToActivate = document.querySelector('.lang-btn[data-lang="' + lang + '"]');
+                if (btnToActivate) btnToActivate.classList.add('active');
+            }
+
             // Carrega as traduções do idioma selecionado
             const t = translations[lang];
             if (!t) return;
-        
+
             // Troca textos de todos os elementos com id presente no objeto de tradução
             for (const key in t) {
                 const el = document.getElementById(key);
@@ -1082,9 +1200,19 @@
                     }
                 }
             }
-        
-            // Ajusta formato do telefone conforme idioma (PT padrão nacional, EN/others internacional)
-            const phones = document.querySelectorAll('[id*="phone"], #header-phone span');
+
+            // Corrigir tradução do telefone no header (apenas o <span>)
+            const headerPhoneSpan = document.querySelector('#header-phone span');
+            if (headerPhoneSpan) {
+                if (lang === 'en' || lang === 'zh') {
+                    headerPhoneSpan.textContent = '+55 41 99904-2212';
+                } else {
+                    headerPhoneSpan.textContent = '(41) 99904-2212';
+                }
+            }
+
+            // Ajusta formato do telefone nos outros locais
+            const phones = document.querySelectorAll('[id*="phone"]:not(#header-phone), #phone-label1, #phone-label2');
             phones.forEach(phone => {
                 // Remove possíveis espaços extras
                 let phoneText = phone.textContent.trim();
@@ -1098,22 +1226,39 @@
             });
         }
 
-        document.getElementById('contato-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nome = document.getElementById('nome').value;
-            const currentLang = document.querySelector('.lang-btn.active').textContent.includes('PT') ? 'pt' : 'en';
-            const message = currentLang === 'pt' 
-                ? `OBRIGADO, ${nome.toUpperCase()}! SUA SOLICITAÇÃO FOI ENVIADA COM SUCESSO. ENTRAREMOS EM CONTATO EM BREVE.`
-                : `THANK YOU, ${nome.toUpperCase()}! YOUR REQUEST HAS BEEN SENT SUCCESSFULLY. WE WILL CONTACT YOU SOON.`;
-            
-            alert(message);
-            this.reset();
-        });
-
+        // Delegação de evento para garantir funcionamento mesmo após troca de idioma
         document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa idioma padrão
             changeLanguage('pt');
+
+            // Evento de click nos botões de idioma
+            document.querySelector('.language-selector').addEventListener('click', function(e) {
+                const btn = e.target.closest('.lang-btn');
+                if (btn) {
+                    const lang = btn.getAttribute('data-lang');
+                    changeLanguage(lang, btn);
+                }
+            });
+
+            // Corrige submit do formulário (seleciona pelo action, pois não há id)
+            const contatoForm = document.querySelector('form[action^="https://formsubmit.co/"]');
+            if (contatoForm) {
+                contatoForm.addEventListener('submit', function(e) {
+            // e.preventDefault(); // Removido para permitir envio real ao FormSubmit
+            // Busca nome pelo input name
+            const nomeInput = contatoForm.querySelector('input[name="nome"]');
+            const nome = nomeInput ? nomeInput.value : '';
+            const currentLang = document.querySelector('.lang-btn.active').getAttribute('data-lang') || 'pt';
+            const message = currentLang === 'pt'
+                ? `OBRIGADO, ${nome.toUpperCase()}! SUA SOLICITAÇÃO FOI ENVIADA COM SUCESSO. ENTRAREMOS EM CONTATO EM BREVE.`
+                : currentLang === 'en'
+                    ? `THANK YOU, ${nome.toUpperCase()}! YOUR REQUEST HAS BEEN SENT SUCCESSFULLY. WE WILL CONTACT YOU SOON.`
+                    : `感谢您, ${nome.toUpperCase()}! 您的请求已成功发送。我们会尽快与您联系。`;
+            // alert(message); // Opcional: remova ou mantenha se quiser mostrar alerta antes do envio
+            // this.reset(); // Removido para não resetar antes do envio real
         });
+    }
+});
     </script>
 </body>
 </html>
