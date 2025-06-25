@@ -445,6 +445,72 @@
             font-size: 18px;
             color: #fff !important;
         }
+
+        /* Card Moderno para o ASIC Engeletron */
+        .asic-card {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 32px 28px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  transition: box-shadow 0.3s;
+}
+.asic-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.asic-card-logo {
+  width: 80px;
+  margin-bottom: 18px;
+}
+.asic-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.asic-card-desc {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.asic-card-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.asic-card-list li {
+  padding: 7px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1rem;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.asic-card-list li:last-child {
+  border-bottom: none;
+}
+.asic-card-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  font-size: 0.85rem;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-left: auto;
+}
+@media (max-width: 500px) {
+  .asic-card {
+    padding: 18px 6vw;
+  }
+}
     </style>
 </head>
 <body>
@@ -656,6 +722,25 @@
                     <span>SISTEMAS COMPLETOS COM RELATÓRIO DE TESTE AUTOMATIZADO (PDF/EXCEL)</span>
                 </div>
             </div>
+
+            <!-- Card Moderno para o ASIC Engeletron integrado ao sistema de tradução do site -->
+            <div class="asic-card">
+  <img src="assets/asic.png" alt="CI ASIC Engeletron" class="asic-card-ci" style="width:90px;display:block;margin:0 auto 18px auto;filter:drop-shadow(0 2px 8px #b0b0b0);background:#f8fafd;border-radius:10px;" />
+  <h3 class="section-title" id="asic-title">ASIC Engeletron – Controle RF 433,92MHz</h3>
+  <div class="asic-card-desc" id="asic-desc">Circuito integrado inovador para controles remotos e sensores, sem necessidade de cristal externo.</div>
+  <ul class="asic-card-list" id="asic-list">
+    <li>Oscilador interno proprietário <span class="asic-card-badge">Sem cristal</span></li>
+    <li>Potência de transmissão: <b>+13dBm</b></li>
+    <li>Entrada para <b>4 teclas</b></li>
+    <li>2 modos: Controle remoto ou Sensor de abertura</li>
+    <li>Tempo máx. transmissão: <b>4s</b></li>
+    <li>Tempo mín. transmissão: <b>1s</b></li>
+    <li>Indicação de bateria baixa</li>
+    <li>Compatível com protocolo <b>HT6P20B</b></li>
+    <li>Número serial de fábrica: <span class="asic-card-badge">Não requer gravação em produção</span></li>
+  </ul>
+  <div id="asic-footer" style="font-size:0.95rem;color:#1976d2;font-weight:500;text-align:center;">Ideal para alarmes e portões automáticos</div>
+</div>
         </div>
     </section>
 
@@ -1210,25 +1295,76 @@
             }
         };
 
+        // Adiciona as traduções do card ASIC ao objeto global
+translations.pt['asic-title'] = 'ASIC Engeletron – Controle RF 433,92MHz';
+translations.pt['asic-desc'] = 'Circuito integrado inovador para controles remotos e sensores, sem necessidade de cristal externo.';
+translations.pt['asic-list'] = '' +
+  '<li>Oscilador interno proprietário <span class="asic-card-badge">Sem cristal</span></li>' +
+  '<li>Potência de transmissão: <b>+13dBm</b></li>' +
+  '<li>Entrada para <b>4 teclas</b></li>' +
+  '<li>2 modos: Controle remoto ou Sensor de abertura</li>' +
+  '<li>Tempo máx. transmissão: <b>4s</b></li>' +
+  '<li>Tempo mín. transmissão: <b>1s</b></li>' +
+  '<li>Indicação de bateria baixa</li>' +
+  '<li>Compatível com protocolo <b>HT6P20B</b></li>' +
+  '<li>Número serial de fábrica: <span class="asic-card-badge">Não requer gravação em produção</span></li>';
+translations.pt['asic-footer'] = 'Ideal para alarmes e portões automáticos';
+translations.en['asic-title'] = 'ASIC Engeletron – RF 433.92MHz Controller';
+translations.en['asic-desc'] = 'Innovative integrated circuit for remote controls and sensors, no external crystal required.';
+translations.en['asic-list'] = '' +
+  '<li>Proprietary internal oscillator <span class="asic-card-badge">No crystal</span></li>' +
+  '<li>Transmission power: <b>+13dBm</b></li>' +
+  '<li>Input for <b>4 keys</b></li>' +
+  '<li>2 modes: Remote control or Door sensor</li>' +
+  '<li>Max transmission time: <b>4s</b></li>' +
+  '<li>Min transmission time: <b>1s</b></li>' +
+  '<li>Low battery indication</li>' +
+  '<li>Compatible with <b>HT6P20B</b> protocol</li>' +
+  '<li>Factory serial number: <span class="asic-card-badge">No programming required in production</span></li>';
+translations.en['asic-footer'] = 'Ideal for alarms and automatic gates';
+translations.es['asic-title'] = 'ASIC Engeletron – Controlador RF 433,92MHz';
+translations.es['asic-desc'] = 'Circuito integrado innovador para controles remotos y sensores, sin necesidad de cristal externo.';
+translations.es['asic-list'] = '' +
+  '<li>Oscilador interno propietario <span class="asic-card-badge">Sin cristal</span></li>' +
+  '<li>Potencia de transmisión: <b>+13dBm</b></li>' +
+  '<li>Entrada para <b>4 teclas</b></li>' +
+  '<li>2 modos: Control remoto o Sensor de abertura</li>' +
+  '<li>Tiempo máx. de transmisión: <b>4s</b></li>' +
+  '<li>Tiempo mín. de transmisión: <b>1s</b></li>' +
+  '<li>Indicación de batería baja</li>' +
+  '<li>Compatible con protocolo <b>HT6P20B</b></li>' +
+  '<li>Número de serie de fábrica: <span class="asic-card-badge">No requiere grabación en producción</span></li>';
+translations.es['asic-footer'] = 'Ideal para alarmas y portones automáticos';
+translations.zh['asic-title'] = 'ASIC Engeletron – 433.92MHz 射频控制器';
+translations.zh['asic-desc'] = '创新集成电路，适用于遥控器和传感器，无需外部晶体。';
+translations.zh['asic-list'] = '' +
+  '<li>专有内部振荡器 <span class="asic-card-badge">无需晶体</span></li>' +
+  '<li>发射功率：<b>+13dBm</b></li>' +
+  '<li>支持 <b>4 个按键</b></li>' +
+  '<li>2 种模式：遥控器或门磁传感器</li>' +
+  '<li>最大发射时间：<b>4秒</b></li>' +
+  '<li>最小发射时间：<b>1秒</b></li>' +
+  '<li>低电池指示</li>' +
+  '<li>兼容 <b>HT6P20B</b> 协议</li>' +
+  '<li>出厂序列号：<span class="asic-card-badge">生产时无需烧录</span></li>';
+translations.zh['asic-footer'] = '适用于报警器和自动门';
+
         function changeLanguage(lang, btn) {
-            // Remove 'active' de todos os botões e adiciona ao clicado
             document.querySelectorAll('.lang-btn').forEach(button => button.classList.remove('active'));
             if (btn) btn.classList.add('active');
             else {
-                // Ativa o botão correto se chamado sem btn (ex: onload)
                 const btnToActivate = document.querySelector('.lang-btn[data-lang="' + lang + '"]');
                 if (btnToActivate) btnToActivate.classList.add('active');
             }
-
-            // Carrega as traduções do idioma selecionado
             const t = translations[lang];
             if (!t) return;
-
-            // Troca textos de todos os elementos com id presente no objeto de tradução
             for (const key in t) {
                 const el = document.getElementById(key);
                 if (el) {
-                    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                    // Card ASIC: usar innerHTML para permitir HTML formatado
+                    if (["asic-title","asic-desc","asic-list","asic-footer"].includes(key)) {
+                        el.innerHTML = t[key];
+                    } else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
                         el.placeholder = t[key];
                     } else {
                         el.textContent = t[key];
@@ -1259,6 +1395,9 @@
                     phone.textContent = phoneText.replace(/\+55 (\d{2}) (\d{5})-?(\d{4})/, '($1) $2-$3');
                 }
             });
+
+            // Atualiza o card ASIC conforme o idioma
+            if (typeof updateAsicCard === 'function') updateAsicCard(lang);
         }
 
         // Delegação de evento para garantir funcionamento mesmo após troca de idioma
