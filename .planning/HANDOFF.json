@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-05-29T03:19:54.779Z",
+  "timestamp": "2026-05-29T03:25:13.402Z",
   "source": "auto-postool",
   "partial": false,
   "phase": null,
@@ -22,53 +22,9 @@
     },
     {
       "status": "M",
-      "path": "memory/MEMORY.md"
-    },
-    {
-      "status": "M",
-      "path": "memory/deploy-github-pages.md"
-    },
-    {
-      "status": "M",
-      "path": "src/components/EmpresaPage.astro"
-    },
-    {
-      "status": "M",
-      "path": "src/components/Nav.astro"
-    },
-    {
-      "status": "M",
-      "path": "src/data/product.ts"
-    },
-    {
-      "status": "M",
-      "path": "src/layouts/Base.astro"
-    },
-    {
-      "status": "M",
-      "path": "src/styles/global.css"
-    },
-    {
-      "status": "??",
-      "path": ".playwright-mcp/"
-    },
-    {
-      "status": "??",
-      "path": "memory/site-build-status.md"
-    },
-    {
-      "status": "??",
-      "path": "qa-mobile-home.jpeg"
-    },
-    {
-      "status": "??",
-      "path": "qa-mobile-product.jpeg"
-    },
-    {
-      "status": "??",
-      "path": "src/components/WhatsAppIcon.astro"
+      "path": "src/components/ProductCard.astro"
     }
   ],
   "next_action": null,
-  "context_notes": "Recent commits:\n077c31b feat: publish assets, optimize GLB, CNAME, Pages deploy workflow\nbf22a8a feat: en/es/zh locale routes\n5b4120e refactor: extract page content into reusable components\n82fd0aa feat: EN/ES/ZH translations for all UI strings\n05f5ef8 feat: empresa and privacidade pages"
+  "context_notes": "Recent commits:\n26f1209 feat: emails @engeletron.com.br, icone WhatsApp (FAB), responsividade mobile\n077c31b feat: publish assets, optimize GLB, CNAME, Pages deploy workflow\nbf22a8a feat: en/es/zh locale routes\n5b4120e refactor: extract page content into reusable components\n82fd0aa feat: EN/ES/ZH translations for all UI strings"
 }

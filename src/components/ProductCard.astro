@@ -1,6 +1,7 @@
 ---
 import { eetx433a } from '../data/product';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import ChipViewer from './ChipViewer.astro';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -20,9 +21,7 @@ const base = lang === 'pt' ? '' : `/${lang}`;
     </div>
     <a href={`${base}/produtos/eetx433a`} class="btn fill">{t('cta.viewProduct')} →</a>
   </div>
-  <div class="prodart">
-    <span>{t('product.card.art')}</span>
-  </div>
+  <ChipViewer height="240px" />
 </div>
 <style>
   .prod{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;border:1px solid var(--line);border-radius:18px;padding:26px;background:linear-gradient(180deg,var(--panel),var(--bg2))}
