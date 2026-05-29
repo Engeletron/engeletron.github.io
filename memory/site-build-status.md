@@ -1,8 +1,8 @@
 ---
 name: site-build-status
-description: Estado da implementação do novo site Astro (branch feat/site-rf-astro) — construído e verificado.
+description: Estado do novo site Astro — construído, PUBLICADO no ar, e com ajustes pós-deploy (e-mails, WhatsApp, mobile).
 type: project
-updated: 2026-05-28
+updated: 2026-05-29
 ---
 
 O novo site (Astro) foi **implementado e verificado** em 2026-05-28, na branch
@@ -34,9 +34,16 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
 **Follow-ups de polimento (não bloqueiam):**
 - `<title>`/`<meta description>` das páginas estão fixos em PT — localizar por idioma.
 - Eyebrow EN diz "BRASIL" → trocar para "Brazil".
-- `ProductCard` tem um placeholder "[ chip 3D / foto do produto ]" — pôr imagem real/chip.
+- ✅ RESOLVIDO: card "Nosso produto" da home usa o chip 3D (ChipViewer). (Testamos uma foto real no card e o usuário REJEITOU — manter 3D.)
 - Formulário de amostra (cadastro) não implementado — CTAs vão a WhatsApp/e‑mail (decisão atual).
 - Datasheet/App Notes em "em breve" até os PDFs existirem.
+
+**Mudanças pós-deploy (2026-05-29, todas no ar):**
+- E-mails de contato → **danilo@engeletron.com.br** e **gisely@engeletron.com.br** (em `src/data/product.ts` e `EmpresaPage.astro`).
+- **Ícone oficial do WhatsApp**: `src/components/WhatsAppIcon.astro` + botão flutuante verde (FAB) em todas as páginas, via `Base.astro`.
+- **Responsividade mobile**: guardas anti-overflow no `global.css` (`overflow-x:hidden`, img/svg max-width) + `Nav.astro` quebra o menu em linha no mobile (≤760px). Verificado a 390px: sem overflow horizontal.
+- **Foto real do chip** tratada (fundo azul removido + realce) salva em `public/assets/eetx433a-photo.png` (transparente) e `eetx433a-photo-stage.jpg` (palco escuro). NÃO usada no card (3D mantido) — disponível para uso futuro.
+- **Como atualizar o site:** editar a fonte (repo local na branch `main` = fonte Astro; espelhada na branch remota `source`) → `npm run build` → publicar `dist/` na `main` remota (force-push do build). Rollback: `git push --force origin site-legacy:main`.
 
 **Deploy:** ✅ PUBLICADO em 2026-05-29 — site novo no ar em https://engeletron.com.br/ (repo
 `Engeletron/engeletron.github.io`, build na branch `main`; `site-legacy` = backup do antigo;
