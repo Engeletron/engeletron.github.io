@@ -4,7 +4,7 @@ import AdvantagesCompare from './AdvantagesCompare.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
 ---
-<Base title="Tecnologia — Engeletron" description={t('home.hero.tag')}>
+<Base title={t('meta.title.tech')} description={t('home.hero.tag')}>
   <div class="wrap">
     <section style="border-top:none">
       <div class="stitle">{t('home.tech.eyebrow')}</div>
@@ -20,7 +20,7 @@ const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
   <style>
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px}
     .card{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
-    .card .ic{color:var(--cyan);font-size:22px}.card h3{font-size:17px;margin:10px 0 6px}.card p{color:var(--dim);font-size:13.5px}
+    .card .ic{color:var(--cyan);font-size:22px}.card h3{font-size:20px;margin:10px 0 6px}.card p{color:var(--dim);font-size:17px}
     @media(max-width:760px){.grid3{grid-template-columns:1fr}}
   </style>
 </Base>

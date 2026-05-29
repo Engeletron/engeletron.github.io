@@ -48,3 +48,26 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
 **Deploy:** ✅ PUBLICADO em 2026-05-29 — site novo no ar em https://engeletron.com.br/ (repo
 `Engeletron/engeletron.github.io`, build na branch `main`; `site-legacy` = backup do antigo;
 `source` = fonte Astro). Detalhes e rollback em [[deploy-github-pages]].
+
+**Mudanças de UI (2026-05-29, sessão 2 — BUILDADAS e verificadas, ainda NÃO publicadas):**
+- "comb." → "códigos" (codes / 编码) no card e no spec `encoding` (`product.ts`).
+- Fontes pequenas aumentadas ~1.4× em todo o site (global.css + componentes) p/ legibilidade.
+- Bandeiras BR/China agora são **IMAGENS** (não emoji — ver [[astro-model-viewer-flags]]): seletor de
+  idioma = 4 bandeiras 60px lado a lado (e o botão CTA ao lado foi removido); destaques (eyebrow do
+  hero, stat BR, boxes silício BR/CN) usam `Flag.astro`. China corrigida (🌏→bandeira CN). EN: "Brasil"→"Brazil".
+- Hero: eyebrow "◢ Nossa criação" acima do chip 3D, alinhado ao eyebrow do hero (`align-items:start`).
+- **Todo o site fala em "cotação"** (não "amostra"): botões + headings (contact.cta.title/sub, contact.page.sub,
+  product.commercial.title/sample.title/sample.body) trocados nos 4 idiomas (quote / cotización / 报价).
+  As CHAVES i18n `cta.sample`/`product.commercial.sample.*` mantêm o nome interno (não exibido).
+- Card "Nosso produto": chip agora **ESTÁTICO em vista de cima, texto horizontal** (ChipViewer com props
+  `orbit/rotate/controls`; orbit `270deg 4deg`). Hero **mantém girando** com `disable-zoom` (rotação sim, zoom não).
+- `ChipViewer.astro` ganhou props `orbit`, `rotate`, `controls` (defaults preservam o hero).
+- Build 28 páginas, 0 erros; verificado no navegador (desktop 1280 + mobile 390px), 0 erros de console.
+- **Auditoria de tradução (i18n)**: valores de spec antes fixos em PT agora localizados via `eetx433aI18n`
+  + `advantagesEliminatedI18n` em `product.ts` (SpecTable/AdvantagesCompare fazem merge por idioma). Chips
+  "ajustável/Código fixo", rótulo "Endereço", link "Política de Privacidade" (Footer) e cargos da equipe
+  passaram a usar i18n. ✅ `<title>`/`<meta>` de todas as páginas localizados (`meta.title.*`/`meta.desc.*`) e
+  a Política de Privacidade inteira traduzida nos 4 idiomas via `src/data/privacy.ts` (render por idioma).
+  (Astro: generic `<...>` em expressão de template quebra o build — usar `as any`.)
+- Pós-ajustes: "+13 dBm" com "dBm" em branco nos chips; "1N4148" → "LL4148" em todo o site.
+- ⚠️ **Ainda NÃO publicado** — falta `npm run build` + push do `dist/` p/ `main` remota quando o usuário aprovar.

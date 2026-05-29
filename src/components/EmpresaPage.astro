@@ -4,11 +4,11 @@ import SiliconSection from './SiliconSection.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
 const team = [
-  {name:'Danilo Miguel Neves Adur', role:'Diretor · Engenheiro Eletricista', crea:'CREA‑PR PR‑87205/D', email:'danilo@engeletron.com.br', phone:'(41) 99904‑2212', photo:'/assets/danilo.jpg'},
-  {name:'Gisely Bellozupko Adur', role:'Diretora · Engenheira Eletricista', crea:'CREA‑PR PR‑87210/D', email:'gisely@engeletron.com.br', phone:'(41) 99904‑2302', photo:'/assets/gisely.jpg'},
+  {name:'Danilo Miguel Neves Adur', roleKey:'team.role.dir.m', crea:'CREA‑PR PR‑87205/D', email:'danilo@engeletron.com.br', phone:'(41) 99904‑2212', photo:'/assets/danilo.jpg'},
+  {name:'Gisely Bellozupko Adur', roleKey:'team.role.dir.f', crea:'CREA‑PR PR‑87210/D', email:'gisely@engeletron.com.br', phone:'(41) 99904‑2302', photo:'/assets/gisely.jpg'},
 ];
 ---
-<Base title="Empresa — Engeletron" description="A Engeletron: engenharia elétrica brasileira, agora em silício.">
+<Base title={t('meta.title.company')} description={t('meta.desc.company')}>
   <div class="wrap">
     <section style="border-top:none">
       <div class="stitle">{t('home.company.eyebrow')}</div>
@@ -26,7 +26,7 @@ const team = [
           <div class="member">
             <img src={m.photo} alt={m.name} />
             <h3>{m.name}</h3>
-            <p class="role">{m.role}</p>
+            <p class="role">{t(m.roleKey as any)}</p>
             <p class="meta">{m.crea}</p>
             <p class="meta"><a class="cyan" href={`mailto:${m.email}`}>{m.email}</a></p>
             <p class="meta">{m.phone}</p>
@@ -48,7 +48,7 @@ const team = [
     .team{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px}
     .member{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);text-align:center}
     .member img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
-    .member h3{font-size:18px;margin:12px 0 4px}.member .role{color:var(--cyan);font-size:13px}.member .meta{color:var(--dim);font-size:13px}
+    .member h3{font-size:21px;margin:12px 0 4px}.member .role{color:var(--cyan);font-size:17px}.member .meta{color:var(--dim);font-size:17px}
     .cbox{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);line-height:1.9}
     @media(max-width:760px){.team{grid-template-columns:1fr}}
   </style>

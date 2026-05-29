@@ -1,11 +1,11 @@
 ---
 import { eetx433a } from '../data/product';
-const { height = '440px' } = Astro.props;
+const { height = '440px', orbit = '40deg 64deg auto', rotate = true, controls = true } = Astro.props;
 ---
 <div class="stagewrap" style={`--h:${height}`}>
   <div class="rings"><i style="width:170px;height:170px"></i><i style="width:300px;height:300px"></i><i style="width:430px;height:430px"></i></div>
-  <model-viewer src={eetx433a.glb} alt="EETX433A — SOIC-8" camera-controls auto-rotate
-    rotation-per-second="16deg" camera-orbit="40deg 64deg auto" exposure="1.1"
+  <model-viewer src={eetx433a.glb} alt="EETX433A — SOIC-8" camera-controls={controls ? true : undefined} auto-rotate={rotate ? true : undefined}
+    rotation-per-second="16deg" camera-orbit={orbit} disable-zoom exposure="1.1"
     tone-mapping="aces" shadow-intensity="1.2" environment-image="neutral" interaction-prompt="none"></model-viewer>
 </div>
 <style>

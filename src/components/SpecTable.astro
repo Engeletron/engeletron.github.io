@@ -1,19 +1,20 @@
 ---
-import { eetx433a } from '../data/product';
+import { eetx433a, eetx433aI18n } from '../data/product';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const v: Record<string, string> = { ...eetx433a, ...(eetx433aI18n[lang] ?? {}) };
 const rows: [Parameters<typeof t>[0], string][] = [
-  ['spec.freq',       eetx433a.freq],
-  ['spec.power',      eetx433a.power],
-  ['spec.keys',       eetx433a.keys],
-  ['spec.encoding',   eetx433a.encoding],
-  ['spec.txTime',     eetx433a.txTime],
-  ['spec.oscillator', eetx433a.oscillator],
-  ['spec.protocol',   eetx433a.protocol],
-  ['spec.programming',eetx433a.programming],
-  ['spec.package',    eetx433a.package],
-  ['spec.supply',     eetx433a.supply],
+  ['spec.freq',       v.freq],
+  ['spec.power',      v.power],
+  ['spec.keys',       v.keys],
+  ['spec.encoding',   v.encoding],
+  ['spec.txTime',     v.txTime],
+  ['spec.oscillator', v.oscillator],
+  ['spec.protocol',   v.protocol],
+  ['spec.programming',v.programming],
+  ['spec.package',    v.package],
+  ['spec.supply',     v.supply],
 ];
 ---
 <div class="specs">
@@ -23,7 +24,7 @@ const rows: [Parameters<typeof t>[0], string][] = [
 </div>
 <style>
   .specs{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
-  .spec{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #16223a;font-size:14.5px}
+  .spec{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid #16223a;font-size:18px}
   .spec span{color:var(--dim)} .spec b{color:#eaf0fb;font-weight:500;font-family:'Space Grotesk'}
   @media(max-width:760px){.specs{grid-template-columns:1fr}}
 </style>

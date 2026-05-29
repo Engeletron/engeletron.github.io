@@ -2,14 +2,24 @@
 import { languages, getLangFromUrl } from '../i18n/ui';
 const cur = getLangFromUrl(Astro.url);
 const rest = Astro.url.pathname.replace(/^\/(en|es|zh)/, '') || '/';
-function href(l:string){ return l === 'pt' ? rest : `/${l}${rest}`; }
+function href(l: string){ return l === 'pt' ? rest : `/${l}${rest}`; }
+const codes: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' };
+const names = languages as Record<string, string>;
 ---
-<details class="lang">
-  <summary>{cur.toUpperCase()} ▾</summary>
-  <ul>{Object.keys(languages).map(l => <li><a href={href(l)}>{l.toUpperCase()}</a></li>)}</ul>
-</details>
+<div class="langs" role="group" aria-label="Idioma / Language">
+  {Object.keys(languages).map(l => (
+    <a href={href(l)} class:list={["flag", { on: l === cur }]}
+       title={names[l]} aria-label={names[l]} aria-current={l === cur ? 'true' : undefined}>
+      <img src={`/assets/flags/${codes[l]}.png`} alt={names[l]} width="30" height="20" />
+    </a>
+  ))}
+</div>
 <style>
-  .lang{position:relative} .lang summary{list-style:none;cursor:pointer;color:var(--cyan);font-size:13px;font-weight:600}
-  .lang ul{position:absolute;right:0;top:130%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px;min-width:80px}
-  .lang li{list-style:none} .lang a{display:block;padding:6px 10px;font-size:13px;color:var(--dim)} .lang a:hover{color:var(--txt)}
+  .langs{display:flex;align-items:center;gap:6px}
+  .flag{display:inline-flex;padding:3px;border-radius:7px;line-height:0;filter:grayscale(.5) opacity(.65);transition:filter .15s, background .15s, transform .1s}
+  .flag img{width:42px;height:28px;object-fit:cover;border-radius:4px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+  .flag:hover{filter:none;background:rgba(92,225,230,.12)}
+  .flag:active{transform:scale(.92)}
+  .flag.on{filter:none;background:rgba(92,225,230,.18);box-shadow:inset 0 0 0 1px rgba(92,225,230,.55)}
+  @media(max-width:760px){.flag img{width:42px;height:28px}.langs{gap:8px}}
 </style>

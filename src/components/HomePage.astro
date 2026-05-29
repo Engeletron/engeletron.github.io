@@ -7,18 +7,19 @@ import ProductCard from './ProductCard.astro';
 import SiliconSection from './SiliconSection.astro';
 import AppCards from './AppCards.astro';
 import ContactCTA from './ContactCTA.astro';
+import Flag from './Flag.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const base = lang === 'pt' ? '' : `/${lang}`;
 ---
-<Base title="Engeletron — Circuitos integrados de RF" description={t('home.hero.tag')}>
+<Base title={t('meta.title.home')} description={t('home.hero.tag')}>
 
   <!-- HERO -->
   <div class="wrap">
     <div class="hero">
       <div>
-        <div class="eb">{t('home.hero.eyebrow')}</div>
+        <div class="eb">{t('home.hero.eyebrow')} <Flag code="br" alt="Brasil" /></div>
         <h1>{t('home.hero.title.a')}<em>{t('home.hero.title.em')}</em>{t('home.hero.title.b')}</h1>
         <p class="tag">{t('home.hero.tag')}</p>
         <div class="cta-row">
@@ -26,7 +27,10 @@ const base = lang === 'pt' ? '' : `/${lang}`;
           <a href={eetx433a.whatsapp} target="_blank" rel="noopener" class="btn ghost">{t('cta.sample')}</a>
         </div>
       </div>
-      <ChipViewer height="460px" />
+      <div class="hero-art">
+        <div class="eb" style="margin-bottom:10px">{t('home.hero.creation')}</div>
+        <ChipViewer height="460px" />
+      </div>
     </div>
   </div>
 
@@ -90,7 +94,7 @@ const base = lang === 'pt' ? '' : `/${lang}`;
       <div class="stats">
         <div class="stat"><div class="n">{t('home.stat1.n')}</div><small>{t('home.stat1.label')}</small></div>
         <div class="stat"><div class="n">{t('home.stat2.n')}</div><small>{t('home.stat2.label')}</small></div>
-        <div class="stat"><div class="n">{t('home.stat3.n')}</div><small>{t('home.stat3.label')}</small></div>
+        <div class="stat"><div class="n"><Flag code="br" alt="Brasil" /> {t('home.stat3.n')}</div><small>{t('home.stat3.label')}</small></div>
         <div class="stat"><div class="n">{t('home.stat4.n')}</div><small>{t('home.stat4.label')}</small></div>
       </div>
     </div>
@@ -111,7 +115,7 @@ const base = lang === 'pt' ? '' : `/${lang}`;
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 30px;
-    align-items: center;
+    align-items: start;
     padding: 60px 0 40px;
   }
   @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
@@ -131,7 +135,7 @@ const base = lang === 'pt' ? '' : `/${lang}`;
   }
   .hero .tag {
     color: var(--dim);
-    font-size: 18px;
+    font-size: 20px;
     max-width: 50ch;
     margin-bottom: 24px;
   }
@@ -151,8 +155,8 @@ const base = lang === 'pt' ? '' : `/${lang}`;
     background: var(--panel);
   }
   .card .ic { color: var(--cyan); font-size: 22px; }
-  .card h3 { font-size: 17px; margin: 10px 0 6px; }
-  .card p { color: var(--dim); font-size: 13.5px; }
+  .card h3 { font-size: 20px; margin: 10px 0 6px; }
+  .card p { color: var(--dim); font-size: 17px; }
 
   /* STATS */
   .stats {
@@ -175,5 +179,5 @@ const base = lang === 'pt' ? '' : `/${lang}`;
   /* SECTION OVERRIDE: SiliconSection has its own section tag — avoid double border */
   section > .wrap > :global(.silicon-section) { border-top: none; padding-top: 0; }
 
-  .ssub { color: var(--dim); font-size: 15px; margin-bottom: 24px; }
+  .ssub { color: var(--dim); font-size: 18px; margin-bottom: 24px; }
 </style>

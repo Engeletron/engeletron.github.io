@@ -1,13 +1,14 @@
 ---
-import { advantagesEliminated } from '../data/product';
+import { advantagesEliminated, advantagesEliminatedI18n } from '../data/product';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const items = advantagesEliminatedI18n[lang] ?? advantagesEliminated;
 ---
 <div class="adv">
   <div class="col bad">
     <h4>{t('adv.bad.heading')}</h4>
-    {advantagesEliminated.map((item) => (
+    {items.map((item) => (
       <div class="row del"><span class="x">✕</span> {item}</div>
     ))}
   </div>
@@ -24,9 +25,9 @@ const t = useTranslations(lang);
   @media(max-width:760px){.adv{grid-template-columns:1fr}}
   .col{border:1px solid var(--line);border-radius:14px;padding:18px;background:linear-gradient(180deg,var(--panel),var(--bg2))}
   .col.good{border-color:rgba(92,225,230,.4);box-shadow:0 0 40px rgba(92,225,230,.07)}
-  .col h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+  .col h4{font-size:15px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
   .col.bad h4{color:#ff8b96}.col.good h4{color:var(--cyan)}
-  .row{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#c7d0dd;padding:7px 0}
+  .row{display:flex;align-items:center;gap:10px;font-size:17px;color:#c7d0dd;padding:7px 0}
   .row .x{color:#ff5b6b;font-weight:700}.row .v{color:var(--cyan);font-weight:700}
   .row.del{color:#8090ab;text-decoration:line-through;text-decoration-color:rgba(255,91,107,.5)}
 </style>

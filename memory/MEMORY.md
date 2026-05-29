@@ -20,6 +20,7 @@
 
 ## Referência
 - [Stakeholders e contatos](stakeholders.md) — diretores/engenheiros e dados institucionais da empresa.
+- [Gotchas Astro/bandeiras/model-viewer](astro-model-viewer-flags.md) — emoji de bandeira não renderiza no Windows (usar imagens); attr booleano em custom element.
 
 ## Convenções
 - [Preferências do usuário](preferencias-usuario.md) — comunicação em pt-BR; confirmar antes de remover arquivos.
