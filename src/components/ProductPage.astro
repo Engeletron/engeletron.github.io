@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/ui';
-import { eetx433a } from '../data/product';
+import { getLangFromUrl, useTranslations, languages } from '../i18n/ui';
+import { eetx433a, datasheets } from '../data/product';
+import Flag from './Flag.astro';
 import ChipViewer from './ChipViewer.astro';
 import SpecTable from './SpecTable.astro';
 import AdvantagesCompare from './AdvantagesCompare.astro';
@@ -10,6 +11,7 @@ import EngineeringProgram from './EngineeringProgram.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' };
 ---
 <Base title={t('meta.title.product')} description={t('product.hero.tag')}>
 
@@ -37,7 +39,7 @@ const t = useTranslations(lang);
         </div>
         <div class="cta-row">
           <a href={eetx433a.whatsapp} target="_blank" rel="noopener" class="btn fill">{t('cta.sample')}</a>
-          <a href="#" class="btn ghost" aria-disabled="true">{t('product.hero.datasheet')}</a>
+          <a href={datasheets[lang] ?? datasheets.pt} download class="btn ghost">{t('product.hero.datasheet')}</a>
           <a href={eetx433a.whatsapp} target="_blank" rel="noopener" class="btn ghost">{t('cta.whatsapp')}</a>
         </div>
       </div>
@@ -85,13 +87,21 @@ const t = useTranslations(lang);
       <div class="stitle">{t('product.docs.eyebrow')}</div>
       <div class="sh">{t('product.docs.title')}</div>
       <div class="dl">
-        <div class="dlc">
-          <span class="big">📄</span>
-          <div>
-            <b>{t('product.docs.ds.label')}</b>
-            <small>{t('product.docs.ds.sub')}</small>
+        <div class="dlc ds">
+          <div class="dl-head">
+            <span class="big">📄</span>
+            <div>
+              <b>{t('product.docs.ds.label')}</b>
+              <small>{t('product.docs.ds.sub')}</small>
+            </div>
           </div>
-          <span class="soon">{t('product.docs.soon')}</span>
+          <div class="ds-langs">
+            {(['pt','en','es','zh'] as const).map((l) => (
+              <a class="ds-lang" href={datasheets[l]} download>
+                <Flag code={dsFlag[l]} alt={languages[l]} /> {languages[l]} <span>PDF</span>
+              </a>
+            ))}
+          </div>
         </div>
         <div class="dlc">
           <span class="big">📘</span>
@@ -157,6 +167,13 @@ const t = useTranslations(lang);
 
   /* DOWNLOADS */
   .dl { display: flex; flex-wrap: wrap; gap: 12px; }
+  .dlc.ds { flex-direction: column; align-items: stretch; gap: 0; }
+  .dlc.ds .dl-head { display: flex; align-items: center; gap: 12px; }
+  .ds-langs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+  @media (max-width: 480px) { .ds-langs { grid-template-columns: 1fr; } }
+  .ds-lang { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 9px; background: rgba(92,225,230,.05); color: #cdd8f2; font-size: 15px; }
+  .ds-lang:hover { border-color: var(--cyan); color: var(--txt); }
+  .ds-lang span { margin-left: auto; color: var(--dim); font-size: 12px; letter-spacing: .08em; }
   .dlc {
     flex: 1;
     min-width: 220px;

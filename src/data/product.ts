@@ -9,6 +9,14 @@ export const eetx433a = {
   whatsapp: 'https://wa.me/5541999042212',
   email: 'danilo@engeletron.com.br',
 } as const;
+
+// Datasheets por idioma (PDF) — servidos de public/assets/datasheets/
+export const datasheets: Record<string, string> = {
+  pt: '/assets/datasheets/EETX433A_PT.pdf',
+  en: '/assets/datasheets/EETX433A_EN.pdf',
+  es: '/assets/datasheets/EETX433A_ES.pdf',
+  zh: '/assets/datasheets/EETX433A_CN.pdf',
+};
 export const advantagesEliminated = ['Cristal SMD 3225 (XTAL)','Ressonador SAW SMD','2× diodo LL4148 (MiniMELF)','Diodo duplo BAV70 (SOT‑23)'];
 export const applications = [
   {icon:'🚪', key:'gates'}, {icon:'🚨', key:'alarms'}, {icon:'🔑', key:'access'},

@@ -4,6 +4,9 @@ import { companies, companyCity } from '../data/company';
 const lang = getLangFromUrl(Astro.url); const base = lang==='pt'?'':`/${lang}`;
 const t = useTranslations(lang);
 ---
-<footer>© 2026 Engeletron · {t('company.role.dev')} {companies.developer.name} (CNPJ {companies.developer.cnpj}) · {t('company.role.seller')} {companies.seller.name} (CNPJ {companies.seller.cnpj}) · {companyCity} ·
-  <a href={base+'/privacidade'}>{t('footer.privacy')}</a></footer>
-<style>footer{border-top:1px solid var(--line);padding:30px 5vw;color:var(--dim);font-size:16px;text-align:center}footer a{color:var(--cyan)}</style>
+<footer>
+  <img class="fmark" src="/assets/icon_engeletron.svg" alt="Engeletron" width="34" height="34" />
+  <div class="legal">© 2026 Engeletron · {t('company.role.dev')} {companies.developer.name} (CNPJ {companies.developer.cnpj}) · {t('company.role.seller')} {companies.seller.name} (CNPJ {companies.seller.cnpj}) · {companyCity} ·
+  <a href={base+'/privacidade'}>{t('footer.privacy')}</a></div>
+</footer>
+<style>footer{border-top:1px solid var(--line);padding:30px 5vw;color:var(--dim);font-size:16px;text-align:center}.fmark{width:34px;height:34px;display:block;margin:0 auto 12px;filter:drop-shadow(0 0 10px rgba(92,225,230,.35))}footer a{color:var(--cyan)}</style>
