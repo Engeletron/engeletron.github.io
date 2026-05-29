@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-05-29T03:42:27.736Z",
+  "timestamp": "2026-05-29T17:49:02.359Z",
   "source": "auto-postool",
   "partial": false,
   "phase": null,
@@ -18,9 +18,57 @@
   "uncommitted_files": [
     {
       "status": "M",
+      "path": ".gitignore"
+    },
+    {
+      "status": "M",
       "path": ".planning/HANDOFF.json"
+    },
+    {
+      "status": "D",
+      "path": "assets/eetx433a-photo-stage.jpg"
+    },
+    {
+      "status": "D",
+      "path": "assets/eetx433a-photo.png"
+    },
+    {
+      "status": "D",
+      "path": "\"assets/nova logomarca engeletron - 200924/png fundo solido/engeletron.zip\""
+    },
+    {
+      "status": "D",
+      "path": "\"assets/nova logomarca engeletron - 200924/png fundo transparente/engeletron.zip\""
+    },
+    {
+      "status": "D",
+      "path": "\"assets/nova logomarca engeletron - 200924/svg fundo solido/engeletron.zip\""
+    },
+    {
+      "status": "D",
+      "path": "\"assets/nova logomarca engeletron - 200924/svg fundo transparente/engeletron.zip\""
+    },
+    {
+      "status": "M",
+      "path": "memory/site-build-status.md"
+    },
+    {
+      "status": "M",
+      "path": "src/components/HomePage.astro"
+    },
+    {
+      "status": "M",
+      "path": "src/components/ProductPage.astro"
+    },
+    {
+      "status": "M",
+      "path": "src/i18n/ui.ts"
+    },
+    {
+      "status": "??",
+      "path": "src/components/EngineeringProgram.astro"
     }
   ],
   "next_action": null,
-  "context_notes": "Recent commits:\n1b7b6fb revert: card de produto volta ao chip 3D\n0f1caa6 fix: chip 3D no card de produto da home (remove placeholder)\n26f1209 feat: emails @engeletron.com.br, icone WhatsApp (FAB), responsividade mobile\n077c31b feat: publish assets, optimize GLB, CNAME, Pages deploy workflow\nbf22a8a feat: en/es/zh locale routes"
+  "context_notes": "Recent commits:\n1952cc1 feat(site): cotacao, fontes maiores, bandeiras-imagem, chip estatico, i18n completo\nf232bb9 docs(memory): consolidar estado final da sessao (site no ar, ajustes pos-deploy)\n1b7b6fb revert: card de produto volta ao chip 3D\n0f1caa6 fix: chip 3D no card de produto da home (remove placeholder)\n26f1209 feat: emails @engeletron.com.br, icone WhatsApp (FAB), responsividade mobile"
 }

@@ -4,3 +4,7 @@ dist/
 .superpowers/
 *.log
 assets/_marking.png
+
+# Artefatos de teste/captura (Playwright, screenshots na raiz)
+.playwright-mcp/
+/*.png

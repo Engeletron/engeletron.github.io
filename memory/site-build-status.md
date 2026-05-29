@@ -70,4 +70,11 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
   a Política de Privacidade inteira traduzida nos 4 idiomas via `src/data/privacy.ts` (render por idioma).
   (Astro: generic `<...>` em expressão de template quebra o build — usar `as any`.)
 - Pós-ajustes: "+13 dBm" com "dBm" em branco nos chips; "1N4148" → "LL4148" em todo o site.
-- ⚠️ **Ainda NÃO publicado** — falta `npm run build` + push do `dist/` p/ `main` remota quando o usuário aprovar.
+- **Seção "Engenharia inclusa"** (`EngineeringProgram.astro`) na Home e na página do Produto: 5 serviços
+  gratuitos para quem adota o EETX433A (consultoria RF, projeto p/ gabinete, documentação de produção,
+  protótipo, testes de potência) + card-selo "Custo absorvido pela Engeletron" + CTAs. i18n nos 4 idiomas.
+  Auditoria mobile (375/320 px, PT+ZH): 0 overflow horizontal em todas as páginas.
+- ✅ **PUBLICADO no ar em 2026-05-29 (sessão 2)** — fonte commitada e enviada p/ `origin/source` (1952cc1);
+  build force-pushed p/ `origin/main` (0dbb226, com `.nojekyll` + `CNAME`). **Backup do build anterior** em
+  `origin/backup-main-20260529` (adb6a1e). Verificado em https://engeletron.com.br/ (PT "Nossa criação"/
+  "Solicitar cotação"; EN specs "adjustable/Fixed code"). **Rollback:** `git push -f origin backup-main-20260529:main`.

@@ -6,6 +6,7 @@ import ChipViewer from './ChipViewer.astro';
 import SpecTable from './SpecTable.astro';
 import AdvantagesCompare from './AdvantagesCompare.astro';
 import AppCards from './AppCards.astro';
+import EngineeringProgram from './EngineeringProgram.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -68,6 +69,13 @@ const t = useTranslations(lang);
       <div class="stitle">{t('product.apps.eyebrow')}</div>
       <div class="sh">{t('product.apps.title')}</div>
       <AppCards />
+    </div>
+  </section>
+
+  <!-- ENGENHARIA INCLUSA -->
+  <section>
+    <div class="wrap">
+      <EngineeringProgram />
     </div>
   </section>
 

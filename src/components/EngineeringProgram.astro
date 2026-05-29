@@ -1,0 +1,49 @@
+---
+import { eetx433a } from '../data/product';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const services = [
+  { ic: '📡', key: 's1' },
+  { ic: '📐', key: 's2' },
+  { ic: '📄', key: 's3' },
+  { ic: '🔧', key: 's4' },
+  { ic: '📶', key: 's5' },
+];
+---
+<div class="eng">
+  <div class="stitle">{t('eng.eyebrow')}</div>
+  <div class="sh">{t('eng.title')}</div>
+  <p class="eng-sub">{t('eng.sub')}</p>
+  <div class="eng-grid">
+    {services.map((s) => (
+      <div class="eng-card">
+        <div class="ic">{s.ic}</div>
+        <h3>{t(`eng.${s.key}.title` as any)}</h3>
+        <p>{t(`eng.${s.key}.body` as any)}</p>
+      </div>
+    ))}
+    <div class="eng-card badge">
+      <div class="ic">✦</div>
+      <h3>{t('eng.badge')}</h3>
+      <div class="eng-cta">
+        <a class="btn fill" href={eetx433a.whatsapp} target="_blank" rel="noopener">{t('cta.sample')}</a>
+        <a class="btn ghost" href={eetx433a.whatsapp} target="_blank" rel="noopener">{t('eng.cta')}</a>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .eng-sub{color:var(--dim);font-size:18px;max-width:62ch;margin:6px 0 22px}
+  .eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:900px){.eng-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.eng-grid{grid-template-columns:1fr}}
+  .eng-card{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
+  .eng-card .ic{font-size:26px}
+  .eng-card h3{font-size:20px;margin:10px 0 6px;font-family:'Space Grotesk',sans-serif}
+  .eng-card p{color:var(--dim);font-size:17px}
+  .eng-card.badge{border-color:rgba(92,225,230,.45);display:flex;flex-direction:column;
+    background:radial-gradient(360px 200px at 70% 0%,rgba(92,225,230,.12),transparent 60%),linear-gradient(180deg,var(--panel),var(--bg2))}
+  .eng-card.badge .ic{color:var(--cyan)}
+  .eng-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:16px}
+</style>

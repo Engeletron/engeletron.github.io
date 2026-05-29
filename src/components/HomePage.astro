@@ -8,6 +8,7 @@ import SiliconSection from './SiliconSection.astro';
 import AppCards from './AppCards.astro';
 import ContactCTA from './ContactCTA.astro';
 import Flag from './Flag.astro';
+import EngineeringProgram from './EngineeringProgram.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -82,6 +83,13 @@ const base = lang === 'pt' ? '' : `/${lang}`;
       <div class="stitle">{t('home.apps.eyebrow')}</div>
       <div class="sh">{t('home.apps.title')}</div>
       <AppCards />
+    </div>
+  </section>
+
+  <!-- ENGENHARIA INCLUSA -->
+  <section>
+    <div class="wrap">
+      <EngineeringProgram />
     </div>
   </section>
 
