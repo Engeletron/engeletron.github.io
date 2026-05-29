@@ -100,6 +100,8 @@ export const ui = {
     'product.commercial.sample.title':'Amostras mediante cadastro',
     'product.commercial.sample.body':'Cadastre‑se (nome, empresa, e‑mail, aplicação, volume) e nossa equipe envia amostras e datasheet.',
     'product.commercial.whatsapp':'Falar no WhatsApp',
+    'contact.page.title':'Vamos conversar',
+    'contact.page.sub':'Fale com a Engeletron por WhatsApp ou e‑mail. Amostras do EETX433A são fornecidas mediante contato.',
   },
   en: {}, es: {}, zh: {},
 } as const;
