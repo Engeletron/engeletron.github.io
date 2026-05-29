@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import AppCards from './AppCards.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
+---
+<Base title="Aplicações — Engeletron" description={t('home.hero.tag')}>
+  <div class="wrap">
+    <section style="border-top:none">
+      <div class="stitle">{t('home.apps.eyebrow')}</div>
+      <div class="sh">{t('home.apps.title')}</div>
+      <AppCards />
+    </section>
+  </div>
+</Base>

@@ -1,25 +1,4 @@
 ---
-import Base from '../layouts/Base.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/ui';
-import { eetx433a } from '../data/product';
-const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
+import ContatoPage from '../components/ContatoPage.astro';
 ---
-<Base title="Contato — Engeletron" description="Fale com a Engeletron">
-  <div class="wrap">
-    <section style="border-top:none">
-      <div class="stitle">{t('nav.contact')}</div>
-      <div class="sh">{t('contact.page.title')}</div>
-      <p style="color:var(--dim);max-width:60ch">{t('contact.page.sub')}</p>
-      <div class="cbox">
-        <p><b>WhatsApp:</b> <a class="cyan" href={eetx433a.whatsapp}>+55 41 99904‑2212</a></p>
-        <p><b>E‑mail:</b> <a class="cyan" href={`mailto:${eetx433a.email}`}>{eetx433a.email}</a></p>
-        <p><b>Endereço:</b> Av. Beira Mar, 9009, Sala 1, Balneário Albatroz, Matinhos‑PR, CEP 83260‑000</p>
-      </div>
-      <div class="ctarow">
-        <a class="btn fill" href={eetx433a.whatsapp}>{t('cta.sample')}</a>
-        <a class="btn ghost" href={`mailto:${eetx433a.email}`}>{t('cta.email')}</a>
-      </div>
-    </section>
-  </div>
-  <style>.cbox{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);margin-top:14px;line-height:2}.ctarow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}</style>
-</Base>
+<ContatoPage />

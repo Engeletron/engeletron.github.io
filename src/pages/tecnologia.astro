@@ -1,26 +1,4 @@
 ---
-import Base from '../layouts/Base.astro';
-import AdvantagesCompare from '../components/AdvantagesCompare.astro';
-import { getLangFromUrl, useTranslations } from '../i18n/ui';
-const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
+import TecnologiaPage from '../components/TecnologiaPage.astro';
 ---
-<Base title="Tecnologia — Engeletron" description={t('home.hero.tag')}>
-  <div class="wrap">
-    <section style="border-top:none">
-      <div class="stitle">{t('home.tech.eyebrow')}</div>
-      <div class="sh">{t('home.tech.title')}</div>
-      <div class="grid3">
-        <div class="card"><div class="ic">◷</div><h3>{t('home.tech.osc.title')}</h3><p>{t('home.tech.osc.body')}</p></div>
-        <div class="card"><div class="ic">⌗</div><h3>{t('home.tech.diodes.title')}</h3><p>{t('home.tech.diodes.body')}</p></div>
-        <div class="card"><div class="ic">⚡</div><h3>{t('home.tech.ready.title')}</h3><p>{t('home.tech.ready.body')}</p></div>
-      </div>
-    </section>
-    <section><AdvantagesCompare /></section>
-  </div>
-  <style>
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px}
-    .card{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
-    .card .ic{color:var(--cyan);font-size:22px}.card h3{font-size:17px;margin:10px 0 6px}.card p{color:var(--dim);font-size:13.5px}
-    @media(max-width:760px){.grid3{grid-template-columns:1fr}}
-  </style>
-</Base>
+<TecnologiaPage />
