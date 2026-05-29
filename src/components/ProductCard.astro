@@ -28,5 +28,6 @@ const base = lang === 'pt' ? '' : `/${lang}`;
   @media(max-width:760px){.prod{grid-template-columns:1fr}}
   .prod h3{font-family:'Space Grotesk',sans-serif;font-size:36px}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-  .prodart{height:230px;border-radius:14px;background:radial-gradient(300px 200px at 50% 50%,rgba(92,225,230,.12),transparent 70%),#05070d;display:flex;align-items:center;justify-content:center;color:#33405a;font-family:'Space Grotesk',sans-serif;font-size:14px}
+  .prodart{min-height:240px;border-radius:14px;background:radial-gradient(320px 220px at 50% 50%,rgba(92,225,230,.14),transparent 70%),#05070d;display:flex;align-items:center;justify-content:center;padding:16px}
+  .prodart img{max-width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 12px 26px rgba(0,0,0,.5))}
 </style>

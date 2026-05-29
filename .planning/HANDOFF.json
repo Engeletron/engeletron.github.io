@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-05-29T03:25:13.402Z",
+  "timestamp": "2026-05-29T03:39:56.298Z",
   "source": "auto-postool",
   "partial": false,
   "phase": null,
@@ -23,8 +23,32 @@
     {
       "status": "M",
       "path": "src/components/ProductCard.astro"
+    },
+    {
+      "status": "??",
+      "path": ".playwright-mcp/"
+    },
+    {
+      "status": "??",
+      "path": "assets/EETX433A_real_photo.jpg"
+    },
+    {
+      "status": "??",
+      "path": "assets/eetx433a-photo-stage.jpg"
+    },
+    {
+      "status": "??",
+      "path": "assets/eetx433a-photo.png"
+    },
+    {
+      "status": "??",
+      "path": "public/assets/eetx433a-photo-stage.jpg"
+    },
+    {
+      "status": "??",
+      "path": "public/assets/eetx433a-photo.png"
     }
   ],
   "next_action": null,
-  "context_notes": "Recent commits:\n26f1209 feat: emails @engeletron.com.br, icone WhatsApp (FAB), responsividade mobile\n077c31b feat: publish assets, optimize GLB, CNAME, Pages deploy workflow\nbf22a8a feat: en/es/zh locale routes\n5b4120e refactor: extract page content into reusable components\n82fd0aa feat: EN/ES/ZH translations for all UI strings"
+  "context_notes": "Recent commits:\n0f1caa6 fix: chip 3D no card de produto da home (remove placeholder)\n26f1209 feat: emails @engeletron.com.br, icone WhatsApp (FAB), responsividade mobile\n077c31b feat: publish assets, optimize GLB, CNAME, Pages deploy workflow\nbf22a8a feat: en/es/zh locale routes\n5b4120e refactor: extract page content into reusable components"
 }
