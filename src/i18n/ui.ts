@@ -102,6 +102,11 @@ export const ui = {
     'product.commercial.whatsapp':'Falar no WhatsApp',
     'contact.page.title':'Vamos conversar',
     'contact.page.sub':'Fale com a Engeletron por WhatsApp ou e‑mail. Amostras do EETX433A são fornecidas mediante contato.',
+    'company.about':'A Engeletron Engenharia Elétrica nasceu como engenharia elétrica brasileira e agora projeta circuitos integrados de RF. Operamos no modelo fabless: a concepção e o projeto são nossos; a fabricação é feita por parceiros especializados.',
+    'company.team.eyebrow':'◢ Nossa equipe',
+    'company.team.title':'Quem projeta',
+    'company.legal.eyebrow':'◢ Dados institucionais',
+    'company.legal.title':'Engeletron Engenharia Elétrica Ltda',
   },
   en: {}, es: {}, zh: {},
 } as const;
