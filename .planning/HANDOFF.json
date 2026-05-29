@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "timestamp": "2026-05-29T00:06:25.026Z",
+  "timestamp": "2026-05-29T00:44:01.351Z",
   "source": "auto-postool",
-  "partial": true,
+  "partial": false,
   "phase": null,
   "phase_name": null,
   "phase_dir": null,
@@ -15,7 +15,28 @@
   "blockers": [],
   "human_actions_pending": [],
   "decisions": [],
-  "uncommitted_files": [],
+  "uncommitted_files": [
+    {
+      "status": "M",
+      "path": ".planning/HANDOFF.json"
+    },
+    {
+      "status": "??",
+      "path": ".github/"
+    },
+    {
+      "status": "??",
+      "path": "README.md"
+    },
+    {
+      "status": "??",
+      "path": "public/CNAME"
+    },
+    {
+      "status": "??",
+      "path": "public/assets/"
+    }
+  ],
   "next_action": null,
-  "context_notes": ""
+  "context_notes": "Recent commits:\nbf22a8a feat: en/es/zh locale routes\n5b4120e refactor: extract page content into reusable components\n82fd0aa feat: EN/ES/ZH translations for all UI strings\n05f5ef8 feat: empresa and privacidade pages\n198293e feat: tecnologia, aplicacoes, contato pages"
 }
