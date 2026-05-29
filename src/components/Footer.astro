@@ -1,8 +1,9 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { companies, companyCity } from '../data/company';
 const lang = getLangFromUrl(Astro.url); const base = lang==='pt'?'':`/${lang}`;
 const t = useTranslations(lang);
 ---
-<footer>© 2026 ENGELETRON ENGENHARIA ELÉTRICA LTDA · CNPJ 37.912.040/0001-10 · Matinhos‑PR ·
+<footer>© 2026 Engeletron · {t('company.role.dev')} {companies.developer.name} (CNPJ {companies.developer.cnpj}) · {t('company.role.seller')} {companies.seller.name} (CNPJ {companies.seller.cnpj}) · {companyCity} ·
   <a href={base+'/privacidade'}>{t('footer.privacy')}</a></footer>
 <style>footer{border-top:1px solid var(--line);padding:30px 5vw;color:var(--dim);font-size:16px;text-align:center}footer a{color:var(--cyan)}</style>

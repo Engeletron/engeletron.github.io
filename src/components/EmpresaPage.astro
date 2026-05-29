@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import SiliconSection from './SiliconSection.astro';
+import { companies } from '../data/company';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
 const team = [
@@ -38,9 +39,10 @@ const team = [
       <div class="stitle">{t('company.legal.eyebrow')}</div>
       <div class="sh">{t('company.legal.title')}</div>
       <div class="cbox">
-        <p><b>ENGELETRON ENGENHARIA ELÉTRICA LTDA</b></p>
-        <p>CNPJ 37.912.040/0001-10</p>
-        <p>Av. Beira Mar, 9009, Sala 1, Balneário Albatroz — Matinhos‑PR, CEP 83260‑000</p>
+        <p class="rl">{t('company.role.dev')}</p>
+        <p><b>{companies.developer.name}</b> · CNPJ {companies.developer.cnpj}</p>
+        <p class="rl">{t('company.role.seller')}</p>
+        <p><b>{companies.seller.name}</b> · CNPJ {companies.seller.cnpj}</p>
       </div>
     </section>
   </div>
@@ -50,6 +52,8 @@ const team = [
     .member img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
     .member h3{font-size:21px;margin:12px 0 4px}.member .role{color:var(--cyan);font-size:17px}.member .meta{color:var(--dim);font-size:17px}
     .cbox{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);line-height:1.9}
+    .cbox .rl{color:var(--cyan);font-weight:600;font-size:14px;letter-spacing:.04em;margin-top:14px}
+    .cbox .rl:first-child{margin-top:0}
     @media(max-width:760px){.team{grid-template-columns:1fr}}
   </style>
 </Base>

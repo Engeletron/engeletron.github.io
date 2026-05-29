@@ -133,7 +133,9 @@ export const ui = {
     'eng.badge':'Custo absorvido pela Engeletron',
     'eng.cta':'Falar com a engenharia',
     'company.legal.eyebrow':'◢ Dados institucionais',
-    'company.legal.title':'Engeletron Engenharia Elétrica Ltda',
+    'company.legal.title':'Estrutura societária',
+    'company.role.dev':'Desenvolvido por',
+    'company.role.seller':'Comercializado por',
   },
   en: {
     'nav.products':'Products','nav.tech':'Technology','nav.apps':'Applications',
@@ -265,7 +267,9 @@ export const ui = {
     'eng.badge':'Engineering cost covered by Engeletron',
     'eng.cta':'Talk to engineering',
     'company.legal.eyebrow':'◢ Company information',
-    'company.legal.title':'Engeletron Engenharia Elétrica Ltda',
+    'company.legal.title':'Corporate structure',
+    'company.role.dev':'Developed by',
+    'company.role.seller':'Commercialized by',
   },
   es: {
     'nav.products':'Productos','nav.tech':'Tecnología','nav.apps':'Aplicaciones',
@@ -397,7 +401,9 @@ export const ui = {
     'eng.badge':'Costo absorbido por Engeletron',
     'eng.cta':'Hablar con ingeniería',
     'company.legal.eyebrow':'◢ Datos institucionales',
-    'company.legal.title':'Engeletron Engenharia Elétrica Ltda',
+    'company.legal.title':'Estructura societaria',
+    'company.role.dev':'Desarrollado por',
+    'company.role.seller':'Comercializado por',
   },
   zh: {
     'nav.products':'产品','nav.tech':'技术','nav.apps':'应用',
@@ -529,7 +535,9 @@ export const ui = {
     'eng.badge':'工程成本由 Engeletron 承担',
     'eng.cta':'联系工程团队',
     'company.legal.eyebrow':'◢ 公司信息',
-    'company.legal.title':'Engeletron Engenharia Elétrica Ltda',
+    'company.legal.title':'公司架构',
+    'company.role.dev':'研发方',
+    'company.role.seller':'销售方',
   },
 } as const;
 

@@ -1,12 +1,13 @@
 // Política de Privacidade localizada (PT/EN/ES/中文). Renderizada por PrivacidadePage.astro.
 // `html` permite <strong>/<a>; `items` é uma lista (<ul>).
+import { companies } from './company';
+
 export interface Block { t: 'p' | 'h2' | 'ul'; html?: string; items?: string[] }
 export interface PrivacyDoc { title: string; blocks: Block[] }
 
-const contactList = (addrLabel: string, emailLabel: string, phoneLabel: string, addr: string) => ([
-  '<strong>ENGELETRON ENGENHARIA ELÉTRICA LTDA</strong>',
-  'CNPJ: 37.912.040/0001-10',
-  `${addrLabel}: ${addr}`,
+const contactList = (devLabel: string, sellerLabel: string, emailLabel: string, phoneLabel: string) => ([
+  `<strong>${devLabel}:</strong> ${companies.developer.name} · CNPJ ${companies.developer.cnpj}`,
+  `<strong>${sellerLabel}:</strong> ${companies.seller.name} · CNPJ ${companies.seller.cnpj}`,
   `${emailLabel}: <a href="mailto:danilo.engeletron@gmail.com">danilo.engeletron@gmail.com</a>`,
   `${phoneLabel}: <a href="https://wa.me/5541999042212">+55 (41) 99904-2212</a>`,
 ]);
@@ -49,7 +50,7 @@ export const privacy: Record<string, PrivacyDoc> = {
       { t: 'p', html: 'Poderemos atualizar esta Política de Privacidade periodicamente. Notificaremos sobre alterações importantes através do aplicativo ou outros meios apropriados.' },
       { t: 'h2', html: '9. Contato' },
       { t: 'p', html: 'Para dúvidas, solicitações ou reclamações relacionadas à privacidade, entre em contato conosco:' },
-      { t: 'ul', items: contactList('Endereço', 'E-mail', 'Telefone', 'Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz, Matinhos - PR, CEP 83260-000') },
+      { t: 'ul', items: contactList('Desenvolvido por', 'Comercializado por', 'E-mail', 'Telefone') },
       { t: 'p', html: 'Esta política está em conformidade com as exigências da Google Play Store e Apple App Store para aplicativos publicados.' },
       { t: 'p', html: 'Última atualização: 04 de junho de 2025' },
     ],
@@ -91,7 +92,7 @@ export const privacy: Record<string, PrivacyDoc> = {
       { t: 'p', html: 'We may update this Privacy Policy periodically. We will notify you of important changes through the application or other appropriate means.' },
       { t: 'h2', html: '9. Contact' },
       { t: 'p', html: 'For questions, requests, or complaints related to privacy, please contact us:' },
-      { t: 'ul', items: contactList('Address', 'E-mail', 'Phone', 'Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz, Matinhos - PR, CEP 83260-000, Brazil') },
+      { t: 'ul', items: contactList('Developed by', 'Commercialized by', 'E-mail', 'Phone') },
       { t: 'p', html: 'This policy complies with the requirements of the Google Play Store and Apple App Store for published applications.' },
       { t: 'p', html: 'Last updated: June 4, 2025' },
     ],
@@ -133,7 +134,7 @@ export const privacy: Record<string, PrivacyDoc> = {
       { t: 'p', html: 'Podremos actualizar esta Política de Privacidad periódicamente. Notificaremos los cambios importantes a través de la aplicación u otros medios apropiados.' },
       { t: 'h2', html: '9. Contacto' },
       { t: 'p', html: 'Para dudas, solicitudes o reclamaciones relacionadas con la privacidad, póngase en contacto con nosotros:' },
-      { t: 'ul', items: contactList('Dirección', 'Correo electrónico', 'Teléfono', 'Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz, Matinhos - PR, CEP 83260-000, Brasil') },
+      { t: 'ul', items: contactList('Desarrollado por', 'Comercializado por', 'Correo electrónico', 'Teléfono') },
       { t: 'p', html: 'Esta política cumple con los requisitos de Google Play Store y Apple App Store para aplicaciones publicadas.' },
       { t: 'p', html: 'Última actualización: 4 de junio de 2025' },
     ],
@@ -175,7 +176,7 @@ export const privacy: Record<string, PrivacyDoc> = {
       { t: 'p', html: '我们可能会定期更新本隐私政策。我们将通过应用程序或其他适当方式通知重要变更。' },
       { t: 'h2', html: '9. 联系我们' },
       { t: 'p', html: '如有与隐私相关的疑问、请求或投诉，请联系我们：' },
-      { t: 'ul', items: contactList('地址', '电子邮箱', '电话', 'Avenida Beira Mar, 9009, Sala 1, Balneário Albatroz, Matinhos - PR, CEP 83260-000, 巴西') },
+      { t: 'ul', items: contactList('研发方', '销售方', '电子邮箱', '电话') },
       { t: 'p', html: '本政策符合 Google Play Store 和 Apple App Store 对已发布应用程序的要求。' },
       { t: 'p', html: '最后更新：2025 年 6 月 4 日' },
     ],

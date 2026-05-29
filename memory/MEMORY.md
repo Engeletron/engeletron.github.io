@@ -20,6 +20,7 @@
 
 ## Referência
 - [Stakeholders e contatos](stakeholders.md) — diretores/engenheiros e dados institucionais da empresa.
+- [Entidades legais](entidades-legais.md) — 2 PJs: desenvolvedora (Eng. Elétrica) vs comercial (Comércio e Importação), CNPJs; endereço não exibido.
 - [Gotchas Astro/bandeiras/model-viewer](astro-model-viewer-flags.md) — emoji de bandeira não renderiza no Windows (usar imagens); attr booleano em custom element.
 
 ## Convenções
