@@ -13,6 +13,7 @@
 - [Produto EETX433A](produto-eetx433a.md) — specs, encapsulamento SOIC-8, MOQ/tape&reel, diferenciais (sem cristal/SAW/diodos).
 - [Decisões do novo site](site-rebuild-decisoes.md) — rebuild dark/premium, 4 idiomas, direção B+C; arte do chip (STEP→GLB marcado) aprovada; modelo fabless (projeto BR / fab China); seção wafer.
 - Documento de design completo: `docs/superpowers/specs/2026-05-28-engeletron-rf-site-design.md` (aprovado 2026-05-28).
+- [Estado do build do site](site-build-status.md) — ✅ Astro construído e verificado na branch `feat/site-rf-astro` (28 páginas, 4 idiomas, chip 3D Draco). Plano em `docs/superpowers/plans/`.
 
 ## Deploy / Publicação
 - [Site publicado](deploy-github-pages.md) — ✅ NO AR em https://engeletron.com.br/ (verificado 2026-05-28); ressalvas sobre a cópia local.

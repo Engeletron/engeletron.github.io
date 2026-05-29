@@ -14,18 +14,31 @@ headline "SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA", e o cont
 idêntico à cópia local (serviços PCB/IoT, ASIC RF, equipe, formulário). Domínio custom
 ativo (HTTPS).
 
-## ⚠️ Sobre a cópia local desta pasta
+## ✅ Repositório de produção (CONFIRMADO pelo usuário em 2026-05-29)
 
-- Esta pasta local **não é um repositório git** e a relação dela com a publicação que
-  está no ar **não está confirmada** (pode ser a fonte original ou apenas uma cópia de
-  trabalho). Portanto, **editar arquivos aqui NÃO atualiza o site automaticamente**.
-- Antes de mexer no que está no ar, descobrir/confirmar com o usuário **de onde** o site
-  publicado é servido (repositório GitHub + GitHub Pages? outro host?) e qual é o fluxo
-  de deploy.
-- Se um dia for republicar a partir desta pasta via GitHub Pages: o arquivo de domínio
-  precisa se chamar **`CNAME`** (sem extensão) — hoje está como `CNAME.txt` — e os
-  `src/*.tsx` vazios devem ser removidos (ver [[arquitetura-site-estatico]]).
+- **Repo:** https://github.com/Engeletron/engeletron.github.io — site de **organização** do
+  GitHub Pages (nome `<org>.github.io`).
+- **Branch padrão:** `main`. O Pages serve **direto da raiz da `main`** (modo "deploy from
+  branch", estático): `index.html`, `privacy-policy.html`, `assets/`, `src/` (stubs), `CNAME`.
+- **A pasta local desta sessão era uma CÓPIA desse repo** (mesmos arquivos do início). O site
+  antigo está preservado em `legacy/` no nosso repo local.
 
-**Como aplicar:** tratar publicação/alterações no site ao vivo somente após confirmar o
-pipeline de deploy real; confirmar antes de renomear/remover (ver [[preferencias-usuario]]).
-Ver também [[projeto-overview]] e [[estado-funcional]].
+## 🚀 PUBLICADO — site novo no ar (2026-05-29)
+
+O novo site Astro foi publicado e **verificado no ar em https://engeletron.com.br/** (e
+engeletron.github.io): home "Projetamos o silício", chip 3D (GLB 83 KB, HTTP 200), /en/ em
+inglês, foto do wafer — tudo OK.
+
+**Mapa de branches no repo `Engeletron/engeletron.github.io`:**
+- **`main`** = site novo publicado (saída do build do Astro, servida pelo Pages na raiz da main).
+- **`site-legacy`** = backup do site antigo (era a `main` anterior, sha e19a112) — para rollback.
+- **`source`** = código‑fonte Astro (o que o nosso repo local tem na `main`).
+
+**Como atualizar o site no futuro:** editar a fonte (repo local / branch `source`),
+`npm run build`, e publicar o `dist/` na `main` (mesmo processo). Alternativa melhor a fazer
+um dia: trocar o Pages para *Source: GitHub Actions* (Settings → Pages) e dar push da fonte na
+`main` — aí o workflow `.github/workflows/deploy.yml` compila e publica sozinho.
+
+**Rollback (uma linha):** `git push --force origin site-legacy:main`.
+
+Ver também [[site-build-status]], [[projeto-overview]], [[site-rebuild-decisoes]].

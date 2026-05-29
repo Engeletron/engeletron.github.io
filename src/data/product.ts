@@ -7,7 +7,7 @@ export const eetx433a = {
   supply: 'Tape & reel — 4.000 pç/rolo (MOQ)',
   glb: '/assets/SOIC-8-web.glb',
   whatsapp: 'https://wa.me/5541999042212',
-  email: 'danilo.engeletron@gmail.com',
+  email: 'danilo@engeletron.com.br',
 } as const;
 export const advantagesEliminated = ['Cristal SMD 3225 (XTAL)','Ressonador SAW SMD','2× diodo 1N4148 (MiniMELF)','Diodo duplo BAV70 (SOT‑23)'];
 export const applications = [

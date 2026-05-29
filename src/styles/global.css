@@ -19,3 +19,15 @@ h1,h2,h3,.font-grotesk{font-family:'Space Grotesk',sans-serif}
 section{padding:50px 0;border-top:1px solid var(--line)}
 .stitle{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--cyan);font-weight:600}
 .sh{font-size:30px;margin:8px 0 6px;font-family:'Space Grotesk',sans-serif}
+
+/* ---- Guardas mobile / nada fora da tela ---- */
+html,body{overflow-x:hidden}
+img{max-width:100%;height:auto}
+svg{max-width:100%}
+table{max-width:100%}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .sh{font-size:23px}
+  section{padding:38px 0}
+  .btn{padding:9px 14px;font-size:12.5px}
+}

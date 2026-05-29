@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../i18n/ui';
+import { eetx433a } from '../data/product';
+import WhatsAppIcon from '../components/WhatsAppIcon.astro';
 const { title, description } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -22,5 +24,14 @@ const lang = getLangFromUrl(Astro.url);
   <Nav />
   <slot />
   <Footer />
+  <a class="wa-fab" href={eetx433a.whatsapp} target="_blank" rel="noopener" aria-label="WhatsApp">
+    <WhatsAppIcon size={34} />
+  </a>
+  <style>
+    .wa-fab{position:fixed;right:20px;bottom:20px;z-index:60;width:58px;height:58px;border-radius:50%;
+      background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .15s}
+    .wa-fab:hover{transform:scale(1.08)}
+  </style>
 </body>
 </html>
