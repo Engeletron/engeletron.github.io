@@ -74,6 +74,13 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
   gratuitos para quem adota o EETX433A (consultoria RF, projeto p/ gabinete, documentação de produção,
   protótipo, testes de potência) + card-selo "Custo absorvido pela Engeletron" + CTAs. i18n nos 4 idiomas.
   Auditoria mobile (375/320 px, PT+ZH): 0 overflow horizontal em todas as páginas.
+- **Logomarca:** nav usa `public/assets/icon_engeletron.svg` (transparente) + glow ciano; rodapé com selo
+  da marca (mesmo ícone centralizado). `logomark_engeletron.svg` NÃO é usado (tem `<rect fill:#fff>` embutido
+  → fundo branco, ruim no dark). Favicon = mesmo ícone.
+- **Datasheets:** PDFs PT/EN/ES/CN em `public/assets/datasheets/` (originais também em `assets/datasheets/`);
+  mapa em `src/data/product.ts` (`datasheets` por idioma). Seção Documentação do produto mostra download
+  **1-clique por idioma** (bandeira + nome + "PDF", attr `download`); botão "Baixar datasheet" do hero baixa o
+  idioma atual. App Notes seguem "EM BREVE".
 - ✅ **PUBLICADO no ar em 2026-05-29 (sessão 2)** — fonte commitada e enviada p/ `origin/source` (1952cc1);
   build force-pushed p/ `origin/main` (0dbb226, com `.nojekyll` + `CNAME`). **Backup do build anterior** em
   `origin/backup-main-20260529` (adb6a1e). Verificado em https://engeletron.com.br/ (PT "Nossa criação"/
