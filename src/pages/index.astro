@@ -1,17 +1,12 @@
 ---
-
+import Base from '../layouts/Base.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Engeletron — Circuitos integrados de RF" description={t('home.hero.tag')}>
+  <main class="wrap" style="padding:60px 5vw">
+    <div class="eb">{t('home.hero.eyebrow')}</div>
+    <h1 style="font-size:48px;margin:12px 0">{t('home.hero.title.a')}<span class="cyan">{t('home.hero.title.em')}</span>{t('home.hero.title.b')}</h1>
+    <p style="color:var(--dim);max-width:50ch">{t('home.hero.tag')}</p>
+  </main>
+</Base>

@@ -1,0 +1,7 @@
+---
+import { getLangFromUrl } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url); const base = lang==='pt'?'':`/${lang}`;
+---
+<footer>© 2026 ENGELETRON ENGENHARIA ELÉTRICA LTDA · CNPJ 37.912.040/0001-10 · Matinhos‑PR ·
+  <a href={base+'/privacidade'}>Política de Privacidade</a></footer>
+<style>footer{border-top:1px solid var(--line);padding:30px 5vw;color:var(--dim);font-size:12.5px;text-align:center}footer a{color:var(--cyan)}</style>

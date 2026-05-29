@@ -1,0 +1,34 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import LangSwitcher from './LangSwitcher.astro';
+import { eetx433a } from '../data/product';
+const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
+const base = lang === 'pt' ? '' : `/${lang}`;
+---
+<nav>
+  <a class="logo" href={base + '/'}>
+    <span class="m"></span><b>ENGELETRON</b><span class="tag">SEMICONDUCTOR</span>
+  </a>
+  <div class="links">
+    <a href={base + '/produtos/eetx433a'}>{t('nav.products')}</a>
+    <a href={base + '/tecnologia'}>{t('nav.tech')}</a>
+    <a href={base + '/aplicacoes'}>{t('nav.apps')}</a>
+    <a href={base + '/empresa'}>{t('nav.company')}</a>
+    <a href={base + '/contato'}>{t('nav.contact')}</a>
+  </div>
+  <div class="right">
+    <LangSwitcher />
+    <a class="btn fill" href={eetx433a.whatsapp}>{t('cta.sample')}</a>
+  </div>
+</nav>
+<style>
+  nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:22px;padding:14px 5vw;background:rgba(7,11,22,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo .m{width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 0 16px rgba(92,225,230,.5)}
+  .logo b{font-family:'Space Grotesk';letter-spacing:.18em;font-size:15px}
+  .logo .tag{color:var(--cyan);font-size:9px;letter-spacing:.34em;border-left:1px solid var(--line);padding-left:9px}
+  .links{display:flex;gap:20px;margin-left:18px;font-size:14px;color:var(--dim)}
+  .links a:hover{color:var(--txt)}
+  .right{margin-left:auto;display:flex;align-items:center;gap:14px}
+  @media(max-width:760px){.links{display:none}}
+</style>

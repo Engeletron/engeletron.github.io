@@ -1,0 +1,15 @@
+---
+import { languages, getLangFromUrl } from '../i18n/ui';
+const cur = getLangFromUrl(Astro.url);
+const rest = Astro.url.pathname.replace(/^\/(en|es|zh)/, '') || '/';
+function href(l:string){ return l === 'pt' ? rest : `/${l}${rest}`; }
+---
+<details class="lang">
+  <summary>{cur.toUpperCase()} ▾</summary>
+  <ul>{Object.keys(languages).map(l => <li><a href={href(l)}>{l.toUpperCase()}</a></li>)}</ul>
+</details>
+<style>
+  .lang{position:relative} .lang summary{list-style:none;cursor:pointer;color:var(--cyan);font-size:13px;font-weight:600}
+  .lang ul{position:absolute;right:0;top:130%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px;min-width:80px}
+  .lang li{list-style:none} .lang a{display:block;padding:6px 10px;font-size:13px;color:var(--dim)} .lang a:hover{color:var(--txt)}
+</style>
