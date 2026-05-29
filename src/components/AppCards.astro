@@ -1,0 +1,28 @@
+---
+import { applications } from '../data/product';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import type { ui } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+type TKey = keyof typeof ui['pt'];
+const cards = applications.map((app) => ({
+  icon: app.icon,
+  title: t((`app.${app.key}.title`) as TKey),
+  body:  t((`app.${app.key}.body`)  as TKey),
+}));
+---
+<div class="apps">
+  {cards.map((card) => (
+    <div class="app">
+      <div class="ic">{card.icon}</div>
+      <h3>{card.title}</h3>
+      <p>{card.body}</p>
+    </div>
+  ))}
+</div>
+<style>
+  .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:760px){.apps{grid-template-columns:1fr}}
+  .app{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel)}
+  .app .ic{font-size:26px}.app h3{font-size:17px;margin:10px 0 6px}.app p{color:var(--dim);font-size:13.5px}
+</style>

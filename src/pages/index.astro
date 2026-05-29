@@ -1,6 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import ChipViewer from '../components/ChipViewer.astro';
+import SpecTable from '../components/SpecTable.astro';
+import AdvantagesCompare from '../components/AdvantagesCompare.astro';
+import AppCards from '../components/AppCards.astro';
+import SiliconSection from '../components/SiliconSection.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
 ---
 <Base title="Engeletron — Circuitos integrados de RF" description={t('home.hero.tag')}>
@@ -8,5 +15,12 @@ const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
     <div class="eb">{t('home.hero.eyebrow')}</div>
     <h1 style="font-size:48px;margin:12px 0">{t('home.hero.title.a')}<span class="cyan">{t('home.hero.title.em')}</span>{t('home.hero.title.b')}</h1>
     <p style="color:var(--dim);max-width:50ch">{t('home.hero.tag')}</p>
+    <ChipViewer />
+    <ProductCard />
+    <SiliconSection />
+    <SpecTable />
+    <AdvantagesCompare />
+    <AppCards />
+    <ContactCTA />
   </main>
 </Base>

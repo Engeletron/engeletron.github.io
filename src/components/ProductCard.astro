@@ -1,0 +1,33 @@
+---
+import { eetx433a } from '../data/product';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Build base path: for lang=pt use root, else /lang prefix
+const base = lang === 'pt' ? '' : `/${lang}`;
+---
+<div class="prod">
+  <div>
+    <div class="eb">{t('product.card.partnumber')}</div>
+    <h3>{eetx433a.partNumber}</h3>
+    <div class="chips">
+      <span class="chip"><b>433.92</b> MHz</span>
+      <span class="chip"><b>+13 dBm</b></span>
+      <span class="chip"><b>1–6</b> {t('product.card.keys')}</span>
+      <span class="chip"><b>1M</b> {t('product.card.comb')}</span>
+      <span class="chip">SOIC‑8 SMD</span>
+    </div>
+    <a href={`${base}/produtos/eetx433a`} class="btn fill">{t('cta.viewProduct')} →</a>
+  </div>
+  <div class="prodart">
+    <span>{t('product.card.art')}</span>
+  </div>
+</div>
+<style>
+  .prod{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;border:1px solid var(--line);border-radius:18px;padding:26px;background:linear-gradient(180deg,var(--panel),var(--bg2))}
+  @media(max-width:760px){.prod{grid-template-columns:1fr}}
+  .prod h3{font-family:'Space Grotesk',sans-serif;font-size:36px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+  .prodart{height:230px;border-radius:14px;background:radial-gradient(300px 200px at 50% 50%,rgba(92,225,230,.12),transparent 70%),#05070d;display:flex;align-items:center;justify-content:center;color:#33405a;font-family:'Space Grotesk',sans-serif;font-size:14px}
+</style>

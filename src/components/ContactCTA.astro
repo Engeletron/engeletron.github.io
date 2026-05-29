@@ -1,0 +1,23 @@
+---
+import { eetx433a } from '../data/product';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+<div class="contact">
+  <div>
+    <div class="stitle">{t('contact.cta.eyebrow')}</div>
+    <div class="sh" style="margin-bottom:0">{t('contact.cta.title')}</div>
+    <div class="ssub" style="margin:8px 0 0">{t('contact.cta.sub')}</div>
+  </div>
+  <div class="cta">
+    <a href={eetx433a.whatsapp} target="_blank" rel="noopener" class="btn fill">{t('cta.sample')}</a>
+    <a href={eetx433a.whatsapp} target="_blank" rel="noopener" class="btn ghost">{t('cta.whatsapp')}</a>
+    <a href={`mailto:${eetx433a.email}`} class="btn ghost">{t('cta.email')}</a>
+  </div>
+</div>
+<style>
+  .contact{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;border:1px solid rgba(92,225,230,.4);border-radius:18px;padding:28px;background:radial-gradient(500px 300px at 80% 0%,rgba(92,225,230,.10),transparent 60%),var(--panel)}
+  .ssub{color:var(--dim);font-size:15px}
+  .cta{display:flex;flex-wrap:wrap;gap:10px}
+</style>
