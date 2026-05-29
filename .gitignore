@@ -2,6 +2,7 @@ node_modules/
 dist/
 .astro/
 .superpowers/
+.planning/
 *.log
 assets/_marking.png
 
