@@ -81,6 +81,12 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
   mapa em `src/data/product.ts` (`datasheets` por idioma). Seção Documentação do produto mostra download
   **1-clique por idioma** (bandeira + nome + "PDF", attr `download`); botão "Baixar datasheet" do hero baixa o
   idioma atual. App Notes seguem "EM BREVE".
+- **Página "Serviços"** (`/servicos` + `/en,/es,/zh`; `ServicosPage.astro` + `src/data/services.ts`): compila os
+  6 serviços de engenharia do site antigo (Dispositivos IoT, Servidor IoT, Aplicativo IoT, Projetos de PCB,
+  Firmware C/C++, Gigas de teste) em estilo premium; item "Serviços" no nav após "Produtos". i18n nos 4 idiomas.
+- ⚙️ **Datasheets DESATIVADOS temporariamente** (docs em revisão pelo dono): flag `datasheetsEnabled = false`
+  em `src/data/product.ts` → seção Documentação volta a "EM BREVE" e botão do hero fica desabilitado.
+  **Para reativar: `datasheetsEnabled = true`** (os PDFs continuam em `public/assets/datasheets/`).
 - ✅ **PUBLICADO no ar em 2026-05-29 (sessão 2)** — fonte commitada e enviada p/ `origin/source` (1952cc1);
   build force-pushed p/ `origin/main` (0dbb226, com `.nojekyll` + `CNAME`). **Backup do build anterior** em
   `origin/backup-main-20260529` (adb6a1e). Verificado em https://engeletron.com.br/ (PT "Nossa criação"/
