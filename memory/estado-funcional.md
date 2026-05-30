@@ -1,23 +1,17 @@
 ---
 name: estado-funcional
-description: Site verificado funcionando — renderiza sem erros de console (2026-05-28).
+description: Site Astro verificado — build 32 páginas 0 erros; mobile 375/320px sem overflow; no ar.
 type: project
-updated: 2026-05-28
+updated: 2026-05-29
 ---
 
-Verificação feita em **2026-05-28** servindo `index.html` via `python -m http.server` e
-abrindo no navegador (Playwright):
+Estado verificado do **site Astro atual** (a verificação antiga, do HTML puro, foi superada):
 
-- ✅ Carrega com **0 erros e 0 warnings** no console.
-- ✅ Renderização visual completa e correta (header com seletor de idiomas, hero, cards de
-  serviços, seção ASIC, equipe, formulário de contato, rodapé institucional).
-- ✅ Todos os assets locais referenciados existem.
+- **Build:** `npm run build` → **32 páginas**, 0 erros; `astro check` limpo.
+- **Console:** 0 erros (Playwright, PT/EN).
+- **Mobile:** auditoria a **375px e 320px**, em PT e 中文 — **0 overflow horizontal** em todas as páginas.
+- **No ar e verificado** em https://engeletron.com.br/.
 
-Além da cópia local, o **site publicado** também foi verificado no ar em
-**https://engeletron.com.br/** (WebFetch, 2026-05-28): carrega com sucesso e exibe o mesmo
-conteúdo. Ver [[deploy-github-pages]].
+Features e histórico de mudanças em [[site-build-status]]; deploy em [[deploy-github-pages]].
 
-**Nota histórica:** no início desta sessão os arquivos estavam como `.docx` (Word real com
-o conteúdo); foram convertidos para `.html`/`.txt` reais — formato correto para o site.
-
-Ver [[arquitetura-site-estatico]].
+> Nota histórica: a verificação anterior (2026‑05‑28) era do site HTML puro, hoje preservado em `legacy/`.

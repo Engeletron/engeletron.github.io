@@ -1,44 +1,38 @@
 ---
 name: deploy-github-pages
-description: Site JÁ PUBLICADO e no ar em https://engeletron.com.br/ (verificado 2026-05-28).
+description: Site no ar em engeletron.com.br (GitHub Pages); processo de deploy manual (dist→main), branches e rollback.
 type: project
-updated: 2026-05-28
+updated: 2026-05-29
 ---
 
-## ✅ Site no ar
+## No ar
+**https://engeletron.com.br/** — site Astro publicado via **GitHub Pages**, repo
+**`Engeletron/engeletron.github.io`** (site de organização). O Pages serve **estático da RAIZ da
+branch `main`** (modo "deploy from branch").
 
-O site **já está publicado e funcionando** em **https://engeletron.com.br/**.
-Confirmado pelo proprietário (Danilo) e **verificado em 2026-05-28** via WebFetch:
-carrega com sucesso, título "ENGELETRON | ENGENHARIA ELÉTRICA E PROJETOS ELETRÔNICOS",
-headline "SOLUÇÕES INOVADORAS EM ENGENHARIA ELÉTRICA E ELETRÔNICA", e o conteúdo é
-idêntico à cópia local (serviços PCB/IoT, ASIC RF, equipe, formulário). Domínio custom
-ativo (HTTPS).
+## Branches no repo de produção
+- **`main`** = SAÍDA DO BUILD (`dist/`) publicada — é o que o Pages serve (`index.html`, `_astro/`,
+  `assets/`, `CNAME`, `.nojekyll`).
+- **`source`** = CÓDIGO‑FONTE Astro (espelho do repo local na branch `main`).
+- **`site-legacy`** = site antigo (pré‑Astro), backup.
+- **`backup-main-*`** = snapshots do build a cada deploy, para rollback (pre‑eng, pre‑entidades,
+  pre‑datasheets, pre‑servicos, pre‑navbig, backup-main-20260529=adb6a1e o mais antigo).
 
-## ✅ Repositório de produção (CONFIRMADO pelo usuário em 2026-05-29)
+> ⚠️ O repo **LOCAL** (branch `main`) é a **FONTE**; a **`main` REMOTA** é o **BUILD**. São conteúdos
+> diferentes — **nunca** dar `git pull` de origin/main para a local. Existe `.github/workflows/deploy.yml`
+> mas é vestigial (espera fonte na main); o deploy real é **manual**.
 
-- **Repo:** https://github.com/Engeletron/engeletron.github.io — site de **organização** do
-  GitHub Pages (nome `<org>.github.io`).
-- **Branch padrão:** `main`. O Pages serve **direto da raiz da `main`** (modo "deploy from
-  branch", estático): `index.html`, `privacy-policy.html`, `assets/`, `src/` (stubs), `CNAME`.
-- **A pasta local desta sessão era uma CÓPIA desse repo** (mesmos arquivos do início). O site
-  antigo está preservado em `legacy/` no nosso repo local.
+## Como publicar (processo manual)
+1. Commitar a fonte → `git push origin main:source`.
+2. Backup do build atual → `git push origin origin/main:refs/heads/backup-main-<rótulo>`.
+3. `npm run build` (gera `dist/`).
+4. `: > dist/.nojekyll`  ← **ESSENCIAL** (sem isso o Pages ignora a pasta `_astro/` e o CSS some).
+5. Publicar o build via repo temporário em `dist/`:
+   `git -C dist init && git -C dist add -A && git -C dist commit -m "Deploy: ..." && git -C dist push -f <repoURL> HEAD:main && rm -rf dist/.git`
+   (`public/CNAME` = engeletron.com.br já entra no dist).
+6. Verificar sem cache de CDN: `raw.githubusercontent.com/Engeletron/engeletron.github.io/main/<pagina>/index.html`.
 
-## 🚀 PUBLICADO — site novo no ar (2026-05-29)
+**Rollback (1 linha):** `git push -f origin <backup-branch>:main`.
+Propagação Pages/CDN: ~1–2 min (pode exigir hard refresh no navegador).
 
-O novo site Astro foi publicado e **verificado no ar em https://engeletron.com.br/** (e
-engeletron.github.io): home "Projetamos o silício", chip 3D (GLB 83 KB, HTTP 200), /en/ em
-inglês, foto do wafer — tudo OK.
-
-**Mapa de branches no repo `Engeletron/engeletron.github.io`:**
-- **`main`** = site novo publicado (saída do build do Astro, servida pelo Pages na raiz da main).
-- **`site-legacy`** = backup do site antigo (era a `main` anterior, sha e19a112) — para rollback.
-- **`source`** = código‑fonte Astro (o que o nosso repo local tem na `main`).
-
-**Como atualizar o site no futuro:** editar a fonte (repo local / branch `source`),
-`npm run build`, e publicar o `dist/` na `main` (mesmo processo). Alternativa melhor a fazer
-um dia: trocar o Pages para *Source: GitHub Actions* (Settings → Pages) e dar push da fonte na
-`main` — aí o workflow `.github/workflows/deploy.yml` compila e publica sozinho.
-
-**Rollback (uma linha):** `git push --force origin site-legacy:main`.
-
-Ver também [[site-build-status]], [[projeto-overview]], [[site-rebuild-decisoes]].
+Ver [[site-build-status]], [[projeto-overview]].

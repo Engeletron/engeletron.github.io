@@ -87,6 +87,10 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
 - ⚙️ **Datasheets DESATIVADOS temporariamente** (docs em revisão pelo dono): flag `datasheetsEnabled = false`
   em `src/data/product.ts` → seção Documentação volta a "EM BREVE" e botão do hero fica desabilitado.
   **Para reativar: `datasheetsEnabled = true`** (os PDFs continuam em `public/assets/datasheets/`).
+- **Nav (destaque da marca):** ícone real `icon_engeletron.svg` a **48px** + wordmark 19px; no mobile as
+  bandeiras ficam numa **linha própria centralizada** (logo `flex:none` p/ evitar colisão com os links).
+- **Estado ao fim da sessão (2026-05-29):** site no ar com produto + serviços + datasheets desativados;
+  build **32 páginas**, 0 erros; mobile 0 overflow. `origin/source` = fonte; `origin/main` = build publicado.
 - ✅ **PUBLICADO no ar em 2026-05-29 (sessão 2)** — fonte commitada e enviada p/ `origin/source` (1952cc1);
   build force-pushed p/ `origin/main` (0dbb226, com `.nojekyll` + `CNAME`). **Backup do build anterior** em
   `origin/backup-main-20260529` (adb6a1e). Verificado em https://engeletron.com.br/ (PT "Nossa criação"/
