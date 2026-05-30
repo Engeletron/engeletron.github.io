@@ -17,6 +17,9 @@ export const datasheets: Record<string, string> = {
   es: '/assets/datasheets/EETX433A_ES.pdf',
   zh: '/assets/datasheets/EETX433A_CN.pdf',
 };
+
+// Downloads de datasheet temporariamente DESATIVADOS (documentos em revisão). Mude para true para reativar.
+export const datasheetsEnabled = false;
 export const advantagesEliminated = ['Cristal SMD 3225 (XTAL)','Ressonador SAW SMD','2× diodo LL4148 (MiniMELF)','Diodo duplo BAV70 (SOT‑23)'];
 export const applications = [
   {icon:'🚪', key:'gates'}, {icon:'🚨', key:'alarms'}, {icon:'🔑', key:'access'},

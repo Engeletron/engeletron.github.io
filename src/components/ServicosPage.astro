@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { services } from '../data/services';
+import { eetx433a } from '../data/product';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const list = services[lang] ?? services.pt;
+---
+<Base title={t('meta.title.services')} description={t('services.sub')}>
+  <div class="wrap">
+    <section style="border-top:none">
+      <div class="stitle">{t('services.eyebrow')}</div>
+      <div class="sh">{t('services.title')}</div>
+      <p class="svc-lead">{t('services.sub')}</p>
+
+      <div class="svc-grid">
+        {list.map((s) => (
+          <div class="svc-card">
+            <div class="svc-ic">{s.icon}</div>
+            <h3>{s.title}</h3>
+            <p class="svc-intro">{s.intro}</p>
+            <ul class="svc-points">
+              {s.points.map((p) => <li>{p}</li>)}
+            </ul>
+            <p class="svc-note">{s.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="svc-cta">
+        <a class="btn fill" href={eetx433a.whatsapp} target="_blank" rel="noopener">{t('services.cta')}</a>
+        <a class="btn ghost" href={`mailto:${eetx433a.email}`}>{t('cta.email')}</a>
+      </div>
+    </section>
+  </div>
+  <style>
+    .svc-lead{color:var(--dim);font-size:19px;max-width:64ch;margin:6px 0 26px}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
+    .svc-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--panel)}
+    .svc-ic{font-size:30px;line-height:1}
+    .svc-card h3{font-family:'Space Grotesk',sans-serif;font-size:21px;margin:12px 0 6px}
+    .svc-intro{color:var(--dim);font-size:16px;margin-bottom:14px}
+    .svc-points{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0 0 14px;padding:0}
+    .svc-points li{position:relative;padding-left:24px;font-size:15px;color:#cdd8f2;line-height:1.5}
+    .svc-points li::before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:700}
+    .svc-note{margin-top:auto;color:var(--cyan);font-size:14px;border-top:1px solid var(--line);padding-top:12px}
+    .svc-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  </style>
+</Base>

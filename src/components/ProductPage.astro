@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getLangFromUrl, useTranslations, languages } from '../i18n/ui';
-import { eetx433a, datasheets } from '../data/product';
+import { eetx433a, datasheets, datasheetsEnabled } from '../data/product';
 import Flag from './Flag.astro';
 import ChipViewer from './ChipViewer.astro';
 import SpecTable from './SpecTable.astro';
@@ -39,7 +39,9 @@ const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' 
         </div>
         <div class="cta-row">
           <a href={eetx433a.whatsapp} target="_blank" rel="noopener" class="btn fill">{t('cta.sample')}</a>
-          <a href={datasheets[lang] ?? datasheets.pt} download class="btn ghost">{t('product.hero.datasheet')}</a>
+          {datasheetsEnabled
+            ? <a href={datasheets[lang] ?? datasheets.pt} download class="btn ghost">{t('product.hero.datasheet')}</a>
+            : <a href="#" class="btn ghost" aria-disabled="true">{t('product.hero.datasheet')}</a>}
           <a href={eetx433a.whatsapp} target="_blank" rel="noopener" class="btn ghost">{t('cta.whatsapp')}</a>
         </div>
       </div>
@@ -87,6 +89,7 @@ const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' 
       <div class="stitle">{t('product.docs.eyebrow')}</div>
       <div class="sh">{t('product.docs.title')}</div>
       <div class="dl">
+        {datasheetsEnabled ? (
         <div class="dlc ds">
           <div class="dl-head">
             <span class="big">📄</span>
@@ -103,6 +106,16 @@ const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' 
             ))}
           </div>
         </div>
+        ) : (
+        <div class="dlc">
+          <span class="big">📄</span>
+          <div>
+            <b>{t('product.docs.ds.label')}</b>
+            <small>{t('product.docs.ds.sub')}</small>
+          </div>
+          <span class="soon">{t('product.docs.soon')}</span>
+        </div>
+        )}
         <div class="dlc">
           <span class="big">📘</span>
           <div>
