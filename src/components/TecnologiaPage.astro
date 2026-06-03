@@ -4,7 +4,7 @@ import AdvantagesCompare from './AdvantagesCompare.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
 ---
-<Base title={t('meta.title.tech')} description={t('home.hero.tag')}>
+<Base title={t('meta.title.tech')} description={t('meta.desc.tech')}>
   <div class="wrap">
     <section style="border-top:none">
       <div class="stitle">{t('home.tech.eyebrow')}</div>

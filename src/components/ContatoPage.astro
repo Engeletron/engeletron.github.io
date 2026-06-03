@@ -11,11 +11,11 @@ const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
       <div class="sh">{t('contact.page.title')}</div>
       <p style="color:var(--dim);max-width:60ch">{t('contact.page.sub')}</p>
       <div class="cbox">
-        <p><b>WhatsApp:</b> <a class="cyan" href={eetx433a.whatsapp}>+55 41 99904‑2212</a></p>
+        <p><b>WhatsApp:</b> <a class="cyan" href={eetx433a.whatsapp} target="_blank" rel="noopener">+55 41 99904‑2212</a></p>
         <p><b>E‑mail:</b> <a class="cyan" href={`mailto:${eetx433a.email}`}>{eetx433a.email}</a></p>
       </div>
       <div class="ctarow">
-        <a class="btn fill" href={eetx433a.whatsapp}>{t('cta.sample')}</a>
+        <a class="btn fill" href={eetx433a.whatsapp} target="_blank" rel="noopener">{t('cta.sample')}</a>
         <a class="btn ghost" href={`mailto:${eetx433a.email}`}>{t('cta.email')}</a>
       </div>
     </section>

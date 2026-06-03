@@ -14,7 +14,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const base = lang === 'pt' ? '' : `/${lang}`;
 ---
-<Base title={t('meta.title.home')} description={t('home.hero.tag')}>
+<Base title={t('meta.title.home')} description={t('home.hero.tag')} chip3d>
 
   <!-- HERO -->
   <div class="wrap">

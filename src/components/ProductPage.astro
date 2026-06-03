@@ -13,7 +13,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' };
 ---
-<Base title={t('meta.title.product')} description={t('product.hero.tag')}>
+<Base title={t('meta.title.product')} description={t('product.hero.tag')} chip3d>
 
   <!-- PRODUCT HERO -->
   <div class="wrap">
@@ -34,7 +34,7 @@ const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' 
           <span class="chip"><b>+13 <span style="color:#fff">dBm</span></b> {t('product.chip.adj')}</span>
           <span class="chip"><b>1–6</b> {t('product.card.keys')}</span>
           <span class="chip">{t('product.chip.fixedcode')}</span>
-          <span class="chip"><b>1.000.000</b> {t('product.card.comb')}</span>
+          <span class="chip"><b>{t('product.codes')}</b> {t('product.card.comb')}</span>
           <span class="chip"><b>SOIC‑8</b> SMD</span>
         </div>
         <div class="cta-row">

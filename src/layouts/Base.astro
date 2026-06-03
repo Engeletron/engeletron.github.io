@@ -5,8 +5,26 @@ import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../i18n/ui';
 import { eetx433a } from '../data/product';
 import WhatsAppIcon from '../components/WhatsAppIcon.astro';
-const { title, description } = Astro.props;
+const { title, description, chip3d = false } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+
+const site = 'https://engeletron.com.br';
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const rest = path.replace(/^\/(en|es|zh)(?=\/|$)/, '') || '/';
+const langPath = (l: string): string =>
+  l === 'pt'
+    ? (rest === '/' ? '/' : rest)
+    : (rest === '/' ? `/${l}` : `/${l}${rest}`);
+const canonical = site + langPath(lang);
+const alternates = [
+  { hreflang: 'pt-BR', href: site + langPath('pt') },
+  { hreflang: 'en', href: site + langPath('en') },
+  { hreflang: 'es', href: site + langPath('es') },
+  { hreflang: 'zh', href: site + langPath('zh') },
+  { hreflang: 'x-default', href: site + langPath('pt') },
+];
+const ogImage = site + '/assets/eetx433a-photo-stage.jpg';
+const ogLocale: Record<string, string> = { pt: 'pt_BR', en: 'en_US', es: 'es_ES', zh: 'zh_CN' };
 ---
 <!DOCTYPE html>
 <html lang={lang}>
@@ -15,10 +33,24 @@ const lang = getLangFromUrl(Astro.url);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Engeletron" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content={ogLocale[lang]} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
   <link rel="icon" href="/assets/icon_engeletron.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  {chip3d && <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>}
 </head>
 <body>
   <Nav />
