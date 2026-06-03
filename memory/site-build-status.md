@@ -147,7 +147,10 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
 - **Git:** fonte `5093bdc` → `origin/source`; build force-push `origin/main` = `56c8e19`; **backup** (b062a72)
   em `origin/backup-main-20260603-melhorias`.
   **Rollback:** `git push -f origin backup-main-20260603-melhorias:main`.
-- **PENDENTE (aguarda dono):** Política de Privacidade (`src/data/privacy.ts`) — (1) e‑mail de contato usa
-  `danilo.engeletron@gmail.com` divergente do corporativo `danilo@engeletron.com.br`; (2) texto é de
-  APLICATIVO (menciona "aplicativo", device IDs, Google Play/App Store) e não do site institucional; data
-  "04/06/2025". Não alterado nesta sessão — requer confirmação do texto legal.
+- ✅ **Política de Privacidade (`src/data/privacy.ts`) — RESOLVIDA e publicada** (dono aprovou): e‑mail
+  `danilo.engeletron@gmail.com` → corporativo `danilo@engeletron.com.br` (helper `contactList`, vale p/ os 4
+  idiomas de uma vez); texto adaptado de "aplicativo" → "site + aplicativos da Engeletron" (intro, info de
+  uso, seção de alterações); data → 03/06/2026. A frase sobre Google Play/App Store foi **mantida** (a
+  Engeletron publica apps como serviço). Fonte `0fcdc7b`→source; `origin/main` = `d04d3c3`; **backup** (56c8e19)
+  em `origin/backup-main-20260603-privacidade`. Rollback: `git push -f origin backup-main-20260603-privacidade:main`.
+  Verificado no ar: corporativo presente, gmail ausente, data 2026.
