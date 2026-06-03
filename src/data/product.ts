@@ -12,14 +12,14 @@ export const eetx433a = {
 
 // Datasheets por idioma (PDF) — servidos de public/assets/datasheets/
 export const datasheets: Record<string, string> = {
-  pt: '/assets/datasheets/EETX433A_PT.pdf',
-  en: '/assets/datasheets/EETX433A_EN.pdf',
-  es: '/assets/datasheets/EETX433A_ES.pdf',
-  zh: '/assets/datasheets/EETX433A_CN.pdf',
+  pt: '/assets/datasheets/EETX433A_pt-BR.pdf',
+  en: '/assets/datasheets/EETX433A_en-US.pdf',
+  es: '/assets/datasheets/EETX433A_es-ES.pdf',
+  zh: '/assets/datasheets/EETX433A_zh-CN.pdf',
 };
 
-// Downloads de datasheet temporariamente DESATIVADOS (documentos em revisão). Mude para true para reativar.
-export const datasheetsEnabled = false;
+// Downloads de datasheet ATIVADOS (PDFs revisados publicados 2026-06-02). Mude para false para desativar.
+export const datasheetsEnabled = true;
 export const advantagesEliminated = ['Cristal SMD 3225 (XTAL)','Ressonador SAW SMD','2× diodo LL4148 (MiniMELF)','Diodo duplo BAV70 (SOT‑23)'];
 export const applications = [
   {icon:'🚪', key:'gates'}, {icon:'🚨', key:'alarms'}, {icon:'🔑', key:'access'},
