@@ -109,3 +109,16 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
 - **Git:** fonte `origin/source` = `e257bb8`; build `origin/main` = `86da20e` (force-push); **backup do build
   anterior** (991b733) em `origin/backup-main-20260602-datasheets`.
   **Rollback:** `git push -f origin backup-main-20260602-datasheets:main`.
+
+**Sessão 2026-06-03 — datasheets atualizados (versões mais novas) publicados (no ar):**
+
+- O dono substituiu os 4 PDFs em `assets/datasheets/` por versões **ainda mais novas** (pt 1.037.600 /
+  en 1.032.902 / es 1.035.827 / zh 1.201.560 bytes — antes eram pt 1.033.476 / en 1.028.836 /
+  es 1.031.699 / zh 1.192.842). Só os originais vieram trocados; copiei p/ `public/assets/datasheets/`
+  (que é o que vai pro build). Nomes de arquivo (locale) e `datasheetsEnabled=true` inalterados — sem mudança de código.
+- Build 32 páginas, 0 erros. Verificado no ar (raw.githubusercontent `main`): página do produto referencia
+  os 4 PDFs; os 4 retornam HTTP 200 com os tamanhos NOVOS exatos.
+- **Git:** fonte commitada `5bcf126` e enviada p/ `origin/source` (fast-forward, sem force); build
+  force-pushed p/ `origin/main` = `b062a72`; **backup do build anterior** (86da20e) em
+  `origin/backup-main-20260603-datasheets`.
+  **Rollback:** `git push -f origin backup-main-20260603-datasheets:main`. Ver [[deploy-github-pages]].
