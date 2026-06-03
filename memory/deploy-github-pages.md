@@ -16,7 +16,8 @@ branch `main`** (modo "deploy from branch").
 - **`source`** = CÓDIGO‑FONTE Astro (espelho do repo local na branch `main`).
 - **`site-legacy`** = site antigo (pré‑Astro), backup.
 - **`backup-main-*`** = snapshots do build a cada deploy, para rollback (pre‑eng, pre‑entidades,
-  pre‑datasheets, pre‑servicos, pre‑navbig, backup-main-20260529=adb6a1e o mais antigo).
+  pre‑datasheets, pre‑servicos, pre‑navbig, backup-main-20260529=adb6a1e o mais antigo,
+  **backup-main-20260602-datasheets=991b733** = build anterior à publicação dos datasheets revisados).
 
 > ⚠️ O repo **LOCAL** (branch `main`) é a **FONTE**; a **`main` REMOTA** é o **BUILD**. São conteúdos
 > diferentes — **nunca** dar `git pull` de origin/main para a local. Existe `.github/workflows/deploy.yml`

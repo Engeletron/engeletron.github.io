@@ -84,9 +84,11 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
 - **Página "Serviços"** (`/servicos` + `/en,/es,/zh`; `ServicosPage.astro` + `src/data/services.ts`): compila os
   6 serviços de engenharia do site antigo (Dispositivos IoT, Servidor IoT, Aplicativo IoT, Projetos de PCB,
   Firmware C/C++, Gigas de teste) em estilo premium; item "Serviços" no nav após "Produtos". i18n nos 4 idiomas.
-- ⚙️ **Datasheets DESATIVADOS temporariamente** (docs em revisão pelo dono): flag `datasheetsEnabled = false`
-  em `src/data/product.ts` → seção Documentação volta a "EM BREVE" e botão do hero fica desabilitado.
-  **Para reativar: `datasheetsEnabled = true`** (os PDFs continuam em `public/assets/datasheets/`).
+- ⚙️ **Datasheets** (`src/data/product.ts`): flag `datasheetsEnabled` controla seção Documentação + botão do
+  hero. Histórico: desativados em 29/05 (docs em revisão) → **REATIVADOS em 2026-06-02** com PDFs revisados.
+  **Nomenclatura atual = locale** (`EETX433A_pt-BR.pdf` / `en-US` / `es-ES` / `zh-CN`), em `assets/datasheets/`
+  (originais) **e** `public/assets/datasheets/` (servidos), com o mapa `datasheets` apontando p/ esses nomes.
+  Os nomes antigos (`_PT/_EN/_ES/_CN.pdf`, ~124 KB) foram **substituídos** pelos revisados (~1 MB).
 - **Nav (destaque da marca):** ícone real `icon_engeletron.svg` a **48px** + wordmark 19px; no mobile as
   bandeiras ficam numa **linha própria centralizada** (logo `flex:none` p/ evitar colisão com os links).
 - **Estado ao fim da sessão (2026-05-29):** site no ar com produto + serviços + datasheets desativados;
@@ -95,3 +97,15 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
   build force-pushed p/ `origin/main` (0dbb226, com `.nojekyll` + `CNAME`). **Backup do build anterior** em
   `origin/backup-main-20260529` (adb6a1e). Verificado em https://engeletron.com.br/ (PT "Nossa criação"/
   "Solicitar cotação"; EN specs "adjustable/Fixed code"). **Rollback:** `git push -f origin backup-main-20260529:main`.
+
+**Sessão 2026-06-02 — datasheets revisados publicados (no ar):**
+
+- O dono entregou os PDFs revisados (~1 MB cada) em `assets/datasheets/` com nomes de locale
+  (`EETX433A_pt-BR/en-US/es-ES/zh-CN.pdf`). Copiados p/ `public/assets/datasheets/`; os 4 antigos
+  (`_PT/_EN/_ES/_CN.pdf`) foram removidos. Mapa `datasheets` em `product.ts` atualizado p/ os novos nomes.
+- **`datasheetsEnabled: false → true`** — downloads de novo ativos nos 4 idiomas (hero + seção Documentação).
+- Build 32 páginas, 0 erros. Verificado no ar (raw.githubusercontent `main`): HTML referencia os 4 PDFs,
+  4 links `ds-lang` ativos, PDFs HTTP 200 (pt 1.033.476 / en 1.028.836 / es 1.031.699 / zh 1.192.842 bytes).
+- **Git:** fonte `origin/source` = `e257bb8`; build `origin/main` = `86da20e` (force-push); **backup do build
+  anterior** (991b733) em `origin/backup-main-20260602-datasheets`.
+  **Rollback:** `git push -f origin backup-main-20260602-datasheets:main`.
