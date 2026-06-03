@@ -122,3 +122,32 @@ marcação EETX433A → otimizado Draco em `public/assets/`. Ver [[site-rebuild-
   force-pushed p/ `origin/main` = `b062a72`; **backup do build anterior** (86da20e) em
   `origin/backup-main-20260603-datasheets`.
   **Rollback:** `git push -f origin backup-main-20260603-datasheets:main`. Ver [[deploy-github-pages]].
+
+**Sessão 2026-06-03 (2) — melhorias pós-auditoria publicadas (no ar):**
+
+Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas e publicadas:
+- **SEO:** `Base.astro` agora emite `<link rel="canonical">` + `hreflang` (pt-BR/en/es/zh + `x-default`) +
+  Open Graph/Twitter (`og:image` = `/assets/eetx433a-photo-stage.jpg`). Adicionado **`@astrojs/sitemap`**
+  (`^3.7.3`, com bloco i18n → gera `sitemap-index.xml`+`sitemap-0.xml` com alternates) e **`public/robots.txt`**
+  (aponta o sitemap). `astro.config.mjs` ganhou `integrations:[sitemap({...})]`.
+- **Perf:** o script pesado `model-viewer` (CDN) agora carrega **só** nas páginas com chip 3D — `Base.astro`
+  recebe prop `chip3d` (default false); passada só em `HomePage`/`ProductPage`. (Empresa NÃO usa chip.)
+- **Texto/i18n (4 idiomas):** copy de "cadastro/registro" reescrita p/ o fluxo real (cotação via WhatsApp/
+  e‑mail; datasheet = download livre) — chaves `contact.cta.sub`, `product.commercial.sample.title/body`.
+  Selo `home.stat3.label`: "projeto nacional/national design/国产自研" → "projeto brasileiro / designed in
+  Brazil / diseño brasileño / 巴西自主研发". Negrito da seção silício (`silicon.lead`) agora embutido no i18n
+  e renderizado em TODOS os idiomas (antes só PT, via `.replace` frágil em `SiliconSection.astro`).
+  Número de códigos no hero do produto localizado (`product.codes`: 1.000.000 / 1,000,000 / 100万) — antes
+  fixo em formato PT. Criadas `meta.desc.tech`/`meta.desc.apps` (Tecnologia/Aplicações tinham desc genérica).
+  Adicionado lead (`apps.lead`) na página Aplicações.
+- **A11y/UX:** regra `:focus-visible` global (`global.css`); `target="_blank" rel="noopener"` nos links da
+  página Contato.
+- Build **32 páginas, 0 erros**. Verificado no ar: robots/sitemap 200; home com canonical+hreflang+og;
+  Tecnologia sem model-viewer; datasheet pt-BR ainda 200 (1.037.600 B, sem regressão).
+- **Git:** fonte `5093bdc` → `origin/source`; build force-push `origin/main` = `56c8e19`; **backup** (b062a72)
+  em `origin/backup-main-20260603-melhorias`.
+  **Rollback:** `git push -f origin backup-main-20260603-melhorias:main`.
+- **PENDENTE (aguarda dono):** Política de Privacidade (`src/data/privacy.ts`) — (1) e‑mail de contato usa
+  `danilo.engeletron@gmail.com` divergente do corporativo `danilo@engeletron.com.br`; (2) texto é de
+  APLICATIVO (menciona "aplicativo", device IDs, Google Play/App Store) e não do site institucional; data
+  "04/06/2025". Não alterado nesta sessão — requer confirmação do texto legal.

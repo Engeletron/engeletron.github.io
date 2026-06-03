@@ -18,8 +18,9 @@ branch `main`** (modo "deploy from branch").
 - **`backup-main-*`** = snapshots do build a cada deploy, para rollback (pre‑eng, pre‑entidades,
   pre‑datasheets, pre‑servicos, pre‑navbig, backup-main-20260529=adb6a1e o mais antigo,
   backup-main-20260602-datasheets=991b733 = build anterior à 1ª publicação dos datasheets revisados,
-  **backup-main-20260603-datasheets=86da20e** = build anterior à atualização dos datasheets p/ as versões
-  mais novas → último build "bom" antes do deploy atual `b062a72`).
+  backup-main-20260603-datasheets=86da20e = build anterior à atualização dos datasheets p/ versões mais novas,
+  **backup-main-20260603-melhorias=b062a72** = build anterior às melhorias SEO/i18n → último build "bom"
+  antes do deploy atual `56c8e19`).
 
 > ⚠️ O repo **LOCAL** (branch `main`) é a **FONTE**; a **`main` REMOTA** é o **BUILD**. São conteúdos
 > diferentes — **nunca** dar `git pull` de origin/main para a local. Existe `.github/workflows/deploy.yml`
