@@ -154,3 +154,18 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
   Engeletron publica apps como serviço). Fonte `0fcdc7b`→source; `origin/main` = `d04d3c3`; **backup** (56c8e19)
   em `origin/backup-main-20260603-privacidade`. Rollback: `git push -f origin backup-main-20260603-privacidade:main`.
   Verificado no ar: corporativo presente, gmail ausente, data 2026.
+
+**Sessão 2026-06-04 — App Notes removido + datasheets novos publicados (no ar):**
+
+- **App Notes removido:** card "📘 Application Notes" da seção Documentação (`ProductPage.astro`) excluído — decisão
+  do dono de integrar esse conteúdo ao próprio datasheet. Sobra só o card Datasheet EETX433A (download por idioma).
+  Chaves i18n órfãs `product.docs.an.label`/`product.docs.an.sub` removidas nos 4 idiomas (`ui.ts`).
+  `product.docs.soon` **MANTIDA** (fallback caso `datasheetsEnabled=false`).
+- **Datasheets atualizados:** o dono trocou os 4 PDFs em `assets/datasheets/` por versões **maiores** (~2.1–2.3 MB:
+  pt 2.193.451 / en 2.189.052 / es 2.191.751 / zh 2.359.491 — antes ~1.0–1.2 MB). Copiados p/ `public/assets/datasheets/`.
+  Mesmos nomes de locale → **sem** mudança no mapa `datasheets`/`product.ts`.
+- Build 32 páginas, 0 erros. Verificado no ar (raw `main`): página do produto com 0 "Application Notes", 1 card
+  Datasheet, 4 links `ds-lang`; os 4 PDFs HTTP 200 com os tamanhos NOVOS exatos.
+- **Git:** fonte commitada `01f937c` → `origin/source`; build force-push `origin/main` = `b1edbaa`; **backup do build
+  anterior** (d04d3c3) em `origin/backup-main-20260604-appnotes-ds`.
+  **Rollback:** `git push -f origin backup-main-20260604-appnotes-ds:main`. Ver [[deploy-github-pages]].
