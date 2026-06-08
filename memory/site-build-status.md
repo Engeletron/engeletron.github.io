@@ -192,3 +192,19 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
   favicon.svg, logomark_engeletron.svg, asic.png, eetx433a-photo.png, icon_engeletron.png) e os usados retornam **200**
   (index.html, SOIC-8-web.glb, icon_engeletron.svg, eetx433a-photo-stage.jpg, silicon_wafer_manufacturing.png,
   datasheets/EETX433A_pt-BR.pdf, flags/br.png). Ver [[deploy-github-pages]].
+
+**Sessão 2026-06-07 (2) — fotos corporativas da equipe + ordem do menu (PUBLICADO no ar):**
+
+- **Fotos da equipe trocadas** (`EmpresaPage.astro`): `danilo.jpg`/`gisely.jpg` → novos headshots corporativos
+  `danilo_corp.png`/`gisely_corp.png` (fundo branco, blazer azul-marinho). Originais full-res (1254×1254, ~880 KB)
+  ficam em `assets/` como fonte-de-verdade; servidas otimizadas em `public/assets/` a **384×384 (~106–113 KB)**
+  (4× o avatar de 96px). As antigas `danilo.jpg`/`gisely.jpg` foram **removidas** de `public/assets/` e `assets/`.
+  Verificado com screenshot: render circular correto na seção "Quem projeta" (vale p/ Empresa nos 4 idiomas).
+- **Ordem do menu invertida** (`Nav.astro`): **Serviços agora vem ANTES de Produtos** (era Produtos→Serviços).
+  Nav é usado via `Base.astro` → vale em todas as páginas/idiomas.
+- Build 32 páginas, 0 erros.
+- ✅ **PUBLICADO no ar em 2026-06-07 (sessão 2):** fonte → `origin/source`; build force-push `origin/main` = `dbecc9f`;
+  **backup do build anterior** (`5172b2c`) em `origin/backup-main-20260607-fotos-nav`.
+  **Rollback:** `git push -f origin backup-main-20260607-fotos-nav:main`. Verificado via `raw.githubusercontent`:
+  `danilo_corp.png`/`gisely_corp.png` → 200; `danilo.jpg`/`gisely.jpg` → 404; nav com "Serviços" antes de "Produtos".
+  Ver [[deploy-github-pages]].
