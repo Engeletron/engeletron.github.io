@@ -2,7 +2,7 @@
 name: deploy-github-pages
 description: Site no ar em engeletron.com.br (GitHub Pages); processo de deploy manual (dist→main), branches e rollback.
 type: project
-updated: 2026-05-29
+updated: 2026-06-07
 ---
 
 ## No ar
@@ -21,8 +21,9 @@ branch `main`** (modo "deploy from branch").
   backup-main-20260603-datasheets=86da20e = build anterior à atualização dos datasheets p/ versões mais novas,
   backup-main-20260603-melhorias=b062a72 = build anterior às melhorias SEO/i18n,
   backup-main-20260603-privacidade=56c8e19 = build anterior ao ajuste da Política de Privacidade,
-  **backup-main-20260604-appnotes-ds=d04d3c3** = build anterior à remoção do App Notes + datasheets novos → último
-  build "bom" antes do deploy atual `b1edbaa`).
+  backup-main-20260604-appnotes-ds=d04d3c3 = build anterior à remoção do App Notes + datasheets novos,
+  **backup-main-20260607-assets-cleanup=b1edbaa** = build anterior à limpeza de assets não usados → último
+  build "bom" antes do deploy atual `5172b2c`).
 
 > ⚠️ O repo **LOCAL** (branch `main`) é a **FONTE**; a **`main` REMOTA** é o **BUILD**. São conteúdos
 > diferentes — **nunca** dar `git pull` de origin/main para a local. Existe `.github/workflows/deploy.yml`

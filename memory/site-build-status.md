@@ -170,7 +170,7 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
   anterior** (d04d3c3) em `origin/backup-main-20260604-appnotes-ds`.
   **Rollback:** `git push -f origin backup-main-20260604-appnotes-ds:main`. Ver [[deploy-github-pages]].
 
-**Sessão 2026-06-07 — limpeza de assets não usados (commit local, AINDA NÃO publicado):**
+**Sessão 2026-06-07 — limpeza de assets não usados (PUBLICADO no ar):**
 
 - Removidos todos os assets sem referência de runtime (commit `6bfa42b` na branch local `main`/fonte).
 - **`public/assets/` (peso morto ~3.8 MB que ia pro `dist/` sem uso):** `SOIC-8-web-full.glb` (fallback nunca
@@ -185,6 +185,10 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
   `assets/danilo.jpg`, `assets/gisely.jpg`; e todo `public/assets/` em uso (SOIC-8-web.glb, icon_engeletron.svg,
   eetx433a-photo-stage.jpg [=og:image], silicon_wafer_manufacturing.png, flags/, danilo/gisely.jpg, datasheets/).
 - Verificado: `npm run build` = **32 páginas, 0 erros**; `dist/` sem o peso morto e com todos os assets usados presentes.
-- ⚠️ **AINDA NÃO PUBLICADO:** o site no ar (`origin/main` = `b1edbaa`) continua servindo o peso morto até o próximo
-  deploy. Para publicar a economia, seguir o processo de deploy em [[deploy-github-pages]]. `origin/source` ainda não
-  recebeu este commit (pendente push da fonte).
+- ✅ **PUBLICADO no ar em 2026-06-07:** fonte enviada p/ `origin/source` (fast-forward → `1717ffe`); build
+  force-push p/ `origin/main` = `5172b2c`; **backup do build anterior** (`b1edbaa`) em
+  `origin/backup-main-20260607-assets-cleanup`. **Rollback:** `git push -f origin backup-main-20260607-assets-cleanup:main`.
+  Verificado via `raw.githubusercontent` (sem cache): os 6 arquivos removidos retornam **404** (SOIC-8-web-full.glb,
+  favicon.svg, logomark_engeletron.svg, asic.png, eetx433a-photo.png, icon_engeletron.png) e os usados retornam **200**
+  (index.html, SOIC-8-web.glb, icon_engeletron.svg, eetx433a-photo-stage.jpg, silicon_wafer_manufacturing.png,
+  datasheets/EETX433A_pt-BR.pdf, flags/br.png). Ver [[deploy-github-pages]].
