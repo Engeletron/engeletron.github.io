@@ -2,7 +2,7 @@
 name: site-build-status
 description: Estado do novo site Astro — construído, PUBLICADO no ar, e com ajustes pós-deploy (e-mails, WhatsApp, mobile).
 type: project
-updated: 2026-05-29
+updated: 2026-06-07
 ---
 
 O novo site (Astro) foi **implementado e verificado** em 2026-05-28, na branch
@@ -169,3 +169,22 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
 - **Git:** fonte commitada `01f937c` → `origin/source`; build force-push `origin/main` = `b1edbaa`; **backup do build
   anterior** (d04d3c3) em `origin/backup-main-20260604-appnotes-ds`.
   **Rollback:** `git push -f origin backup-main-20260604-appnotes-ds:main`. Ver [[deploy-github-pages]].
+
+**Sessão 2026-06-07 — limpeza de assets não usados (commit local, AINDA NÃO publicado):**
+
+- Removidos todos os assets sem referência de runtime (commit `6bfa42b` na branch local `main`/fonte).
+- **`public/assets/` (peso morto ~3.8 MB que ia pro `dist/` sem uso):** `SOIC-8-web-full.glb` (fallback nunca
+  carregado — ChipViewer só usa `SOIC-8-web.glb`), `asic.png`, `eetx433a-photo.png` (foto transparente "p/ uso
+  futuro" — nunca usada), `logomark_engeletron.png`/`.svg` (logomark com fundo branco, descartada), `icon_engeletron.png`
+  (só o `.svg` é usado) e `public/favicon.svg` (default do Astro; favicon real = `/assets/icon_engeletron.svg`).
+- **`assets/` raiz (originais, não entram no build):** 4 fotos antigas (asic, EETX433A_real_photo, eetx433a-photo,
+  eetx433a-photo-stage), `SOIC-8.glb`+`SOIC-8-web.glb` (intermediários 3D, regeneráveis do `.STEP`), `photo-1550751827`
+  (stock), `silicon_wafer_manufacturing2.jpeg`, `gitkeep.txt`, pasta `nova logomarca engeletron - 200924/` (kit+zips),
+  banner LinkedIn, QR WeChat.
+- **MANTIDOS (fonte-de-verdade):** `assets/SOIC-8.STEP`, `assets/datasheets/`, `assets/icon_engeletron.svg`,
+  `assets/danilo.jpg`, `assets/gisely.jpg`; e todo `public/assets/` em uso (SOIC-8-web.glb, icon_engeletron.svg,
+  eetx433a-photo-stage.jpg [=og:image], silicon_wafer_manufacturing.png, flags/, danilo/gisely.jpg, datasheets/).
+- Verificado: `npm run build` = **32 páginas, 0 erros**; `dist/` sem o peso morto e com todos os assets usados presentes.
+- ⚠️ **AINDA NÃO PUBLICADO:** o site no ar (`origin/main` = `b1edbaa`) continua servindo o peso morto até o próximo
+  deploy. Para publicar a economia, seguir o processo de deploy em [[deploy-github-pages]]. `origin/source` ainda não
+  recebeu este commit (pendente push da fonte).
