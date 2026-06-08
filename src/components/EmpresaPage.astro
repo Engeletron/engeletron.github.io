@@ -5,8 +5,8 @@ import { companies } from '../data/company';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 const lang = getLangFromUrl(Astro.url); const t = useTranslations(lang);
 const team = [
-  {name:'Danilo Miguel Neves Adur', roleKey:'team.role.dir.m', crea:'CREA‑PR PR‑87205/D', email:'danilo@engeletron.com.br', phone:'(41) 99904‑2212', photo:'/assets/danilo.jpg'},
-  {name:'Gisely Bellozupko Adur', roleKey:'team.role.dir.f', crea:'CREA‑PR PR‑87210/D', email:'gisely@engeletron.com.br', phone:'(41) 99904‑2302', photo:'/assets/gisely.jpg'},
+  {name:'Danilo Miguel Neves Adur', roleKey:'team.role.dir.m', crea:'CREA‑PR PR‑87205/D', email:'danilo@engeletron.com.br', phone:'(41) 99904‑2212', photo:'/assets/danilo_corp.png'},
+  {name:'Gisely Bellozupko Adur', roleKey:'team.role.dir.f', crea:'CREA‑PR PR‑87210/D', email:'gisely@engeletron.com.br', phone:'(41) 99904‑2302', photo:'/assets/gisely_corp.png'},
 ];
 ---
 <Base title={t('meta.title.company')} description={t('meta.desc.company')}>
