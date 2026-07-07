@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getLangFromUrl, useTranslations, languages } from '../i18n/ui';
-import { eetx433a, datasheets, datasheetsEnabled } from '../data/product';
+import { eetx433a, datasheets, datasheetsEnabled, appNotes, appNotesEnabled, anLocale } from '../data/product';
 import Flag from './Flag.astro';
 import ChipViewer from './ChipViewer.astro';
 import SpecTable from './SpecTable.astro';
@@ -117,6 +117,32 @@ const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' 
         </div>
         )}
       </div>
+
+      {appNotesEnabled && (
+      <div class="an-block">
+        <div class="an-heading">{t('product.docs.an.heading')}</div>
+        <div class="an-grid">
+          {appNotes.map((note) => (
+          <div class="dlc ds">
+            <div class="dl-head">
+              <span class="big">{note.icon}</span>
+              <div>
+                <b>{t(`product.docs.an.${note.id}.label` as any)} <span class="ver">{note.version}</span></b>
+                <small>{t(`product.docs.an.${note.id}.sub` as any)}</small>
+              </div>
+            </div>
+            <div class="ds-langs">
+              {(['pt','en','es','zh'] as const).map((l) => (
+                <a class="ds-lang" href={`/assets/appnotes/${note.prefix}_EETX433A_${anLocale[l]}.pdf`} download>
+                  <Flag code={dsFlag[l]} alt={languages[l]} /> {languages[l]} <span>PDF</span>
+                </a>
+              ))}
+            </div>
+          </div>
+          ))}
+        </div>
+      </div>
+      )}
     </div>
   </section>
 
@@ -179,6 +205,12 @@ const dsFlag: Record<string, string> = { pt: 'br', en: 'us', es: 'es', zh: 'cn' 
   .ds-lang { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 9px; background: rgba(92,225,230,.05); color: #cdd8f2; font-size: 15px; }
   .ds-lang:hover { border-color: var(--cyan); color: var(--txt); }
   .ds-lang span { margin-left: auto; color: var(--dim); font-size: 12px; letter-spacing: .08em; }
+  /* APPLICATION NOTES */
+  .an-block { margin-top: 26px; }
+  .an-heading { font-size: 15px; letter-spacing: .04em; color: var(--dim); text-transform: uppercase; margin-bottom: 12px; }
+  .an-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 760px) { .an-grid { grid-template-columns: 1fr; } }
+  .ver { font-size: 12px; letter-spacing: .06em; color: var(--cyan); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; margin-left: 4px; white-space: nowrap; }
   .dlc {
     flex: 1;
     min-width: 220px;

@@ -20,6 +20,19 @@ export const datasheets: Record<string, string> = {
 
 // Downloads de datasheet ATIVADOS (PDFs revisados publicados 2026-06-02). Mude para false para desativar.
 export const datasheetsEnabled = true;
+
+// Notas de aplicação (PDF) — cada nota documenta um produto real feito com o EETX433A.
+// Servidas de public/assets/appnotes/; originais em assets/application_notes/.
+// Cada nota tem os 4 idiomas (mesmos locales dos datasheets). Título/descrição = i18n
+// (`product.docs.an.<id>.label` / `.sub`). Mude appNotesEnabled p/ false para ocultar a subseção.
+export const appNotesEnabled = true;
+export const anLocale: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es-ES', zh: 'zh-CN' };
+export const appNotes = [
+  { id: 'tx',      prefix: 'AN-TX',      icon: '🔑', version: 'v1.0' },
+  { id: 'mag',     prefix: 'AN-MAG',     icon: '🧲', version: 'v1.1' },
+  { id: 'pir',     prefix: 'AN-PIR',     icon: '🚶', version: 'v1.0' },
+  { id: 'txflash', prefix: 'AN-TXFLASH', icon: '🚗', version: 'v1.0' },
+] as const;
 export const advantagesEliminated = ['Cristal SMD 3225 (XTAL)','Ressonador SAW SMD','2× diodo LL4148 (MiniMELF)','Diodo duplo BAV70 (SOT‑23)'];
 export const applications = [
   {icon:'🚪', key:'gates'}, {icon:'🚨', key:'alarms'}, {icon:'🔑', key:'access'},
