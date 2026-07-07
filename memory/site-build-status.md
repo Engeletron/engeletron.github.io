@@ -2,7 +2,7 @@
 name: site-build-status
 description: Estado do novo site Astro — construído, PUBLICADO no ar, e com ajustes pós-deploy (e-mails, WhatsApp, mobile, notas de aplicação).
 type: project
-updated: 2026-07-06
+updated: 2026-07-07
 ---
 
 O novo site (Astro) foi **implementado e verificado** em 2026-05-28, na branch
@@ -229,3 +229,16 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
   **Rollback:** `git push -f origin backup-main-20260707-appnotes:main`. Verificado via `raw.githubusercontent`
   (`main`): 16 refs de PDF na página do produto, heading em PT (`Notas de aplicação`) e ZH (`应用笔记`), os 4
   PDFs pt-BR retornam HTTP 200. Ver [[deploy-github-pages]].
+
+**Sessão 2026-07-07 — datasheets + notas de aplicação corrigidos (PUBLICADO no ar):**
+
+- O dono substituiu **todos os 20 PDFs** em `assets/` (4 datasheets + 16 app notes) por versões corrigidas —
+  as anteriores continham erros. **Versões/badges inalterados** (datasheet v1.3; AN-TX v1.0, AN-MAG v1.1,
+  AN-PIR v1.0, AN-TXFLASH v1.0 — verificado extraindo o texto dos PDFs com pypdf) → **zero mudança de código**;
+  só cópia p/ `public/assets/{datasheets,appnotes}/`. Tamanhos novos: datasheets pt 2.471.812 / en 2.457.631 /
+  es 2.468.812 / zh 4.012.492.
+- Build 32 páginas, 0 erros.
+- ✅ **PUBLICADO no ar em 2026-07-07:** fonte `98805bb` → `origin/source`; build force-push `origin/main` =
+  **`c8cd07b`**; **backup do build anterior** (`f8cb1c3`) em `origin/backup-main-20260707-docs-fix`.
+  **Rollback:** `git push -f origin backup-main-20260707-docs-fix:main`. Verificado via `raw.githubusercontent`:
+  os 20 PDFs retornam Content-Length exato dos arquivos novos (20/20 OK). Ver [[deploy-github-pages]].
