@@ -1,8 +1,8 @@
 ---
 name: site-build-status
-description: Estado do novo site Astro — construído, PUBLICADO no ar, e com ajustes pós-deploy (e-mails, WhatsApp, mobile).
+description: Estado do novo site Astro — construído, PUBLICADO no ar, e com ajustes pós-deploy (e-mails, WhatsApp, mobile, notas de aplicação).
 type: project
-updated: 2026-06-07
+updated: 2026-07-06
 ---
 
 O novo site (Astro) foi **implementado e verificado** em 2026-05-28, na branch
@@ -208,3 +208,24 @@ Auditoria do site (erros/ambiguidades/apresentação) → 3 ondas implementadas 
   **Rollback:** `git push -f origin backup-main-20260607-fotos-nav:main`. Verificado via `raw.githubusercontent`:
   `danilo_corp.png`/`gisely_corp.png` → 200; `danilo.jpg`/`gisely.jpg` → 404; nav com "Serviços" antes de "Produtos".
   Ver [[deploy-github-pages]].
+
+**Sessão 2026-07-06 — Notas de aplicação do EETX433A publicadas (no ar):**
+
+- O dono entregou **4 notas de aplicação** em `assets/application_notes/`, cada uma nos 4 idiomas de locale
+  (`AN-XXX_EETX433A_pt-BR/en-US/es-ES/zh-CN.pdf`) — cada nota documenta um **produto real** feito com o chip:
+  **AN-TX** (Transmissor Chaveiro, controle 2–6 botões, v1.0), **AN-MAG** (Detector de Abertura Magnético
+  porta/janela, Smart+violação, v1.1), **AN-PIR** (Detector de Movimento PIR, 1/2 elementos, v1.0),
+  **AN-TXFLASH** (Transmissor Automotivo por pulso de farol, sem bateria, v1.0).
+- **Onde ficam:** nova subseção **"Notas de aplicação"** dentro da seção Documentação da página do Produto
+  (`ProductPage.astro`), logo abaixo do card do Datasheet. **Card por nota** espelhando o padrão do datasheet
+  (ícone + título + badge de versão em ciano + grade 2×2 de 4 idiomas com bandeira + `download`). Sem JS novo.
+- **Implementação:** `src/data/product.ts` ganhou `appNotes[]` (`{id,prefix,icon,version}`), `anLocale`
+  (pt→pt-BR etc.) e flag **`appNotesEnabled`** (on/off, igual `datasheetsEnabled`). Títulos/descrições nos 4
+  idiomas em `i18n/ui.ts` (chaves `product.docs.an.heading` + `product.docs.an.<id>.label/.sub`). PDFs servidos
+  de `public/assets/appnotes/` (16); originais preservados em `assets/application_notes/` (fonte-de-verdade).
+- Build **32 páginas, 0 erros**; navegador desktop 1280 + mobile 375px sem overflow, console 0 erros.
+- ✅ **PUBLICADO no ar em 2026-07-06:** fonte commitada (`6c9a463`) → `origin/source`; build force-push
+  `origin/main` = **`f8cb1c3`**; **backup do build anterior** (`dbecc9f`) em `origin/backup-main-20260707-appnotes`.
+  **Rollback:** `git push -f origin backup-main-20260707-appnotes:main`. Verificado via `raw.githubusercontent`
+  (`main`): 16 refs de PDF na página do produto, heading em PT (`Notas de aplicação`) e ZH (`应用笔记`), os 4
+  PDFs pt-BR retornam HTTP 200. Ver [[deploy-github-pages]].

@@ -13,7 +13,7 @@
 - [Produto EETX433A](produto-eetx433a.md) — specs, encapsulamento SOIC-8, MOQ/tape&reel, diferenciais (sem cristal/SAW/diodos).
 - [Decisões do novo site](site-rebuild-decisoes.md) — rebuild dark/premium, 4 idiomas, direção B+C; arte do chip (STEP→GLB marcado) aprovada; modelo fabless (projeto BR / fab China); seção wafer.
 - Documento de design completo: `docs/superpowers/specs/2026-05-28-engeletron-rf-site-design.md` (aprovado 2026-05-28).
-- [Estado do build / features](site-build-status.md) — registro completo das mudanças (cotação, bandeiras-imagem, seção Serviços, entidades, datasheets+flag, logo, nav). Build 32 páginas, no ar.
+- [Estado do build / features](site-build-status.md) — registro completo das mudanças (cotação, bandeiras-imagem, seção Serviços, entidades, datasheets+flag, logo, nav, notas de aplicação). Build 32 páginas, no ar.
 
 ## Deploy / Publicação
 - [Deploy / publicação](deploy-github-pages.md) — NO AR em engeletron.com.br; processo de deploy (dist→main), branches e rollback.

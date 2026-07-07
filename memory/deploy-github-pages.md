@@ -23,8 +23,9 @@ branch `main`** (modo "deploy from branch").
   backup-main-20260603-privacidade=56c8e19 = build anterior ao ajuste da Política de Privacidade,
   backup-main-20260604-appnotes-ds=d04d3c3 = build anterior à remoção do App Notes + datasheets novos,
   backup-main-20260607-assets-cleanup=b1edbaa = build anterior à limpeza de assets não usados,
-  **backup-main-20260607-fotos-nav=5172b2c** = build anterior às fotos corporativas + reordenação do menu → último
-  build "bom" antes do deploy atual `dbecc9f`).
+  backup-main-20260607-fotos-nav=5172b2c = build anterior às fotos corporativas + reordenação do menu,
+  **backup-main-20260707-appnotes=dbecc9f** = build anterior à publicação das notas de aplicação → último
+  build "bom" antes do deploy atual `f8cb1c3`).
 
 > ⚠️ O repo **LOCAL** (branch `main`) é a **FONTE**; a **`main` REMOTA** é o **BUILD**. São conteúdos
 > diferentes — **nunca** dar `git pull` de origin/main para a local. Existe `.github/workflows/deploy.yml`
