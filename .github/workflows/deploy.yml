@@ -27,7 +27,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # `withastro/action@v3` usa Node 20 por padrao e o Astro 6 exige
+      # >=22.12.0 (`engines` no package.json) -- a primeira corrida morreu
+      # exatamente ai. 24 e a versao que compilou os 69 arquivos conferidos
+      # contra o site no ar.
       - uses: withastro/action@v3
+        with:
+          node-version: 24
 
   deploy:
     needs: build
