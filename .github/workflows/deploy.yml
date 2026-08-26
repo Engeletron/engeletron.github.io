@@ -1,18 +1,34 @@
 name: Deploy to GitHub Pages
+
+# O site passou a ser compilado por Actions em 2026-08-26 (ordem do dono).
+# Antes: o Pages servia a branch `main` em modo legacy, que guardava o site JA
+# COMPILADO, enquanto o codigo Astro vivia em `source`. Duas linhas para um
+# projeto so. Agora ha uma unica linha -- `master`, com o codigo -- e o
+# artefato e produzido aqui a cada push.
+
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
+# Uma publicacao de cada vez. `cancel-in-progress: false` para nao abortar um
+# deploy ja em curso: o site no ar vale mais que a pressa.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: withastro/action@v3
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
