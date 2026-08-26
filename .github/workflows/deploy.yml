@@ -3,12 +3,12 @@ name: Deploy to GitHub Pages
 # O site passou a ser compilado por Actions em 2026-08-26 (ordem do dono).
 # Antes: o Pages servia a branch `main` em modo legacy, que guardava o site JA
 # COMPILADO, enquanto o codigo Astro vivia em `source`. Duas linhas para um
-# projeto so. Agora ha uma unica linha -- `master`, com o codigo -- e o
+# projeto so. Agora ha uma unica linha -- `main`, com o codigo -- e o
 # artefato e produzido aqui a cada push.
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
